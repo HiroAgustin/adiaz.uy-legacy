@@ -10,10 +10,8 @@ author:
   email: hiroagustin@gmail.com
 
 # Grunt handles images and assets.
-exclude: ['img', 'css', 'js', 'fonts',
+exclude: ['images', 'styles', 'scripts', 'fonts', 'bower_components',
           '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
-
-include: ['.htaccess']
 
 url: adiaz.uy
 
