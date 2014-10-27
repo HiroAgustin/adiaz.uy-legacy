@@ -18,7 +18,11 @@ module.exports = function (grunt)
     }
 
   , watch: {
-      compass: {
+      bower: {
+        files: ['bower.json']
+      , tasks: ['wiredep']
+      }
+    , compass: {
         files: ['<%= yeoman.app %>/styles/**/*.{scss,sass}']
       , tasks: ['compass:server', 'autoprefixer:server']
       }
@@ -179,6 +183,16 @@ module.exports = function (grunt)
         }
       }
     }
+  , wiredep: {
+      app: {
+        src: ['<%= yeoman.app %>/**/*.html']
+      , ignorePath:  /\.\.\//
+      }
+    , sass: {
+        src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}']
+      , ignorePath: /(\.\.\/){1,2}bower_components\//
+      }
+    }
   , useminPrepare: {
       options: {
         dest: '<%= yeoman.dist %>'
@@ -333,6 +347,7 @@ module.exports = function (grunt)
 
     grunt.task.run([
       'clean:server'
+    , 'wiredep'
     , 'concurrent:server'
     , 'autoprefixer:server'
     , 'connect:livereload'
@@ -349,6 +364,7 @@ module.exports = function (grunt)
 
   grunt.registerTask('build', [
     'clean'
+  , 'wiredep'
   , 'jekyll:dist'
   , 'concurrent:dist'
   , 'useminPrepare'
