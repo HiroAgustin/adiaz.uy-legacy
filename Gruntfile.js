@@ -4,7 +4,7 @@ module.exports = function (grunt)
 
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin'
-  ,	buildcontrol: 'grunt-build-control'
+  , buildcontrol: 'grunt-build-control'
   });
 
   // Time how long tasks take. Can help when optimizing build times
@@ -104,17 +104,17 @@ module.exports = function (grunt)
   , compass: {
       options: {
         sassDir: '<%= yeoman.app %>/styles'
-      ,	cssDir: '.tmp/styles'
-      ,	generatedImagesDir: '.tmp/images/generated'
-      ,	imagesDir: '<%= yeoman.app %>/images'
-      ,	javascriptsDir: '<%= yeoman.app %>/scripts'
-      ,	fontsDir: '<%= yeoman.app %>/fonts'
-      ,	importPath: '<%= yeoman.app %>/bower_components'
-      ,	httpImagesPath: '<%= yeoman.app %>/images'
-      ,	httpGeneratedImagesPath: '<%= yeoman.app %>/images/generated'
-      ,	httpFontsPath: '<%= yeoman.app %>/fonts'
-      ,	relativeAssets: false
-      ,	assetCacheBuster: false
+      , cssDir: '.tmp/styles'
+      , generatedImagesDir: '.tmp/images/generated'
+      , imagesDir: '<%= yeoman.app %>/images'
+      , javascriptsDir: '<%= yeoman.app %>/scripts'
+      , fontsDir: '<%= yeoman.app %>/fonts'
+      , importPath: '<%= yeoman.app %>/bower_components'
+      , httpImagesPath: '<%= yeoman.app %>/images'
+      , httpGeneratedImagesPath: '<%= yeoman.app %>/images/generated'
+      , httpFontsPath: '<%= yeoman.app %>/fonts'
+      , relativeAssets: false
+      , assetCacheBuster: false
       , outputStyle: 'compressed'
       }
     , dist: {
