@@ -259,25 +259,31 @@ module.exports = function (grunt)
     }
   , copy: {
       dist: {
-        files: [{
-          expand: true
-        , dot: true
-        , cwd: '<%= yeoman.app %>'
-        , src: [
-            // Jekyll processes and moves HTML and text files.
-            // Usemin moves CSS and javascript inside of Usemin blocks.
-            // Copy moves asset files and directories.
-            'images/**/*'
-          , 'fonts/**/*'
-            // Like Jekyll, exclude files & folders prefixed with an underscore.
-          , '!**/_*{,/**}'
-            // Explicitly add any files your site needs for distribution here.
-            //'bower_components/jquery/jquery.js',
-            //'favicon.ico',
-            //'apple-touch*.png'
-          ]
-        , dest: '<%= yeoman.dist %>'
-        }]
+        files: [
+          {
+            expand: true
+          , dot: true
+          , cwd: '<%= yeoman.app %>'
+          , src: [
+              // Jekyll processes and moves HTML and text files.
+              // Usemin moves CSS and javascript inside of Usemin blocks.
+              // Copy moves asset files and directories.
+              'images/**/*'
+            , 'fonts/**/*'
+              // Like Jekyll, exclude files & folders prefixed with an underscore.
+            , '!**/_*{,/**}'
+              // Explicitly add any files your site needs for distribution here.
+              //'favicon.ico',
+              //'apple-touch*.png'
+            ]
+          , dest: '<%= yeoman.dist %>'
+          }
+        , {
+            expand: true
+          , src: ['CNAME']
+          , dest: '<%= yeoman.dist %>'
+          }
+        ]
       }
       // Copy CSS into .tmp directory for Autoprefixer processing
     , stageCss: {
