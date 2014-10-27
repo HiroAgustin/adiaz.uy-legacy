@@ -196,23 +196,35 @@ module.exports = function (grunt)
   , useminPrepare: {
       options: {
         dest: '<%= yeoman.dist %>'
+      , root: '<%= yeoman.app %>'
       }
-    , html: '<%= yeoman.dist %>/index.html'
+    , html: ['<%= yeoman.app %>/**/*.html']
     }
   , usemin: {
       options: {
         assetsDirs: '<%= yeoman.dist %>'
+        // This is so we update image references in our ng-templates
+      , patterns: {
+          js: [
+            [/(images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images']
+          ]
+        }
       }
     , html: ['<%= yeoman.dist %>/**/*.html']
     , css: ['<%= yeoman.dist %>/styles/**/*.css']
+    , js: ['<%= yeoman.dist %>/scripts/**/*.js']
     }
   , htmlmin: {
       dist: {
         options: {
-          collapseWhitespace: true
-        , collapseBooleanAttributes: true
+          collapseBooleanAttributes: true
+        , collapseWhitespace: true
         , removeAttributeQuotes: true
+        , removeCommentsFromCDATA: true
+        , removeEmptyAttributes: true
+        , removeOptionalTags: true
         , removeRedundantAttributes: true
+        , useShortDoctype: true
         }
       , files: [{
           expand: true
@@ -220,18 +232,6 @@ module.exports = function (grunt)
         , src: '**/*.html'
         , dest: '<%= yeoman.dist %>'
         }]
-      }
-    }
-    // Usemin adds files to concat
-  , concat: {}
-    // Usemin adds files to uglify
-  , uglify: {}
-    // Usemin adds files to cssmin
-  , cssmin: {
-      dist: {
-        options: {
-          check: 'gzip'
-        }
       }
     }
   , imagemin: {
@@ -298,7 +298,8 @@ module.exports = function (grunt)
     }
   , filerev: {
       options: {
-        length: 4
+        algorithm: 'md5'
+      , length: 8
       }
     , dist: {
         files: [{
@@ -374,10 +375,10 @@ module.exports = function (grunt)
   , 'jekyll:dist'
   , 'concurrent:dist'
   , 'useminPrepare'
-  , 'concat'
+  , 'concat:generated'
   , 'autoprefixer:dist'
-  , 'cssmin'
-  , 'uglify'
+  , 'cssmin:generated'
+  , 'uglify:generated'
   , 'imagemin'
   , 'svgmin'
   , 'filerev'
