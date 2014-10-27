@@ -1,5 +1,8 @@
 {
   "name": "adiaz.github.com",
   "version": "0.1.0",
-  "appPath": "app"
+  "appPath": "app",
+  "dependencies": {
+    "normalize.css": "~3.0.2"
+  }
 }
