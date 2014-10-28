@@ -2,8 +2,16 @@
   display: flex;
 }
 
-.u-Flex--Direction-column {
+.u-Flex--Column {
   flex-direction: column;
+}
+
+.u-Flex--Center {
+  align-items: center;
+}
+
+.u-Flex--Justify {
+  justify-content: space-between;
 }
 
 .u-Flex-1 {
