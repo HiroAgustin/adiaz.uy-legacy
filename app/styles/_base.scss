@@ -1,0 +1,21 @@
+@import "colors";
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body, .body {
+  background: $silver;
+  color: $black;
+  min-height: 100%;
+}
+
+.body-alt {
+  background: $black;
+  color: $silver;
+}

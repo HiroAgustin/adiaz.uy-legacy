@@ -1,12 +1,16 @@
 <!doctype html>
 <html>
+
 <head>
   {% include head.html %}
 </head>
-<body>
+
+<body class="u-Flex u-Flex--Direction-column">
   {% include header.html %}
 
-  {{ content }}
+  <div class="u-Flex-1 container">
+    {{ content }}
+  </div>
 
   {% include footer.html %}
 

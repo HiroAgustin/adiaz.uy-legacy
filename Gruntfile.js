@@ -184,14 +184,20 @@ module.exports = function (grunt)
       }
     }
   , wiredep: {
-      app: {
+      options: {
+        exclude: [
+          '<%= yeoman.app %>/bower_components/colors'
+        , '<%= yeoman.app %>/bower_components/suit'
+        ]
+      }
+    , app: {
         src: ['<%= yeoman.app %>/**/*.html']
       , ignorePath:  /\.\.\//
       }
-    , sass: {
-        src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}']
-      , ignorePath: /(\.\.\/){1,2}bower_components\//
-      }
+    // , sass: {
+    //     src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}']
+    //   , ignorePath: /(\.\.\/){1,2}bower_components\//
+    //   }
     }
   , useminPrepare: {
       options: {
