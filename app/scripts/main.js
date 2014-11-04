@@ -1,7 +1,5 @@
-;(function ()
+;(function (win, doc, undefined)
 {
   'use strict';
 
-  console.log('test');
-
-}());
+}(window, document));

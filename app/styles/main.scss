@@ -1,9 +1,11 @@
+@import "vendor/suit/index";
+
 @import "base";
 
-@import "utils/shame";
+@import "utils/text";
 
 @import "components/flex";
 @import "components/circle";
 @import "components/container";
 
-@import "vendor/suit/index";
+@import "utils/shame";
