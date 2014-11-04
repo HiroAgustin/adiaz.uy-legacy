@@ -71,16 +71,6 @@ module.exports = function (grunt)
           open: true
         , base: ['<%= yeoman.dist %>']
         }
-      },
-      test: {
-        options: {
-          base: [
-            '.tmp'
-          , '.jekyll'
-          , 'test'
-          , '<%= yeoman.app %>'
-          ]
-        }
       }
     }
   , clean: {
@@ -332,7 +322,6 @@ module.exports = function (grunt)
     , all: [
         'Gruntfile.js'
       , '<%= yeoman.app %>/scripts/**/*.js'
-      , 'test/spec/**/*.js'
       ]
     }
   , concurrent: {
@@ -390,14 +379,12 @@ module.exports = function (grunt)
 
   grunt.registerTask('deploy', [
     'check'
-  , 'test'
   , 'build'
   , 'buildcontrol'
   ]);
 
   grunt.registerTask('default', [
     'check'
-  , 'test'
   , 'build'
   ]);
 };
