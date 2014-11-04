@@ -18,4 +18,15 @@ body, .body {
 .body-alt {
   background: $black;
   color: $silver;
+
+  a {
+    color: $silver;
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    color: $white;
+    border-color: $white;
+  }
 }

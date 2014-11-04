@@ -36,7 +36,8 @@
 .u-linkComplex:hover .u-linkComplexTarget,
 .u-linkComplex:focus .u-linkComplexTarget,
 .u-linkComplex:active .u-linkComplexTarget {
-  border-bottom: 1px solid white !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
 }
 
 /**
