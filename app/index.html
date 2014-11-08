@@ -4,14 +4,20 @@ title: adiaz.uy
 excerpt: Agustín Díaz personal blog
 ---
 <section>
-  <h1 class="u-paddingBl divider">Thoughts</h1>
+  <header>
+    <h1 class="u-paddingBl divider">Thoughts</h1>
+  </header>
   <ul>
   {% for post in site.posts %}
     <li>
-      <a class="u-linkBlock u-paddingAl box-link divider" href="{{ post.url }}">
-        <time date-time="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-        <h2>{{ post.title }}</h2>
-        {{ post.excerpt }}
+      <a class="u-linkBlock u-paddingAl box-link {% if forloop.first %}box-link__highlight{% endif %} divider" href="{{ post.url }}">
+        <article>
+          <header>
+            <time date-time="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+            <h2>{{ post.title }}</h2>
+          </header>
+          {{ post.excerpt }}
+        </article>
       </a>
     </li>
   {% endfor %}

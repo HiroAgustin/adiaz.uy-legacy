@@ -1,19 +1,21 @@
+@import "config";
+
 .body-alt {
-  background: $black;
+  background: $alt-background-color;
   border-style: solid;
   border-color: $primary-color;
   border-width: 0;
-  color: $silver;
+  color: $alt-text-color;
 
   a {
-    color: $silver;
+    color: $alt-link-color;
   }
 
   a:hover,
   a:focus,
   a:active {
-    color: $white;
-    border-color: $white;
+    color: $alt-link-color-hover;
+    border-color: $alt-link-color-hover;
   }
 }
 
