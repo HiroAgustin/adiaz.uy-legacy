@@ -1,7 +1,10 @@
 @import "colors";
 
 html {
+  background: $silver;
   box-sizing: border-box;
+  color: $black;
+  font-size: 18px;
   height: 100%;
 }
 
@@ -10,7 +13,5 @@ html {
 }
 
 body {
-  background: $silver;
-  color: $black;
   min-height: 100%;
 }

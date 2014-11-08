@@ -3,15 +3,17 @@ layout: default
 title: adiaz.uy
 excerpt: Agustín Díaz personal blog
 ---
-
-<ul>
-{% for post in site.posts %}
-  <li>
-    <a class="u-linkBlock" href="{{ post.url }}">
-      <time date-time="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-      <h2>{{ post.title }}</h2>
-      {{ post.excerpt }}
-    </a>
-  </li>
-{% endfor %}
-</ul>
+<section>
+  <h1 class="u-paddingBl divider">Thoughts</h1>
+  <ul>
+  {% for post in site.posts %}
+    <li>
+      <a class="u-linkBlock u-paddingAl box-link divider" href="{{ post.url }}">
+        <time date-time="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        <h2>{{ post.title }}</h2>
+        {{ post.excerpt }}
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+</section>

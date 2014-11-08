@@ -1,9 +1,13 @@
-@import "vendor/suit/index";
-
+@import "config";
 @import "base";
 
+@import "vendor/suit/index";
+
+@import "components/text";
 @import "components/flex";
+@import "components/divider";
 @import "components/body-alt";
+@import "components/box-link";
 @import "components/container";
 
 @import "utils/shame";

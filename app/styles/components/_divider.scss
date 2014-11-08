@@ -1,0 +1,9 @@
+@import "config";
+
+.divider {
+  border-bottom: 1px solid $divider-color;
+}
+
+.divider__top {
+  border-top-width: 1px;
+}

@@ -1,0 +1,15 @@
+@import "config";
+
+.box-link {
+  transition: background-color .25s ease-out, border-width .10s linear;
+
+  &:hover {
+    background: $white;
+    border-color: $primary-color;
+    border-bottom-width: 4px;
+  }
+
+  &.__highlight {
+    font-size: 120%;
+  }
+}
