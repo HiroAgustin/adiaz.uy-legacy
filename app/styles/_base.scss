@@ -9,24 +9,8 @@ html {
   box-sizing: inherit;
 }
 
-body, .body {
+body {
   background: $silver;
   color: $black;
   min-height: 100%;
-}
-
-.body-alt {
-  background: $black;
-  color: $silver;
-
-  a {
-    color: $silver;
-  }
-
-  a:hover,
-  a:focus,
-  a:active {
-    color: $white;
-    border-color: $white;
-  }
 }

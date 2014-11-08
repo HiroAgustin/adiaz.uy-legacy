@@ -1,0 +1,26 @@
+.body-alt {
+  background: $black;
+  border-style: solid;
+  border-color: $olive;
+  border-width: 0;
+  color: $silver;
+
+  a {
+    color: $silver;
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    color: $white;
+    border-color: $white;
+  }
+}
+
+.body-alt__top {
+  border-top-width: 4px;
+}
+
+.body-alt__bottom {
+  border-bottom-width: 4px;
+}
