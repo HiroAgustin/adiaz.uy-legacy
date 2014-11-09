@@ -4,7 +4,7 @@ title: adiaz.uy
 excerpt: Agustín Díaz personal blog
 ---
 <section>
-  <header class="u-paddingBl u-paddingHl divider">
+  <header class="divider">
     <h1>Posts</h1>
   </header>
   <ul>
@@ -13,7 +13,7 @@ excerpt: Agustín Díaz personal blog
       <a class="u-linkBlock box-link {% if forloop.first %}box-link__highlight{% endif %} divider" href="{{ post.url }}">
         <article>
           <header>
-            <time date-time="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+            <time date-time="{{ post.date | date: "%F" }}">{{ post.date | date: "%b %-d, %Y" }}</time>
             <h2>{{ post.title }}</h2>
           </header>
           {{ post.excerpt }}
