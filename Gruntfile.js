@@ -182,7 +182,7 @@ module.exports = function (grunt)
       }
     , app: {
         src: ['<%= yeoman.app %>/**/*.html']
-      , ignorePath:  /\.\.\//
+      , ignorePath:  /\.\./
       }
     }
   , useminPrepare: {

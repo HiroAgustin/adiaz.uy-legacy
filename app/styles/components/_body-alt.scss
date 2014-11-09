@@ -9,13 +9,13 @@
 
   a {
     color: $alt-link-color;
-  }
+    border-color: $alt-link-color;
 
-  a:hover,
-  a:focus,
-  a:active {
-    color: $alt-link-color-hover;
-    border-color: $alt-link-color-hover;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $alt-link-color-hover;
+    }
   }
 }
 

@@ -8,7 +8,7 @@
 .u-linkClean:hover,
 .u-linkClean:focus,
 .u-linkClean:active {
-  text-decoration: none !important;
+  border-bottom: none !important;
 }
 
 /**
@@ -30,14 +30,18 @@
 .u-linkComplex:hover,
 .u-linkComplex:focus,
 .u-linkComplex:active {
-  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.u-linkComplex .u-linkComplexTarget {
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
 }
 
 .u-linkComplex:hover .u-linkComplexTarget,
 .u-linkComplex:focus .u-linkComplexTarget,
 .u-linkComplex:active .u-linkComplexTarget {
-  border-style: solid !important;
-  border-width: 0 0 1px !important;
+  border-width: 0 !important;
 }
 
 /**
@@ -50,6 +54,7 @@
 .u-linkBlock:hover,
 .u-linkBlock:focus,
 .u-linkBlock:active {
+  border-bottom: none !important;
   display: block !important;
   text-decoration: none !important;
 }

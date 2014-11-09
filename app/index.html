@@ -5,12 +5,12 @@ excerpt: Agustín Díaz personal blog
 ---
 <section>
   <header>
-    <h1>Posts</h1>
+    <h1>Articles</h1>
   </header>
   <ul>
   {% for post in site.posts %}
     <li>
-      <a class="u-linkBlock box-link {% if forloop.first %}box-link__highlight{% endif %}" href="{{ post.url }}">
+      <a class="box-link {% if forloop.first %}box-link__highlight{% endif %}" href="{{ post.url }}">
         <article>
           <header>
             <time date-time="{{ post.date | date: "%F" }}">{{ post.date | date: "%b %-d, %Y" }}</time>

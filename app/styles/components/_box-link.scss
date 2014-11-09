@@ -2,25 +2,36 @@
 @import "colors";
 @import "utils/breakpoints";
 
+$padding: 20px;
+$divider-width: 1px;
+$fake-border-width: $border-width - $divider-width;
+
 .box-link {
-  border-color: $divider-color;
-  border-style: solid;
-  border-width: 1px 0 0;
-  padding: 20px 10px;
-  transition: background-color .25s ease-out, border-width .10s linear;
+  border-top: $divider-color $divider-width solid;
+  border-bottom: $fake-border-width solid transparent;
+  display: block;
+
+  padding-bottom: $padding - $fake-border-width;
+  padding-left: $padding - 10px;
+  padding-right: $padding - 10px;
+  padding-top: $padding - $divider-width;
+
+  transition: background-color .25s ease-out;
 
   @include breakpoint(30em) {
-    padding: 20px;
+    padding-left: $padding;
+    padding-right: $padding;
   }
 
   &:hover {
     background: $white;
-    border-color: $primary-color;
-    border-bottom-width: $border-width;
+    border-top: $primary-color $border-width solid;
+
+    padding-top: $padding - $border-width;
+    padding-bottom: $padding;
   }
 }
 
 .box-link__highlight {
-  font-size: 120%;
-  border-color: $primary-color;
+  border-top-color: $primary-color;
 }
