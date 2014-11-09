@@ -1,4 +1,5 @@
 @import "config";
+@import "colors";
 
 html {
   color: $text-color;
@@ -22,4 +23,16 @@ h3, .h3 {
   font-size: 1.17em;
   font-weight: bold;
   line-height: 1.17em;
+}
+
+a {
+  color: $link-color;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+time {
+  color: $gray;
 }

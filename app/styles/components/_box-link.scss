@@ -1,9 +1,13 @@
 @import "config";
+@import "colors";
 @import "utils/breakpoints";
 
 .box-link {
-  transition: background-color .25s ease-out, border-width .10s linear;
+  border-color: $divider-color;
+  border-style: solid;
+  border-width: 1px 0 0;
   padding: 20px 10px;
+  transition: background-color .25s ease-out, border-width .10s linear;
 
   @include breakpoint(30em) {
     padding: 20px;
@@ -17,6 +21,6 @@
 }
 
 .box-link__highlight {
-  font-size: 125%;
+  font-size: 120%;
   border-color: $primary-color;
 }
