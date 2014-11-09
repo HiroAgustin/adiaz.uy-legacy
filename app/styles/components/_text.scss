@@ -4,12 +4,13 @@
 html {
   color: $text-color;
   font-size: $base-font-size;
+  font-family: Open Sans, sans-serif;
   line-height: $base-line-height;
 }
 
 h1, .h1 {
   font-size: 2em;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 2em;
 }
 
