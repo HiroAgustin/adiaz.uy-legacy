@@ -1,7 +1,13 @@
 @import "config";
+@import "utils/breakpoints";
 
 .box-link {
   transition: background-color .25s ease-out, border-width .10s linear;
+  padding: 20px 10px;
+
+  @include breakpoint(30em) {
+    padding: 20px;
+  }
 
   &:hover {
     background: $white;
@@ -12,4 +18,5 @@
 
 .box-link__highlight {
   font-size: 125%;
+  border-color: $primary-color;
 }

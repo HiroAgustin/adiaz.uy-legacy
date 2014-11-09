@@ -1,3 +1,5 @@
+@import "utils/breakpoints";
+
 .u-Flex {
   display: flex;
 }
@@ -11,7 +13,11 @@
 }
 
 .u-Flex--Justify {
-  justify-content: space-between;
+  justify-content: space-around;
+
+  @include breakpoint(30em) {
+    justify-content: space-between;
+  }
 }
 
 .u-Flex-1 {

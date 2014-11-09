@@ -1,3 +1,11 @@
+@import "config";
+
+html {
+  color: $text-color;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
 h1, .h1 {
   font-size: 2em;
   font-weight: bold;
