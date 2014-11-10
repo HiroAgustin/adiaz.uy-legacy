@@ -130,10 +130,7 @@ module.exports = function (grunt)
       }
     }
   , autoprefixer: {
-      options: {
-        browsers: ['last 2 versions']
-      }
-    , dist: {
+      dist: {
         files: [{
           expand: true
         , cwd: '<%= yeoman.dist %>/styles'
