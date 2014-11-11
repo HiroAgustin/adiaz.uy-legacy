@@ -278,6 +278,13 @@ module.exports = function (grunt)
           }
         , {
             expand: true
+          , flatten: true
+          , cwd: '<%= yeoman.app %>'
+          , src: ['bower_components/html5shiv/dist/html5shiv.min.js']
+          , dest: '<%= yeoman.dist %>/scripts/'
+          }
+        , {
+            expand: true
           , src: ['CNAME']
           , dest: '<%= yeoman.dist %>'
           }
