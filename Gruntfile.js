@@ -310,6 +310,7 @@ module.exports = function (grunt)
         files: [{
           src: [
             '<%= yeoman.dist %>/scripts/**/*.js'
+          , '!<%= yeoman.dist %>/scripts/html5shiv.min.js'
           , '<%= yeoman.dist %>/styles/**/*.css'
           , '<%= yeoman.dist %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}'
           , '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
