@@ -173,7 +173,8 @@ module.exports = function (grunt)
   , wiredep: {
       options: {
         exclude: [
-          '<%= yeoman.app %>/bower_components/colors'
+          '<%= yeoman.app %>/bower_components/html5shiv'
+        , '<%= yeoman.app %>/bower_components/colors'
         , '<%= yeoman.app %>/bower_components/suit'
         ]
       }

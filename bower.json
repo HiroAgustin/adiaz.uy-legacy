@@ -6,6 +6,7 @@
     "colors": "~2.0.0",
     "fontawesome": "~4.2.0",
     "suit": "~0.6.0",
-    "normalize-css": "~3.0.2"
+    "normalize-css": "~3.0.2",
+    "html5shiv": "~3.7.2"
   }
 }
