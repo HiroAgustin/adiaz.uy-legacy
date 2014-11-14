@@ -34,14 +34,14 @@
 }
 
 .u-linkComplex .u-linkComplexTarget {
-  border-style: solid !important;
-  border-width: 0 0 1px !important;
+  border-width: 0 !important;
 }
 
 .u-linkComplex:hover .u-linkComplexTarget,
 .u-linkComplex:focus .u-linkComplexTarget,
 .u-linkComplex:active .u-linkComplexTarget {
-  border-width: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
 }
 
 /**

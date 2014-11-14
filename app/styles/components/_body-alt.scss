@@ -9,12 +9,12 @@
 
   a {
     color: $alt-link-color;
-    border-color: $alt-link-color;
 
     &:hover,
     &:focus,
     &:active {
       color: $alt-link-color-hover;
+      border-color: $alt-link-color-hover;
     }
   }
 }

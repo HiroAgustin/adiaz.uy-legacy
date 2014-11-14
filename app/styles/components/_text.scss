@@ -27,11 +27,11 @@ h3, .h3 {
 
 a {
   color: $link-color;
-  border-bottom: 1px solid $link-color;
+  text-decoration: none;
 
   &:hover {
     color: $link-color-hover;
-    border-bottom: none;
+    border-bottom: 1px solid $link-color-hover;
     text-decoration: none;
   }
 }
