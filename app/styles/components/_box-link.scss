@@ -3,6 +3,7 @@
 @import "utils/breakpoints";
 
 $padding: 20px;
+$padding-sm: 10px;
 $divider-width: 1px;
 $fake-border-width: $border-width - $divider-width;
 
@@ -12,11 +13,12 @@ $fake-border-width: $border-width - $divider-width;
   display: block;
 
   padding-bottom: $padding - $fake-border-width;
-  padding-left: $padding - 10px;
-  padding-right: $padding - 10px;
+  padding-left: $padding-sm;
+  padding-right: $padding-sm;
   padding-top: $padding - $divider-width;
 
-  transition: background-color .25s ease-out;
+  transition: background-color .2s ease-out;
+  will-change: background-color;
 
   @include breakpoint(30em) {
     padding-left: $padding;
@@ -26,6 +28,7 @@ $fake-border-width: $border-width - $divider-width;
   &:hover {
     background: $white;
     border-top: $primary-color $border-width solid;
+    border-bottom: none;
 
     padding-top: $padding - $border-width;
     padding-bottom: $padding;

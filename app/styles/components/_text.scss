@@ -27,7 +27,10 @@ h3, .h3 {
 
 a {
   color: $link-color;
+  border-color: $link-color;
+  transition: color .2s ease-out, border-color .2s ease-out;
   text-decoration: none;
+  will-change: color, border-color;
 
   &:hover {
     color: $link-color-hover;
