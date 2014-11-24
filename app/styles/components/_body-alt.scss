@@ -7,6 +7,11 @@
   border-width: 0;
   color: $alt-text-color;
 
+  ::selection {
+    background: $olive;
+    color: $black;
+  }
+
   a {
     color: $alt-link-color;
 

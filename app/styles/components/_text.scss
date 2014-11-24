@@ -8,6 +8,11 @@ html {
   line-height: $base-line-height;
 }
 
+::selection {
+  background: $black;
+  color: $olive;
+}
+
 h1, .h1 {
   font-size: 2em;
   font-weight: normal;
