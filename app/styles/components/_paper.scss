@@ -1,0 +1,28 @@
+@import "config";
+
+.paper {
+
+  h2, .h2 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: $base-line-height;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul, ol {
+    list-style: disc;
+
+    &.enum {
+      list-style: decimal;
+    }
+
+    ul, ol {
+      list-style: circle;
+    }
+  }
+}

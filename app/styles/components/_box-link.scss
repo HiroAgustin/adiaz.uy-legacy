@@ -10,6 +10,7 @@ $fake-border-width: $border-width - $divider-width;
 .box-link {
   border-top: $divider-color $divider-width solid;
   border-bottom: $fake-border-width solid transparent;
+  color: $black;
   display: block;
 
   padding-bottom: $padding - $fake-border-width;
@@ -32,6 +33,10 @@ $fake-border-width: $border-width - $divider-width;
 
     padding-top: $padding - $border-width;
     padding-bottom: $padding;
+  }
+
+  p {
+    margin-bottom: 0;
   }
 }
 
