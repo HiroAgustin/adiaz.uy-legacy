@@ -1,5 +1,4 @@
 @import "config";
-@import "colors";
 
 html {
   color: $text-color;
@@ -9,8 +8,8 @@ html {
 }
 
 ::selection {
-  background: $black;
-  color: $olive;
+  background: $selection-background;
+  color: $selection-color;
 }
 
 h1, .h1 {
@@ -45,5 +44,5 @@ a {
 }
 
 time {
-  color: $gray;
+  color: $secondary-text-color;
 }

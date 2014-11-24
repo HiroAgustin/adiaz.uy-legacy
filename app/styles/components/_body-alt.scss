@@ -8,8 +8,8 @@
   color: $alt-text-color;
 
   ::selection {
-    background: $olive;
-    color: $black;
+    background: $alt-selection-background;
+    color: $alt-selection-color;
   }
 
   a {
