@@ -14,15 +14,16 @@
     }
   }
 
-  ul, ol {
-    list-style: disc;
+  ol, ul {
+    list-style-position: inside;
+    margin-bottom: $base-line-height;
+  }
 
-    &.enum {
-      list-style: decimal;
-    }
+  ol {
+    list-style-type: decimal;
+  }
 
-    ul, ol {
-      list-style: circle;
-    }
+  ul {
+    list-style-type: disc;
   }
 }
