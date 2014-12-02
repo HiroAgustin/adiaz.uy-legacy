@@ -26,7 +26,8 @@ $fake-border-width: $border-width - $divider-width;
     padding-right: $padding;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: $white;
     border-top: $primary-color $border-width solid;
     border-bottom: none;

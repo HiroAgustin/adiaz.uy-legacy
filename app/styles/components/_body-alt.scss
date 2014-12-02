@@ -16,10 +16,9 @@
     color: $alt-link-color;
 
     &:hover,
-    &:focus,
-    &:active {
-      color: $alt-link-color-hover;
+    &:focus {
       border-color: $alt-link-color-hover;
+      color: $alt-link-color-hover;
     }
   }
 }

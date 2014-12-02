@@ -36,9 +36,16 @@ a {
   text-decoration: none;
   will-change: color, border-color;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $link-color-hover;
     border-bottom: 1px solid $link-color-hover;
+    outline: none;
+    text-decoration: none;
+  }
+
+  &:active {
+    // color: $link-color-active;
     text-decoration: none;
   }
 }
