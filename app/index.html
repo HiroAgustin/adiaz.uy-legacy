@@ -13,7 +13,7 @@ excerpt: Agustín Díaz personal blog
       <a class="box-link {% if forloop.first %}box-link__highlight{% endif %}" href="{{ post.url }}">
         <article>
           <header>
-            <time date-time="{{ post.date | date: "%F" }}">{{ post.date | date: "%-d %B, %Y" }}</time>
+            <time date-time="{{ post.date | date: "%F" }}">{{ post.date | date: "%d %B, %Y" }}</time>
             <h2>{{ post.title }}</h2>
           </header>
           {{ post.excerpt }}
