@@ -1,10 +1,12 @@
 ---
 layout: default
 ---
-<header>
-  <h1>{{ page.title }}</h1>
-</header>
+<body class="u-Flex u-Flex--Column">
 
-<article>
-  {{ content }}
-</article>
+  {% include header.html %}
+
+  <main role="main" class="u-Flex-1 container u-paddingVxl">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
