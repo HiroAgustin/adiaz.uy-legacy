@@ -196,12 +196,12 @@ module.exports = function (grunt)
         assetsDirs: '<%= yeoman.dist %>'
         // This is so we update image references in our templates
       , patterns: {
-          js: [
-            [/(images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images']
-          ]
-        , css: [
-            [/(fonts\/.*?\.(?:eot*|otf|svg|ttf|woff))/gm, 'Update the styles to reference our revved fonts']
-          ]
+        //   js: [
+        //     [/(images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images']
+        //   ]
+        // , css: [
+        //     [/(fonts\/.*?\.(?:eot*|otf|svg|ttf|woff))/gm, 'Update the styles to reference our revved fonts']
+        //   ]
         }
       }
     , html: ['<%= yeoman.dist %>/**/*.html']
@@ -313,8 +313,8 @@ module.exports = function (grunt)
             '<%= yeoman.dist %>/scripts/**/*.js'
           , '!<%= yeoman.dist %>/scripts/html5shiv.min.js'
           , '<%= yeoman.dist %>/styles/**/*.css'
-          , '<%= yeoman.dist %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}'
-          , '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
+          // , '<%= yeoman.dist %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}'
+          // , '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
           ]
         }]
       }
