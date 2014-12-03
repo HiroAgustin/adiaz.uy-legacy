@@ -286,7 +286,7 @@ module.exports = function (grunt)
           }
         , {
             expand: true
-          , src: ['CNAME']
+          , src: ['CNAME', '*.html']
           , dest: '<%= yeoman.dist %>'
           }
         ]
