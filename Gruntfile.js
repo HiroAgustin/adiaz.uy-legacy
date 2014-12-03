@@ -196,12 +196,12 @@ module.exports = function (grunt)
         assetsDirs: '<%= yeoman.dist %>'
         // This is so we update image references in our templates
       , patterns: {
-        //   js: [
-        //     [/(images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images']
-        //   ]
-        // , css: [
-        //     [/(fonts\/.*?\.(?:eot*|otf|svg|ttf|woff))/gm, 'Update the styles to reference our revved fonts']
-        //   ]
+          js: [
+            // [/(images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images']
+          ]
+        , css: [
+            // [/(fonts\/.*?\.(?:eot*|otf|svg|ttf|woff))/gm, 'Update the styles to reference our revved fonts']
+          ]
         }
       }
     , html: ['<%= yeoman.dist %>/**/*.html']
