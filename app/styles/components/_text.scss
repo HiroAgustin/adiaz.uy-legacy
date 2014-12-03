@@ -48,6 +48,10 @@ a {
     // color: $link-color-active;
     text-decoration: none;
   }
+
+  &::selection {
+    color: $selection-link-color;
+  }
 }
 
 time {

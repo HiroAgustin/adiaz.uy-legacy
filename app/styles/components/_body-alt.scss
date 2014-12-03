@@ -20,6 +20,10 @@
       border-color: $alt-link-color-hover;
       color: $alt-link-color-hover;
     }
+
+    &::selection {
+      color: $alt-selection-link-color;
+    }
   }
 }
 
