@@ -173,7 +173,8 @@ module.exports = function (grunt)
   , wiredep: {
       options: {
         exclude: [
-          '<%= yeoman.app %>/bower_components/html5shiv'
+          '<%= yeoman.app %>/bower_components/fontawesome'
+        , '<%= yeoman.app %>/bower_components/html5shiv'
         , '<%= yeoman.app %>/bower_components/colors'
         , '<%= yeoman.app %>/bower_components/suit'
         ]
@@ -269,13 +270,13 @@ module.exports = function (grunt)
             ]
           , dest: '<%= yeoman.dist %>'
           }
-        , {
-            expand: true
-          , flatten: true
-          , cwd: '<%= yeoman.app %>'
-          , src: ['bower_components/fontawesome/fonts/**/*']
-          , dest: '<%= yeoman.dist %>/fonts/'
-          }
+        // , {
+        //     expand: true
+        //   , flatten: true
+        //   , cwd: '<%= yeoman.app %>'
+        //   , src: ['bower_components/fontawesome/fonts/**/*']
+        //   , dest: '<%= yeoman.dist %>/fonts/'
+        //   }
         , {
             expand: true
           , flatten: true
