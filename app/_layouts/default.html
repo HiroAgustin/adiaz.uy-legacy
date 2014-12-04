@@ -1,29 +1,32 @@
 <!doctype html>
 <html lang="en" dir="ltr">
-<head>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- DNS Prefetchs -->
+<link rel="dns-prefetch" href="//platform.twitter.com/">
+<link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com/">
+<link rel="dns-prefetch" href="//www.google-analytics.com/">
 
 <title>{{ page.title }}</title>
 <meta name="description" content="{{ page.excerpt | strip_html }}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:description" content="{{ page.excerpt | strip_html }}">
+<meta property="og:image" content="http://www.gravatar.com/avatar/9519dd86da6381c554b97f662547d7ed.png?s=200">
+<meta property="og:site_name" content="adiaz.uy">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@hiroagustin">
 <meta name="twitter:creator" content="@hiroagustin">
 
-<!-- Open Graph -->
-<meta property="og:title" content="{{ page.title }}">
-<meta property="og:url" content="{{ site.url }}{{ page.url | remove: 'index.html' }}">
-<meta property="og:description" content="{{ page.excerpt | strip_html }}">
-<meta property="og:image" content="http://www.gravatar.com/avatar/9519dd86da6381c554b97f662547d7ed.png?s=200">
-<meta property="og:site_name" content="adiaz.uy">
-
-<!-- DNS Prefetchs -->
-<link rel="dns-prefetch" href="//platform.twitter.com/">
-<link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com/">
-<link rel="dns-prefetch" href="//www.google-analytics.com/">
+<!-- Google -->
+<link rel="author" href="https://plus.google.com/+AgustinDiazUy/">
 
 <!-- build:css(app) /styles/vendor.css -->
 <!-- bower:css -->
@@ -36,8 +39,5 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
 <!--[if lt IE 9]><script src="/scripts/html5shiv.min.js"></script><![endif]-->
-
-<!-- SEO -->
-<link rel="author" href="https://plus.google.com/+AgustinDiazUy/">
 
 {{ content }}
