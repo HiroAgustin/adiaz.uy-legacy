@@ -213,10 +213,10 @@ module.exports = function (grunt)
         options: {
           collapseBooleanAttributes: true
         , collapseWhitespace: true
-        , removeAttributeQuotes: false
+        , removeAttributeQuotes: true
         , removeCommentsFromCDATA: true
         , removeEmptyAttributes: true
-        , removeOptionalTags: false
+        , removeOptionalTags: true
         , removeRedundantAttributes: true
         , useShortDoctype: true
         }

@@ -1,19 +1,11 @@
-<!doctype html>
-<html lang="en" dir="ltr">
-  <head>
-    {% include head.html %}
-    {% include styles.html %}
-  </head>
-
-  <body class="u-Flex u-Flex--Column">
-
-    {% include header.html %}
-
-    <main role="main" class="u-Flex-1 container u-paddingVxl">
-      {{ content }}
-    </main>
-
-    {% include footer.html %}
-
-  </body>
-</html>
+---
+layout: default
+---
+<article>
+  <header>
+    <h1>{{ page.title }}</h1>
+  </header>
+  <section>
+    {{ content }}
+  </section>
+</article>
