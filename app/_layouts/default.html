@@ -15,7 +15,7 @@
 
 <!-- Open Graph -->
 <meta property="og:title" content="{{ page.title }}">
-<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url | remove: 'index.html' }}">
 <meta property="og:description" content="{{ page.excerpt | strip_html }}">
 <meta property="og:image" content="http://www.gravatar.com/avatar/9519dd86da6381c554b97f662547d7ed.png?s=200">
 <meta property="og:site_name" content="adiaz.uy">
