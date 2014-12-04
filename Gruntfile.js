@@ -216,7 +216,7 @@ module.exports = function (grunt)
         , removeAttributeQuotes: false
         , removeCommentsFromCDATA: true
         , removeEmptyAttributes: true
-        , removeOptionalTags: true
+        , removeOptionalTags: false
         , removeRedundantAttributes: true
         , useShortDoctype: true
         }
