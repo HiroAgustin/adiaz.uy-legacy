@@ -15,8 +15,9 @@
   }
 
   ol, ul {
-    list-style-position: inside;
+    list-style-position: outside;
     margin-bottom: $base-line-height;
+    padding-left: 15px;
   }
 
   ol {
