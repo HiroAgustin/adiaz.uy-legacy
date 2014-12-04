@@ -1,29 +1,34 @@
----
-layout: default
----
-  <meta property="og:type" content="article">
-</head>
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include head.html %}
+    <meta property="og:type" content="article">
+    {% include styles.html %}
+  </head>
 
-<body class="u-Flex u-Flex--Column">
+  <body class="u-Flex u-Flex--Column">
 
-  {% include header.html %}
+    {% include header.html %}
 
-  <main role="main" class="u-Flex-1 container u-paddingVxl" itemscope itemtype="http://schema.org/Article">
-    <header class="u-marginBm">
-      <time itemprop="datePublished" datetime="{{ page.date | date: "%F" }}">{{ page.date | date: "%d %B, %Y" }}</time>
-      <h1 itemprop="name">{{ page.title }}</h1>
-    </header>
+    <main role="main" class="u-Flex-1 container u-paddingVxl" itemscope itemtype="http://schema.org/Article">
+      <header class="u-marginBm">
+        <time itemprop="datePublished" datetime="{{ page.date | date: "%F" }}">{{ page.date | date: "%d %B, %Y" }}</time>
+        <h1 itemprop="name">{{ page.title }}</h1>
+      </header>
 
-    <article class="paper" itemprop="articleBody">
-      {{ content }}
-    </article>
+      <article class="paper" itemprop="articleBody">
+        {{ content }}
+      </article>
 
-    <footer class="u-textCenter u-paddingTxl">
-      <a class="u-linkComplex u-paddingAm" href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.url }}{{ page.url }}&amp;via=hiroagustin">
-        <i class="fa fa-fw fa-twitter"></i>
-        <span class="u-linkComplexTarget">Tweet</span>
-      </a>
-    </footer>
-  </main>
+      <footer class="u-textCenter u-paddingTxl">
+        <a class="u-linkComplex u-paddingAm" href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.url }}{{ page.url }}&amp;via=hiroagustin">
+          <i class="fa fa-fw fa-twitter"></i>
+          <span class="u-linkComplexTarget">Tweet</span>
+        </a>
+      </footer>
+    </main>
 
-  {% include footer.html %}
+    {% include footer.html %}
+
+  </body>
+</html>
