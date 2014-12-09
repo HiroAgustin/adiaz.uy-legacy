@@ -18,6 +18,10 @@
     list-style-position: outside;
     margin-bottom: $base-line-height;
     padding-left: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   ol {
