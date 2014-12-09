@@ -12,7 +12,7 @@ excerpt: Agustín Díaz personal blog
     <a class="box-link {% if forloop.first %}box-link__highlight{% endif %}" href="{{ post.url }}">
       <article itemscope itemtype="http://schema.org/Article">
         <header>
-          <time itemprop="datePublished" datetime="{{ post.date | date: "%F" }}">{{ post.date | date: "%d %B, %Y" }}</time>
+          <time class="secondary" itemprop="datePublished" datetime="{{ post.date | date: "%F" }}">{{ post.date | date: "%d %B, %Y" }}</time>
           <h2 itemprop="name">{{ post.title }}</h2>
         </header>
         <p itemprop="description">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
