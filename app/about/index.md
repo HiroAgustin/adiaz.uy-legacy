@@ -7,7 +7,9 @@ My name is Agustín Díaz and I’m a web developer. You can find me in most pla
 
 ## The Web is The Platform
 
-I love being a web developer. I love the openness of the community, I love reading articles, I love going to meetups and see how passionate everyone is about this trade we all share. The web just keeps getting stronger with more API’s and frameworks and the stuff people is building is nothing short from amazing. It is a great time to be a web developer.
+I love being a web developer. I love the openness of the community, I love reading articles, I love going to meetups and see how passionate everyone is about this trade we all share.
+
+The web just keeps getting stronger with more API’s and frameworks and the stuff people is building is nothing short from amazing. It is a great time to be a web developer.
 
 ## Experience
 
