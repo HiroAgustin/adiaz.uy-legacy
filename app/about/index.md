@@ -3,17 +3,21 @@ layout: page
 title: About Me
 ---
 
-My name is Agustín Díaz, but you can find me in most places as HiroAgustin. The name “Hiro” comes from my gaming days, and it’s a reference to the lovable time traveling programmer/samurai [Hiro Nakamura](http://en.wikipedia.org/wiki/Hiro_Nakamura).
+My name is Agustín Díaz and I’m a web developer. You can find me in most places as HiroAgustin. The name “Hiro” comes from my gaming days and it’s a reference to the lovable time traveling programmer/samurai [Hiro Nakamura](http://en.wikipedia.org/wiki/Hiro_Nakamura).
 
 ## The Web is The Platform
 
-I’ve been doing web development all of my professional life and it’s been amazing to see how much the web has grown. Browsers are now constantly releasing new features and API’s, and the community is building an incredible amount of tools and libraries to take advantage of them. It is a great time to be a web developer.
+I love being a web developer. I love the openness of the community, I love reading articles, I love going to meetups and see how passionate everyone is about this trade we all share. The web just keeps getting stronger with more API’s and frameworks and the stuff people is building is nothing short from amazing. It is a great time to be a web developer.
 
-I’m passionate about the vanilla web stack, but to build rich applications, frameworks are usually the way to go. Some of the ones I’ve worked with include jQuery, Backbone, Jasmine, Express, Grunt, Bootstrap, and Sass. You can check out my resume [here](/resume/).
+## Experience
+
+I started out working at SuiteCommerce, implementing customized web stores on top of the NetSuite platform. Two and a half years later the company was acquired and I moved from building websites into building NetSuite’s new ECommerce platform. You can check out my resume [here](/resume/).
 
 ## Leisure
 
-I’m a big fan of TV, from “Agents of S.H.I.E.L.D.” to “The Newsroom”. Also, the gamer in me hasn’t died yet (although I own a Mac). Recently I’ve been playing anything from “Telltale Games”. To fight sedentarism, I started doing more exercise by going for a jog a couple of times a week.
+I’m a big fan of TV, from “Agents of S.H.I.E.L.D.” to “The Newsroom”, I watch it all. The gamer in me hasn’t died yet, although I own a Mac. Lately I’ve been playing anything from “Telltale Games”.
+
+To fight my natural sedentarism, I forced myself into doing some exercise. I can’t recommend [this book](http://www.amazon.com/Terrible-Wonderful-Reasons-Long-Distances/dp/1449459951/) enough. I’m enjoying going out for a jog every once in a while.
 
 ## Contact
 
