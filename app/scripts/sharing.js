@@ -1,4 +1,4 @@
-(function (win, doc, s, js, fjs, inc, ga)
+;(function (win, doc, s, js, fjs, inc, ga)
 {
   'use strict';
 
