@@ -16,7 +16,6 @@ module.exports = function (grunt)
       app: 'app',
       dist: 'dist'
     }
-
   , watch: {
       bower: {
         files: ['bower.json']
