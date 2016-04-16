@@ -23,7 +23,7 @@ show_drafts: true
 markdown: redcarpet
 #   extensions: ['fenced_code_blocks', 'smart']
 
-pygments: false
+highlighter: null
 
 # Output
 permalink: /:title/
