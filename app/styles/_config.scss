@@ -1,7 +1,7 @@
 @import "colors";
 // Base
 $primary-color: $olive;
-$background-color: $silver;
+$background-color: #fafafa;
 
 // Text Colors
 $text-color: $black;
@@ -12,10 +12,10 @@ $link-color-hover: $primary-color;
 
 // Alt Body
 $alt-background-color: $black;
-$alt-text-color: $silver;
+$alt-text-color: $white;
 
 $alt-link-color: $primary-color;
-$alt-link-color-hover: $silver;
+$alt-link-color-hover: $white;
 
 // Text Selection
 $selection-background: $alt-background-color;
@@ -32,4 +32,4 @@ $divider-color: $gray;
 $base-font-size: 1.1em;
 $base-line-height: 1.5em;
 
-$border-width: 4px;
+$border-width: 3px;
