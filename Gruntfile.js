@@ -23,11 +23,11 @@ module.exports = function (grunt)
       }
     , compass: {
         files: ['<%= yeoman.app %>/styles/**/*.{scss,sass}']
-      , tasks: ['compass:server', 'autoprefixer:server']
+      , tasks: ['compass:server', 'postcss:local']
       }
-    , autoprefixer: {
+    , postcss: {
         files: ['<%= yeoman.app %>/styles/**/*.css']
-      , tasks: ['copy:stageCss', 'autoprefixer:server']
+      , tasks: ['copy:stageCss', 'postcss:local']
       }
     , jekyll: {
         files: [
@@ -128,7 +128,13 @@ module.exports = function (grunt)
         }]
       }
     }
-  , autoprefixer: {
+  , postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer')({browsers: ['last 1 version']})
+        ]
+      },
       dist: {
         files: [{
           expand: true
@@ -137,7 +143,7 @@ module.exports = function (grunt)
         , dest: '.tmp/concat/styles'
         }]
       }
-    , server: {
+    , local: {
         files: [{
           expand: true
         , cwd: '.tmp/styles'
@@ -290,7 +296,7 @@ module.exports = function (grunt)
           }
         ]
       }
-      // Copy CSS into .tmp directory for Autoprefixer processing
+      // Copy CSS into .tmp directory for Postcss processing
     , stageCss: {
         files: [{
           expand: true
@@ -361,7 +367,7 @@ module.exports = function (grunt)
       'clean:server'
     , 'wiredep'
     , 'concurrent:server'
-    , 'autoprefixer:server'
+    , 'postcss:local'
     , 'connect:livereload'
     , 'watch'
     ]);
@@ -381,7 +387,7 @@ module.exports = function (grunt)
   , 'concurrent:dist'
   , 'useminPrepare'
   , 'concat:generated'
-  , 'autoprefixer:dist'
+  , 'postcss:dist'
   , 'cssmin:generated'
   , 'uglify:generated'
   , 'imagemin'
