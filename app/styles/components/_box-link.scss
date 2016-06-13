@@ -4,43 +4,25 @@
 
 $padding: 20px;
 $padding-sm: 10px;
-$divider-width: 1px;
-$fake-border-width: $border-width - $divider-width;
 
 .box-link {
-  border-top: $divider-color $divider-width solid;
-  border-bottom: $fake-border-width solid transparent;
+  border-top: $divider-color 1px solid;
   color: $black;
   display: block;
-
-  padding-bottom: $padding - $fake-border-width;
-  padding-left: $padding-sm;
-  padding-right: $padding-sm;
-  padding-top: $padding - $divider-width;
-
-  transition: background-color .2s ease-out;
-  will-change: background-color;
+  padding: $padding $padding-sm;
 
   @include breakpoint(30em) {
-    padding-left: $padding;
-    padding-right: $padding;
+    padding: $padding;
   }
 
   &:hover,
   &:focus {
-    background: $white;
-    border-top: $primary-color $border-width solid;
+    background: #fefefe;
     border-bottom: none;
-
-    padding-top: $padding - $border-width;
-    padding-bottom: $padding;
+    border-top-color: $primary-color;
   }
 
-  p {
+  &__description {
     margin-bottom: 0;
   }
-}
-
-.box-link__highlight {
-  border-top-color: $primary-color;
 }
