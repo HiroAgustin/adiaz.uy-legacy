@@ -7,11 +7,6 @@ html {
   line-height: $base-line-height;
 }
 
-::selection {
-  background: $selection-background;
-  color: $selection-color;
-}
-
 h1, .h1 {
   font-size: 2em;
   font-weight: normal;
