@@ -13,7 +13,7 @@ author:
 exclude: ['images', 'styles', 'scripts', 'fonts', 'bower_components',
           '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
 
-url: http://adiaz.uy
+url: https://adiaz.uy
 
 # _config.build.yml sets future and show_drafts to false on `grunt build`
 future: true
