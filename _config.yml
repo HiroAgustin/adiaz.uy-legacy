@@ -1,29 +1,33 @@
-# Jekyll configuration precedence:
-# 1. Gruntfile task
-# 2. config.build.yml
-# 3. config.yml
+# Permalinks
+permalink:           pretty
 
-name: adiaz.github.com
-description: My personal site and blog
+# Setup
+title:               adiaz.uy
+tagline:             My corner of the web.
+url:                 https://adiaz.uy
+paginate:            1
+baseurl:             ""
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
 author:
-  name: HiroAgustin
-  email: hiroagustin@gmail.com
+  name:              Agustín Díaz
+  url:               https://adiaz.uy
+  email:             hiroagustin@gmail.com
 
-# Grunt handles images and assets.
-exclude: ['images', 'styles', 'scripts', 'fonts', 'bower_components',
-          '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
+# Custom vars
+version:             2.0.0
+github:
+  repo:              https://github.com/HiroAgustin/adiaz.github.com
+analytics_id:        UA-46154238-1
 
-url: https://adiaz.uy
-
-# _config.build.yml sets future and show_drafts to false on `grunt build`
-future: true
-show_drafts: true
-
-# Markdown library
-markdown: redcarpet
-#   extensions: ['fenced_code_blocks', 'smart']
-
-highlighter: null
-
-# Output
-permalink: /:title/
+# Gems
+plugins:
+  - jekyll-paginate
+  - jekyll-gist
