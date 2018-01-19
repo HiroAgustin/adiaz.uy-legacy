@@ -31,3 +31,4 @@ analytics_id:        UA-46154238-1
 plugins:
   - jekyll-paginate
   - jekyll-gist
+  - jekyll-compose
