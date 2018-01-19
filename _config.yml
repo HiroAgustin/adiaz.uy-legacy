@@ -29,6 +29,5 @@ analytics_id:        UA-46154238-1
 
 # Gems
 plugins:
-  - jekyll-paginate
   - jekyll-gist
-  - jekyll-compose
+  - jekyll-paginate
