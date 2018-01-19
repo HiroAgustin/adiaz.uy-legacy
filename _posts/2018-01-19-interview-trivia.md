@@ -51,5 +51,3 @@ class Car extends Vehicle {
   }
 }
 {% endhighlight %}
-
-***
