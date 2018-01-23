@@ -14,10 +14,23 @@
         {{ content }}
       </main>
 
-      <footer class="footer">
+      <footer class="Footer">
         <small>
           &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time> Agustín Díaz
         </small>
+
+        <ul class="Footer__Nav">
+          <li class="Footer__Nav__Item">
+            <a class="Footer__Nav__Link Footer__Nav__Link--Twitter" title="Agustin’s Twitter" href="https://twitter.com/HiroAgustin/">
+              {% include icon-twitter.html %}
+            </a>
+          </li>
+          <li class="Footer__Nav__Item">
+            <a class="Footer__Nav__Link Footer__Nav__Link--GitHub" title="Agustin’s GitHub" href="https://github.com/HiroAgustin/">
+              {% include icon-github.html %}
+            </a>
+          </li>
+        </ul>
       </footer>
     </div>
 
