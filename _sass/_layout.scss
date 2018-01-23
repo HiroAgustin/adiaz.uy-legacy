@@ -3,9 +3,16 @@
 // Styles for managing the structural hierarchy of the site.
 
 .container {
-  max-width: 38rem;
-  padding-left:  1.5rem;
-  padding-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
   margin-left:  auto;
   margin-right: auto;
+  max-width: 38rem;
+  min-height: 100vh;
+  padding-left:  1.5rem;
+  padding-right: 1.5rem;
+}
+
+.main {
+  flex: 1;
 }
