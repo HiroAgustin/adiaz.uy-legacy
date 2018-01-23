@@ -3,9 +3,7 @@
 // Update the foundational and global aspects of the page.
 
 * {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 html,
@@ -15,6 +13,7 @@ body {
 }
 
 html {
+  box-sizing: border-box;
   font-family: $root-font-family;
   font-size: $root-font-size;
   line-height: $root-line-height;
@@ -25,8 +24,8 @@ html {
 }
 
 body {
-  color: $body-color;
   background-color: $body-bg;
+  color: $body-color;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }

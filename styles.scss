@@ -22,9 +22,11 @@
 @import "type";
 @import "syntax";
 @import "code";
+
 @import "layout";
-@import "masthead";
+@import "header";
+@import "footer";
+
 @import "posts";
 @import "pagination";
 @import "message";
-@import "footer";

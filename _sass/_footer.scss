@@ -1,49 +1,8 @@
 .Footer {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+  background: $gray-6;
+  color: $gray-2;
+  padding: 1rem 0;
 
-  &__Nav {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    &__Item {
-      margin: 0 6px;
-
-      &:first-child {
-        margin-left: 0;
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
-    &__Link {
-      color: $gray-2;
-      transition: color .15s ease-out;
-
-      &--GitHub {
-        &:hover, &:focus {
-          border-color: $GitHub;
-          color: $GitHub;
-        }
-      }
-
-      &--Twitter {
-        &:hover, &:focus {
-          border-color: $Twitter;
-          color: $Twitter;
-        }
-      }
-
-      .Icon {
-        height: 24px;
-        width: 24px;
-      }
-    }
-  }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

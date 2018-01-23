@@ -1,0 +1,87 @@
+// Header
+//
+// Super small header above the content for site name and short description.
+
+.Header {
+  border-bottom: $border-color 1px solid;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+
+  &__Content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    @media (min-width: 30em) {
+      align-items: flex-start;
+    }
+  }
+
+  &__Title {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $gray-4;
+
+    a {
+      color: inherit;
+
+      &:hover {
+        border-bottom: none;
+      }
+    }
+
+    small {
+      display: block;
+      font-size: 75%;
+      font-weight: 400;
+      opacity: .5;
+
+      @media (min-width: 30em) {
+        display: inline;
+      }
+    }
+  }
+
+  &__Nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &__Item {
+      margin: 0 6px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__Link {
+      color: $gray-2;
+      transition: color .15s ease-out;
+
+      &--GitHub {
+        &:hover, &:focus {
+          border-color: $GitHub;
+          color: $GitHub;
+        }
+      }
+
+      &--Twitter {
+        &:hover, &:focus {
+          border-color: $Twitter;
+          color: $Twitter;
+        }
+      }
+
+      .Icon {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+}

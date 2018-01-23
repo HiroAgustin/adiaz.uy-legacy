@@ -2,17 +2,18 @@
 //
 // Styles for managing the structural hierarchy of the site.
 
-.container {
+body {
   display: flex;
   flex-direction: column;
-  margin-left:  auto;
-  margin-right: auto;
-  max-width: 38rem;
   min-height: 100vh;
-  padding-left:  1.5rem;
-  padding-right: 1.5rem;
 }
 
-.main {
+main {
   flex: 1;
+}
+
+.Container {
+  margin: 0 auto;
+  max-width: 38rem;
+  padding: 0 1.5rem;
 }

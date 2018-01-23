@@ -2,37 +2,41 @@
 <html lang="en">
   {% include head.html %}
   <body>
-    <div class="container content">
-      <header class="masthead">
-        <h3 class="masthead-title">
+    <header class="Header">
+      <div class="Container Header__Content">
+        <h3 class="Header__Title">
           <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
           <small>{{ site.tagline }}</small>
         </h3>
-      </header>
 
-      <main class="main" role="main">
-        {{ content }}
-      </main>
-
-      <footer class="Footer">
-        <small>
-          &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time> Agustín Díaz
-        </small>
-
-        <ul class="Footer__Nav">
-          <li class="Footer__Nav__Item">
-            <a class="Footer__Nav__Link Footer__Nav__Link--Twitter" title="Agustin’s Twitter" href="https://twitter.com/HiroAgustin/">
+        <ul class="Header__Nav">
+          <li class="Header__Nav__Item">
+            <a class="Header__Nav__Link Header__Nav__Link--Twitter" title="Agustin’s Twitter" href="https://twitter.com/HiroAgustin/">
               {% include icon-twitter.html %}
             </a>
           </li>
-          <li class="Footer__Nav__Item">
-            <a class="Footer__Nav__Link Footer__Nav__Link--GitHub" title="Agustin’s GitHub" href="https://github.com/HiroAgustin/">
+          <li class="Header__Nav__Item">
+            <a class="Header__Nav__Link Header__Nav__Link--GitHub" title="Agustin’s GitHub" href="https://github.com/HiroAgustin/">
               {% include icon-github.html %}
             </a>
           </li>
         </ul>
-      </footer>
-    </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="Container">
+        {{ content }}
+      </div>
+    </main>
+
+    <footer class="Footer">
+      <div class="Container Footer__Content">
+        <small>
+          &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time> Agustín Díaz
+        </small>
+      </div>
+    </footer>
 
     {% if site.analytics_id %}
      <script>
