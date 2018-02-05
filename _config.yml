@@ -21,17 +21,17 @@ author:
   name:              Agustín Díaz
   url:               https://adiaz.uy/
   email:             me@adiaz.uy
+  twitter:           HiroAgustin
 
 twitter:
   username:          HiroAgustin
 
 social:
-  name: Agustín Díaz
   links:
     - https://twitter.com/HiroAgustin/
     - https://github.com/HiroAgustin/
     - https://codepen.io/HiroAgustin/
-    - https://www.linkedin.com/in/HiroAgustin/en/
+    - https://linkedin.com/in/HiroAgustin/en/
 
 # Custom vars
 version:             2.0.0
@@ -44,3 +44,9 @@ plugins:
   - jekyll-gist
   - jekyll-seo-tag
   - jekyll-paginate
+
+# Compress
+compress_html:
+  clippings: all
+  comments:  ["<!-- ", " -->"]
+  endings:   all
