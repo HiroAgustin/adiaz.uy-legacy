@@ -13,11 +13,14 @@
 }
 
 // Blog post or page title
-.page-title,
-.post-title,
-.post-title a {
-  color: #303030;
-  border-bottom-color: #303030;
+.page-title, .post-title {
+  color: $gray-5;
+
+  a {
+    &:after {
+      border-color: $gray-5;
+    }
+  }
 }
 .page-title,
 .post-title {
