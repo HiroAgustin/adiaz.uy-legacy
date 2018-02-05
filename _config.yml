@@ -3,31 +3,44 @@ permalink:           /:title/
 
 # Setup
 title:               adiaz.uy
+description:         Another web development blog.
 tagline:             My corner of the web.
-url:                 https://adiaz.uy
+url:                 https://adiaz.uy/
 paginate:            1
-baseurl:             ""
+baseurl:             ''
 
 # Assets
 #
 # We specify the directory for Jekyll so we can use @imports.
 sass:
   sass_dir:          _sass
-  style:            :compressed
+  style:             :compressed
 
 # About/contact
 author:
   name:              Agustín Díaz
-  url:               https://adiaz.uy
-  email:             hiroagustin@gmail.com
+  url:               https://adiaz.uy/
+  email:             me@adiaz.uy
+
+twitter:
+  username:          HiroAgustin
+
+social:
+  name: Agustín Díaz
+  links:
+    - https://twitter.com/HiroAgustin/
+    - https://github.com/HiroAgustin/
+    - https://codepen.io/HiroAgustin/
+    - https://www.linkedin.com/in/HiroAgustin/en/
 
 # Custom vars
 version:             2.0.0
 github:
-  repo:              https://github.com/HiroAgustin/adiaz.github.com
+  repo:              https://github.com/HiroAgustin/adiaz.github.com/
 analytics_id:        UA-46154238-1
 
 # Gems
 plugins:
   - jekyll-gist
+  - jekyll-seo-tag
   - jekyll-paginate
