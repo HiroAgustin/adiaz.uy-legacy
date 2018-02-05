@@ -38,7 +38,7 @@ As web development grew from building simple websites to complex web apps, so di
 Using the latest version of the spec, one can simply use the `extend` keyword to create a
 subclass and inherit the prototype of the parent class:
 
-{% highlight js linenos %}
+{% highlight js %}
 class Vehicle {
   constructor(wheels) {
     this.wheels = wheels
