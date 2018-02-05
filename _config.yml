@@ -6,8 +6,6 @@ title:               adiaz.uy
 description:         Personal site and web development blog of @HiroAgustin.
 tagline:             HiroAgustin
 url:                 https://adiaz.uy
-paginate:            1
-baseurl:             ''
 
 # Assets
 #
