@@ -43,6 +43,7 @@ analytics_id:        UA-46154238-1
 plugins:
   - jekyll-gist
   - jekyll-seo-tag
+  - jekyll-sitemap
   - jekyll-paginate
 
 # Compress
