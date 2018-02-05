@@ -24,7 +24,10 @@
 
     a {
       color: inherit;
-      border-color: $gray-4;
+
+      &:after {
+        border-color: $gray-4;
+      }
     }
 
     small {
@@ -59,19 +62,29 @@
 
     &__Link {
       color: $gray-2;
-      transition: color .15s ease-out;
+      transition: color .15s ease-out, border-color .15s ease-out;
+
+      &:after {
+        border-color: $gray-2;
+      }
 
       &--GitHub {
         &:hover, &:focus {
-          border-color: $GitHub;
           color: $GitHub;
+
+          &:after {
+            border-color: $GitHub;
+          }
         }
       }
 
       &--Twitter {
         &:hover, &:focus {
-          border-color: $Twitter;
           color: $Twitter;
+
+          &:after {
+            border-color: $Twitter;
+          }
         }
       }
 
