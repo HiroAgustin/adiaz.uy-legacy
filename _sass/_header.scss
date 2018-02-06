@@ -88,6 +88,16 @@
         }
       }
 
+      &--LinkedIn {
+        &:hover, &:focus {
+          color: $LinkedIn;
+
+          &:after {
+            border-color: $LinkedIn;
+          }
+        }
+      }
+
       .Icon {
         height: 24px;
         width: 24px;
