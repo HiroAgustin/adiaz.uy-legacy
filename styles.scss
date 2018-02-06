@@ -17,17 +17,17 @@
 // Designed, built, and released under MIT license by @mdo. Learn more at
 // https://github.com/poole/poole.
 
-@import "variables";
-@import "util";
-@import "base";
-@import "type";
-@import "syntax";
-@import "code";
+@import 'variables';
+@import 'util';
+@import 'base';
+@import 'type';
+@import 'syntax';
+@import 'code';
 
-@import "layout";
-@import "header";
-@import "footer";
+@import 'layout';
+@import 'Header';
+@import 'Footer';
 
-@import "posts";
-@import "pagination";
-@import "message";
+@import 'Post';
+@import 'Pagination';
+@import 'message';

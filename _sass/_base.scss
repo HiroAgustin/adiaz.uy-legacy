@@ -26,8 +26,8 @@ html {
 body {
   background-color: $body-bg;
   color: $body-color;
+  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
 }
 
 svg {
@@ -41,7 +41,7 @@ a {
   position: relative;
   text-decoration: none;
 
-  &:after {
+  &::after {
     border-bottom: 1px solid $link-color;
     bottom: 0;
     display: block;
@@ -54,10 +54,8 @@ a {
   }
 
   // `:focus` is linked to `:hover` for basic accessibility
-  &:hover,
-  &:focus {
-
-    &:after {
+  &:hover, &:focus {
+    &::after {
       transform: scaleX(1);
     }
   }
@@ -68,31 +66,31 @@ a {
 }
 
 img {
-  display: block;
-  max-width: 100%;
-  margin: 0 0 1rem;
   border-radius: 5px;
+  display: block;
+  margin: 0 0 1rem;
+  max-width: 100%;
 }
 
-.table {
-  margin-bottom: 1rem;
-  width: 100%;
-  font-size: 85%;
+table {
   border: 1px solid #e5e5e5;
   border-collapse: collapse;
+  font-size: 85%;
+  margin-bottom: 1rem;
+  width: 100%;
 
-  td,
-  th {
-    padding: .25rem .5rem;
+  td, th {
     border: 1px solid #e5e5e5;
+    padding: .25rem .5rem;
   }
 
   th {
     text-align: left;
   }
 
-  tbody tr:nth-child(odd) td,
-  tbody tr:nth-child(odd) th {
-    background-color: #f9f9f9;
+  tbody tr:nth-child(odd) {
+    td, th {
+      background-color: #f9f9f9;
+    }
   }
 }

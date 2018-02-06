@@ -1,78 +1,17 @@
 ---
 layout: compress
 ---
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  {% include head.html %}
+  {% include Head.html %}
   <body>
-    <header class="Header">
-      <div class="Container Header__Content">
-        <h3 class="Header__Title">
-          <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-          <small>{{ site.tagline }}</small>
-        </h3>
-
-        <ul class="Header__Nav">
-          <li class="Header__Nav__Item">
-            <a class="Header__Nav__Link"
-               href="{{ site.baseurl }}/about/"
-               title="Agustin’s"
-            >
-              About
-            </a>
-          </li>
-          <li class="Header__Nav__Item">
-            <a class="Header__Nav__Link Header__Nav__Link--Twitter"
-               href="https://twitter.com/HiroAgustin/"
-               title="Agustin’s Twitter"
-            >
-              {% include icon-twitter.html %}
-            </a>
-          </li>
-          <li class="Header__Nav__Item">
-            <a class="Header__Nav__Link Header__Nav__Link--GitHub"
-               href="https://github.com/HiroAgustin/"
-               title="Agustin’s GitHub"
-            >
-              {% include icon-github.html %}
-            </a>
-          </li>
-          <li class="Header__Nav__Item">
-            <a class="Header__Nav__Link Header__Nav__Link--LinkedIn"
-               href="https://linkedin.com/in/HiroAgustin/en/"
-               title="Agustin’s LinkedIn"
-            >
-              {% include icon-linkedin.html %}
-            </a>
-          </li>
-        </ul>
-      </div>
-    </header>
-
+    {% include Header.html %}
     <main>
       <div class="Container">
         {{ content }}
       </div>
     </main>
-
-    <footer class="Footer">
-      <div class="Container Footer__Content">
-        <small>
-          &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time> Agustín Díaz
-        </small>
-      </div>
-    </footer>
-
-    {% if site.analytics_id %}
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-       ga('create', '{{ site.analytics_id }}', 'auto');
-       ga('send', 'pageview');
-     </script>
-    {% endif %}
+    {% include Footer.html %}
+    {% include Analytics.html %}
   </body>
 </html>

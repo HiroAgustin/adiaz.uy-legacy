@@ -1,0 +1,34 @@
+// Posts and pages
+//
+// Each post is wrapped in `.Post` and is used on default and post layouts. Each
+// page is wrapped in `.Page` and is only used on the page layout.
+
+.Page, .Post {
+  margin-bottom: 4em;
+
+  li + li {
+    margin-top: .25rem;
+  }
+
+  // Blog post or page title
+  &__Title {
+    color: $gray-5;
+    margin-top: 0;
+
+    a {
+      color: $gray-5;
+
+      &:after {
+        border-color: $gray-5;
+      }
+    }
+  }
+
+  // Meta data line below post title
+  &__Date {
+    display: block;
+    margin-top: -.5rem;
+    margin-bottom: 1rem;
+    color: #9a9a9a;
+  }
+}

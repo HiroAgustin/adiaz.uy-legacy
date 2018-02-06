@@ -1,0 +1,12 @@
+<div class="Pagination">
+  {% if page.previous.url %}
+    <a class="Pagination__Item Pagination__Item--Link Pagination__Item--Older" href="{{ page.previous.url }}">Older</a>
+  {% else %}
+    <span class="Pagination__Item Pagination__Item--Older">Older</span>
+  {% endif %}
+  {% if page.next.url %}
+    <a class="Pagination__Item Pagination__Item--Link Pagination__Item--Newer" href="{{ page.next.url }}">Newer</a>
+  {% else %}
+    <span class="Pagination__Item Pagination__Item--Newer">Newer</span>
+  {% endif %}
+</div>

@@ -3,17 +3,14 @@ layout: default
 title: Home
 ---
 {% assign post = site.posts.first %}
+<article class="Post">
+  <h1 class="Post__Title">
+    <a href="{{ site.baseurl }}{{ post.url }}">
+      {{ post.title }}
+    </a>
+  </h1>
 
-<div class="posts">
-  <article class="post">
-    <h1 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+  <time class="Post__Date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
 
-    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
-
-    {{ post.content }}
-  </article>
-</div>
+  {{ post.content }}
+</article>

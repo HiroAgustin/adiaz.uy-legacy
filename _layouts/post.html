@@ -1,22 +1,9 @@
 ---
 layout: default
 ---
-
-<article class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date_to_string }}</time>
+<article class="Post">
+  <h1 class="Post__Title">{{ page.title }}</h1>
+  <time class="Post__Date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
   {{ content }}
 </article>
-
-<div class="Pagination">
-  {% if page.previous.url %}
-    <a class="Pagination__Item Pagination__Item--Link Pagination__Item--Older" href="{{ page.previous.url }}">Older</a>
-  {% else %}
-    <span class="Pagination__Item Pagination__Item--Older">Older</span>
-  {% endif %}
-  {% if page.next.url %}
-    <a class="Pagination__Item Pagination__Item--Link Pagination__Item--Newer" href="{{ page.next.url }}">Newer</a>
-  {% else %}
-    <span class="Pagination__Item Pagination__Item--Newer">Newer</span>
-  {% endif %}
-</div>
+{% include Pagination.html %}
