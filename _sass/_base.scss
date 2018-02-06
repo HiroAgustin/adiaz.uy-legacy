@@ -38,12 +38,17 @@ svg {
 a {
   color: $link-color;
   display: inline-block;
+  position: relative;
   text-decoration: none;
 
   &:after {
     border-bottom: 1px solid $link-color;
+    bottom: 0;
     display: block;
     content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
     transform: scaleX(0);
     transition: transform .15s ease-in-out;
   }

@@ -5,16 +5,11 @@
 .Header {
   border-bottom: $border-color 1px solid;
   margin-bottom: 2rem;
-  padding: 1rem 0;
 
   &__Content {
-    align-items: center;
+    align-items: stretch;
     display: flex;
     justify-content: space-between;
-
-    @media (min-width: 30em) {
-      align-items: flex-start;
-    }
   }
 
   &__Title {
@@ -24,9 +19,12 @@
 
     a {
       color: inherit;
+      height: 100%;
+      padding: .5rem 0;
 
       &:after {
         border-color: $gray-4;
+        bottom: -1px;
       }
     }
 
@@ -48,24 +46,14 @@
     margin: 0;
     padding: 0;
 
-    &__Item {
-      margin: 0 6px;
-
-      &:first-child {
-        margin-left: 0;
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
     &__Link {
       color: $gray-2;
+      padding: .5rem;
       transition: color .15s ease-out, border-color .15s ease-out;
 
       &:after {
         border-color: $gray-2;
+        bottom: -1px;
       }
 
       &--GitHub {
