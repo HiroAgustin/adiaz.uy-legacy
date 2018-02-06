@@ -29,12 +29,12 @@
     }
 
     small {
-      display: block;
+      display: none;
       font-size: 75%;
       font-weight: 400;
       opacity: .5;
 
-      @media (min-width: 30em) {
+      @media (min-width: 25em) {
         display: inline;
       }
     }
@@ -47,13 +47,24 @@
     padding: 0;
 
     &__Link {
+      align-items: center;
       color: $gray-2;
+      display: flex;
+      height: 100%;
       padding: .5rem;
       transition: color .15s ease-out, border-color .15s ease-out;
 
       &:after {
         border-color: $gray-2;
         bottom: -1px;
+      }
+
+      &:hover, &:focus {
+        color: $link-color;
+
+        &:after {
+          border-color: $link-color;
+        }
       }
 
       &--GitHub {
