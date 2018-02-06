@@ -3,6 +3,6 @@
   "name": "Personal site and web development blog of @HiroAgustin.",
   "start_url": "/",
   "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "theme_color": "#202020",
   "display": "standalone"
 }
