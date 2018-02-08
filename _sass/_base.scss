@@ -34,7 +34,7 @@ svg {
   fill: currentColor;
 }
 
-pre[class*="language-"] {
+p ~ pre[class*="language-"] {
   margin: 1rem 0;
 }
 
