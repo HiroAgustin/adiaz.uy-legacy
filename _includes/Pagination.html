@@ -1,12 +1,12 @@
 <div class="Pagination">
   {% if page.previous.url %}
-    <a class="Pagination__Item Pagination__Item--Link Pagination__Item--Older" href="{{ page.previous.url }}">Older</a>
+    <a class="Pagination__Item Pagination__Item--Link Pagination__Item--Previous" href="{{ page.previous.url }}">Previous</a>
   {% else %}
-    <span class="Pagination__Item Pagination__Item--Older">Older</span>
+    <span class="Pagination__Item Pagination__Item--Previous">Previous</span>
   {% endif %}
   {% if page.next.url %}
-    <a class="Pagination__Item Pagination__Item--Link Pagination__Item--Newer" href="{{ page.next.url }}">Newer</a>
+    <a class="Pagination__Item Pagination__Item--Link Pagination__Item--Next" href="{{ page.next.url }}">Next</a>
   {% else %}
-    <span class="Pagination__Item Pagination__Item--Newer">Newer</span>
+    <span class="Pagination__Item Pagination__Item--Next">Next</span>
   {% endif %}
 </div>
