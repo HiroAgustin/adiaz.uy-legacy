@@ -22,7 +22,7 @@
       height: 100%;
       padding: .5rem 0;
 
-      &:after {
+      &::after {
         border-color: $gray-4;
         bottom: -1px;
       }
@@ -54,7 +54,7 @@
       padding: .5rem;
       transition: color .15s ease-out, border-color .15s ease-out;
 
-      &:after {
+      &::after {
         border-color: $gray-2;
         bottom: -1px;
       }
@@ -62,7 +62,7 @@
       &:hover, &:focus {
         color: $link-color;
 
-        &:after {
+        &::after {
           border-color: $link-color;
         }
       }
@@ -71,7 +71,7 @@
         &:hover, &:focus {
           color: $GitHub;
 
-          &:after {
+          &::after {
             border-color: $GitHub;
           }
         }
@@ -81,7 +81,7 @@
         &:hover, &:focus {
           color: $Twitter;
 
-          &:after {
+          &::after {
             border-color: $Twitter;
           }
         }
@@ -91,7 +91,7 @@
         &:hover, &:focus {
           color: $LinkedIn;
 
-          &:after {
+          &::after {
             border-color: $LinkedIn;
           }
         }

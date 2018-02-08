@@ -18,7 +18,7 @@
     a {
       color: $gray-5;
 
-      &:after {
+      &::after {
         border-color: $gray-5;
       }
     }

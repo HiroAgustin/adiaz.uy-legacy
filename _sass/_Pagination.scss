@@ -45,7 +45,7 @@
 
     // Only provide a hover state for linked pagination items
     &--Link {
-      &:after {
+      &::after {
         display: none;
       }
 
