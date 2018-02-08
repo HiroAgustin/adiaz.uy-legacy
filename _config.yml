@@ -11,7 +11,7 @@ url:                https://adiaz.uy
 #
 # We specify the directory for Jekyll so we can use @imports.
 sass:
-  sass_dir:         _sass
+  sass_dir:         ../_sass
   style:            :compressed
 
 # About/contact
