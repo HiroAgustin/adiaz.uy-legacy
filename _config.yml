@@ -1,29 +1,29 @@
 # Permalinks
-permalink:           /:title/
+permalink:          /:title/
 
 # Setup
-title:               adiaz.uy
-description:         Personal site and web development blog of @HiroAgustin.
-tagline:             HiroAgustin
-url:                 https://adiaz.uy
+title:              adiaz.uy
+description:        Personal site and web development blog of @HiroAgustin.
+tagline:            HiroAgustin
+url:                https://adiaz.uy
 
 # Assets
 #
 # We specify the directory for Jekyll so we can use @imports.
 sass:
-  sass_dir:          _sass
-  style:             :compressed
+  sass_dir:         _sass
+  style:            :compressed
 
 # About/contact
 author:
-  name:              Agustín Díaz
-  url:               https://adiaz.uy/
-  email:             me@adiaz.uy
-  twitter:           HiroAgustin
-  picture:           /public/Avatar.jpeg
+  name:             Agustín Díaz
+  url:              https://adiaz.uy/
+  email:            me@adiaz.uy
+  twitter:          HiroAgustin
+  picture:          /public/Avatar.jpeg
 
 twitter:
-  username:          HiroAgustin
+  username:         HiroAgustin
 
 social:
   links:
@@ -33,10 +33,10 @@ social:
     - https://linkedin.com/in/HiroAgustin/en/
 
 # Custom vars
-version:             2.0.0
+version:            2.0.0
 github:
-  repo:              https://github.com/HiroAgustin/adiaz.github.com/
-analytics_id:        UA-46154238-1
+  repo:             https://github.com/HiroAgustin/adiaz.github.com/
+analytics_id:       UA-46154238-1
 
 # Gems
 plugins:
@@ -46,10 +46,10 @@ plugins:
   - jekyll-paginate
 
 # Disable Rouge
-highlighter: none
+highlighter:        none
 
 # Compress
 compress_html:
-  clippings: all
-  comments:  ["<!-- ", " -->"]
-  endings:   all
+  clippings:        all
+  comments:         ["<!-- ", " -->"]
+  endings:          all
