@@ -45,6 +45,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
 
+# Disable Rouge
+highlighter: none
+
 # Compress
 compress_html:
   clippings: all
