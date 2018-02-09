@@ -63,6 +63,7 @@ a {
     right: 0;
     transform: scaleX(0);
     transition: transform .15s ease-in-out;
+    will-change: transform;
   }
 
   // `:focus` is linked to `:hover` for basic accessibility
