@@ -2,13 +2,13 @@
 layout: page
 title: Archive
 ---
+<hr>
 <ul class="Archive">
   {% for post in site.posts %}
   <li class="Archive__Item">
     <a class="lead Archive__Item__Link" href="{{ site.baseurl }}{{ post.url }}">
       {{ post.title }}
     </a>
-
     <time class="Archive__Item__Date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
   </li>
   {% endfor %}
