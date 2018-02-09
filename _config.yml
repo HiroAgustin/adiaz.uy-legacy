@@ -46,7 +46,9 @@ plugins:
   - jekyll-paginate
 
 # Disable Rouge
-highlighter:        none
+kramdown:
+  syntax_highlighter_opts:
+    disable:        true
 
 # Compress
 compress_html:
