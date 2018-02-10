@@ -14,14 +14,6 @@
   &__Title {
     color: $gray-5;
     margin-top: 0;
-
-    a {
-      color: $gray-5;
-
-      &::after {
-        border-color: $gray-5;
-      }
-    }
   }
 
   // Meta data line below post title
