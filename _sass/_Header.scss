@@ -55,45 +55,41 @@
       transition: color .15s ease-out, border-color .15s ease-out;
 
       &::after {
-        border-color: $gray-2;
+        border-color: $link-color;
         bottom: -1px;
       }
 
       &:hover, &:focus {
         color: $link-color;
-
-        &::after {
-          border-color: $link-color;
-        }
       }
 
       &--GitHub {
         &:hover, &:focus {
           color: $GitHub;
+        }
 
-          &::after {
-            border-color: $GitHub;
-          }
+        &::after {
+          border-color: $GitHub;
         }
       }
 
       &--Twitter {
         &:hover, &:focus {
           color: $Twitter;
+        }
 
-          &::after {
-            border-color: $Twitter;
-          }
+        &::after {
+          border-color: $Twitter;
         }
       }
 
       &--LinkedIn {
         &:hover, &:focus {
           color: $LinkedIn;
+        }
 
-          &::after {
-            border-color: $LinkedIn;
-          }
+        &::after {
+          border-color: $LinkedIn;
         }
       }
 
