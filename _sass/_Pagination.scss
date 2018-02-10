@@ -10,6 +10,7 @@
 
   @media (min-width: 30em) {
     display: flex;
+    justify-content: center;
     margin: 3rem 0;
   }
 
@@ -29,6 +30,7 @@
 
     @media (min-width: 30em) {
       border-width: 1px;
+      flex: .5;
 
       &:first-child {
         margin-bottom: 0;
