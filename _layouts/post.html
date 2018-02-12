@@ -1,11 +1,16 @@
 ---
 layout: default
 ---
-<article class="Post">
-  <h1 class="Post__Title">{{ page.title }}</h1>
-  <time class="Post__Date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
-  {{ content }}
+<article class="Post" itemscope itemtype="https://schema.org/Article">
+  <header>
+    <h1 class="Post__Title">{{ page.title }}</h1>
+    <time class="Post__Date" itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+  </header>
+  <section itemprop="articleBody">
+    {{ content }}
+  </section>
 </article>
+
 <div class="Pagination">
   {% if page.previous.url %}
     <a class="Pagination__Item Pagination__Item--Link Pagination__Item--Previous" href="{{ page.previous.url }}">Previous</a>
