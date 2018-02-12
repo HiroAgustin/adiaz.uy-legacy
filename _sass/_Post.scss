@@ -4,10 +4,15 @@
 // page is wrapped in `.Page` and is only used on the page layout.
 
 .Page, .Post {
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 
   li + li {
     margin-top: .25rem;
+  }
+
+  & + & {
+    border-top: $border-color 1px solid;
+    padding-top: 2em;
   }
 
   // Blog post or page title

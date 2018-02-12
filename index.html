@@ -2,19 +2,33 @@
 layout: default
 title: Home
 ---
-{% assign post = site.posts.first %}
-<article class="Post">
-  <h1 class="Post__Title">
-    <a href="{{ site.baseurl }}{{ post.url }}">
-      {{ post.title }}
-    </a>
-  </h1>
+<div class="Posts">
+  {% for post in paginator.posts %}
+  <article class="Post">
+    <h1 class="Post__Title">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
 
-  <time class="Post__Date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+    <time class="Post__Date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
 
-  {{ post.content }}
-</article>
-
-<div class="Pagination">
-  <a class="Pagination__Item Pagination__Item--Link" href="{{ site.baseurl }}/archive/">Archive</a>
+    {{ post.content }}
+  </article>
+  {% endfor %}
 </div>
+
+{% if paginator.next_page or paginator.previous_page %}
+<div class="Pagination">
+  {% if paginator.next_page %}
+    <a class="Pagination__Item Pagination__Item--Link Pagination__Item--Previous" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+  {% else %}
+    <span class="Pagination__Item Pagination__Item--Previous">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    <a class="Pagination__Item Pagination__Item--Link Pagination__Item--Next" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+  {% else %}
+    <span class="Pagination__Item Pagination__Item--Next">Newer</span>
+  {% endif %}
+</div>
+{% endif %}

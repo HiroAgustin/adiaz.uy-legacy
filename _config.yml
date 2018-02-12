@@ -1,11 +1,13 @@
 # Permalinks
 permalink:          /:title/
+paginate_path:      /:num/
 
 # Setup
 title:              adiaz.uy
 description:        Personal site and web development blog of @HiroAgustin.
 tagline:            HiroAgustin
 url:                https://adiaz.uy
+paginate:           10
 
 # Assets
 #
