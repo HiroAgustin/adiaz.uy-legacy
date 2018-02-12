@@ -43,7 +43,8 @@ p ~ pre[class*="language-"] {
 code:not([class*="language-"]) {
   background-color: #f9f9f9;
   border-radius: 3px;
-  color: #bf616a;
+  color: $code-color;
+  font-family: $code-font-family;
   font-size: 85%;
   padding: .25em .5em;
 }
@@ -88,14 +89,14 @@ img {
 }
 
 table {
-  border: 1px solid #e5e5e5;
+  border: 1px solid $border-color;
   border-collapse: collapse;
   font-size: 85%;
   margin-bottom: 1rem;
   width: 100%;
 
   td, th {
-    border: 1px solid #e5e5e5;
+    border: 1px solid $border-color;
     padding: .25rem .5rem;
   }
 
