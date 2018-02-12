@@ -63,6 +63,14 @@
         color: $link-color;
       }
 
+      &--active {
+        color: $link-color;
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+
       &--GitHub {
         &:hover, &:focus {
           color: $GitHub;
