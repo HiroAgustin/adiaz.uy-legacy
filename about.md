@@ -2,6 +2,7 @@
 layout: about
 title: About
 ---
+
 I’ve been building stuff on the web for about 8 years, working remotely with startups for the past 3. Some of my responsibilities included: designing and implementing a SPA for orders handling, improving upon a data visualization library, and migrating a vanilla JS codebase to React.
 
 Before that I was a participant at [The Recurse Center](https://www.recurse.com/) where I got to improve on my skills alongside some of the nicest, most talented people I’ve ever met.
