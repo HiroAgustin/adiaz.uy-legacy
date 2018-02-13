@@ -12,7 +12,7 @@ For a more detailed account please checkout my [LinkedIn](https://www.linkedin.c
 
 <!-- <p class="Message">I’m currently looking for the opportunity to join a new team full-time.</p> -->
 
-On my spare time I’m either reading a tech book, binging something on Netflix, cycling on the [promenade](https://www.tripadvisor.com/ShowUserReviews-g294323-d2233045-r196103509-Rambla_de_Montevideo-Montevideo_Montevideo_Department.html), or playing video (or board) games.
+On my spare time I’m either reading a tech book, bingeing something on Netflix, cycling on the [promenade](https://www.tripadvisor.com/ShowUserReviews-g294323-d2233045-r196103509-Rambla_de_Montevideo-Montevideo_Montevideo_Department.html), or playing video (or board) games.
 
 ***
 
