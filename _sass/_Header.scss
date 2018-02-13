@@ -101,6 +101,16 @@
         }
       }
 
+      &--RSS {
+        &:hover, &:focus {
+          color: $RSS;
+        }
+
+        &::after {
+          border-color: $RSS;
+        }
+      }
+
       .Icon {
         height: 24px;
         width: 24px;
