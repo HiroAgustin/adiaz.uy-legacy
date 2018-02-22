@@ -11,7 +11,7 @@ Images also helped push the boundaries of what was achievable with CSS: border r
 
 But when did image obesity started to become a problem?
 
-### The Fat Web
+## The Fat Web
 
 When the iPhone 4 came out, Apple introduced the “Retina Display”. In theory, this meant beautifully rendered images however in practice, all of the images on the web started to look fuzzy. Retina displays basically double the amount of pixels on the screen, so images now require twice as many pixels to look sharp.
 
@@ -25,7 +25,7 @@ Where traditionally images are used, any of the following approaches may be bett
 
 Data URIs allows us to embed images inline using Base64 encoding. This should only be applied to small images as the resulting amount of characters from the encoding may not worth it. You can use [this tool](http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/) to convert your images.
 
-**S**calable **V**ector **G**raphics have been [widely supported](http://caniuse.com/#search=svg) for a while now. It can reduce the image size considerably and, if embedded into the HTML is one less HTTP Request. SVGs come with other advantages, as they can be styled and [animated](http://davidwalsh.name/svg-animation) using CSS/JS.
+**SVGs** have been [widely supported](http://caniuse.com/#search=svg) for a while now. It can reduce the image size considerably and, if embedded into the HTML is one less HTTP Request. SVGs come with other advantages, as they can be styled and [animated](http://davidwalsh.name/svg-animation) using CSS/JS.
 
 UTF8 provides a set of symbols which, although limited, can be very useful as they can be styled as text with virtually no performance cost. You can find some of them [here](http://www.utf8icons.com/) and [here](http://www.fileformat.info/info/unicode/block/miscellaneous_symbols/utf8test.htm).
 
