@@ -24,9 +24,3 @@
     opacity: .5;
   }
 }
-
-.Post + .Post {
-  border-top: $border-color 1px solid;
-  margin-top: -1em;
-  padding-top: 3em;
-}
