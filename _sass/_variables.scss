@@ -17,9 +17,9 @@ $root-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxy
 $root-font-size: 16px;
 $root-line-height: 1.5;
 
-$body-color: #515151;
 $body-bg: #fff;
-$link-color: $orange;
+$body-color: #515151;
+$link-color: hsl(30, 100%, 50%);
 
 $border-color: #e5e5e5;
 
@@ -32,5 +32,5 @@ $code-color: #bf616a;
 // Brands
 $Twitter: #1DA1F2;
 $GitHub: #181717;
-$LinkedIn: #0077b5;
-$RSS: #db3c14;
+$LinkedIn: #0077B5;
+$RSS: #FFA500;
