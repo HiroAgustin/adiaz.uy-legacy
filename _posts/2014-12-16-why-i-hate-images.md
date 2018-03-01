@@ -27,7 +27,7 @@ Data URIs allows us to embed images inline using Base64 encoding. This should on
 
 **SVGs** have been [widely supported](http://caniuse.com/#search=svg) for a while now. It can reduce the image size considerably and, if embedded into the HTML is one less HTTP Request. SVGs come with other advantages, as they can be styled and [animated](http://davidwalsh.name/svg-animation) using CSS/JS.
 
-UTF8 provides a set of symbols which, although limited, can be very useful as they can be styled as text with virtually no performance cost. You can find some of them [here](http://www.utf8icons.com/) and [here](http://www.fileformat.info/info/unicode/block/miscellaneous_symbols/utf8test.htm).
+UTF8 provides a set of symbols which, although limited, can be very useful as they can be styled as text with virtually no performance cost. You can find some of them at [utf8icons](http://www.utf8icons.com/) or [fileformat](http://www.fileformat.info/info/unicode/block/miscellaneous_symbols/utf8test.htm).
 
 Icon fonts are an amazing example of developer creativity. As custom fonts were available on the web, someone decided to use a font of icons instead of text. [Font Awesome](http://fontawesome.io/) is a free font with an outstanding set of icons which you can include in your website from their CDN.
 
