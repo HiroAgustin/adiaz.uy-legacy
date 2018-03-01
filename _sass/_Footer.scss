@@ -1,5 +1,9 @@
 .Footer {
-  background: $gray-6;
-  color: $gray-2;
-  padding: 1rem 0;
+  &__Content {
+    align-items: center;
+    border-top: $border-color 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }

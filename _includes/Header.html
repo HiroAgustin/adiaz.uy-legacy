@@ -9,33 +9,17 @@
       <li class="Header__Nav__Item">
         <a class="Header__Nav__Link {% if page.url == '/about/' %}Header__Nav__Link--active{% endif %}"
            href="/about/"
-           title="Agustin’s Profile"
+           title="About"
         >
           About
         </a>
       </li>
       <li class="Header__Nav__Item">
-        <a class="Header__Nav__Link Header__Nav__Link--Twitter"
-           href="https://twitter.com/HiroAgustin/"
-           title="Agustin’s Twitter"
+        <a class="Header__Nav__Link {% if page.url == '/archive/' %}Header__Nav__Link--active{% endif %}"
+           href="/archive/"
+           title="Archive"
         >
-          {% include icon-twitter.html %}
-        </a>
-      </li>
-      <li class="Header__Nav__Item">
-        <a class="Header__Nav__Link Header__Nav__Link--GitHub"
-           href="https://github.com/HiroAgustin/"
-           title="Agustin’s GitHub"
-        >
-          {% include icon-github.html %}
-        </a>
-      </li>
-      <li class="Header__Nav__Item">
-        <a class="Header__Nav__Link Header__Nav__Link--RSS"
-           href="/atom.xml"
-           title="Agustin’s RSS"
-        >
-          {% include icon-rss.html %}
+          Archive
         </a>
       </li>
     </ul>

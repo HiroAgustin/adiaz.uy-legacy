@@ -70,51 +70,6 @@
           transform: scaleX(1);
         }
       }
-
-      &--GitHub {
-        &:hover, &:focus {
-          color: $GitHub;
-        }
-
-        &::after {
-          border-color: $GitHub;
-        }
-      }
-
-      &--Twitter {
-        &:hover, &:focus {
-          color: $Twitter;
-        }
-
-        &::after {
-          border-color: $Twitter;
-        }
-      }
-
-      &--LinkedIn {
-        &:hover, &:focus {
-          color: $LinkedIn;
-        }
-
-        &::after {
-          border-color: $LinkedIn;
-        }
-      }
-
-      &--RSS {
-        &:hover, &:focus {
-          color: $RSS;
-        }
-
-        &::after {
-          border-color: $RSS;
-        }
-      }
-
-      .Icon {
-        height: 24px;
-        width: 24px;
-      }
     }
   }
 }
