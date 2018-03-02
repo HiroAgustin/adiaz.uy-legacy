@@ -52,6 +52,16 @@
       }
     }
 
+    &--CodePen {
+      &:hover, &:focus {
+        color: $CodePen;
+      }
+
+      &::after {
+        border-color: $CodePen;
+      }
+    }
+
     &--RSS {
       &:hover, &:focus {
         color: $RSS;
