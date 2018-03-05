@@ -24,3 +24,24 @@
     opacity: .5;
   }
 }
+
+.Posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.Post--📌 {
+  border-radius: .3em;
+  box-shadow: 0 2px 5px $gray-2;
+  color: $gray-3;
+  order: -1;
+  padding: 1rem;
+  position: relative;
+
+  &::before {
+    content: '📌';
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

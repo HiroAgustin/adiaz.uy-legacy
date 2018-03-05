@@ -4,7 +4,7 @@ title: Home
 ---
 <div class="Posts">
   {% for post in paginator.posts %}
-  <article class="Post" itemscope itemtype="https://schema.org/Article">
+  <article class="Post {% if post.pinned %}Post--📌{% endif %}" itemscope itemtype="https://schema.org/Article">
     <header>
       <h1 class="Post__Title">
         <a href="{{ post.url }}">
