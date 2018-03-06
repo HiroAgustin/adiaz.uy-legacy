@@ -6,7 +6,14 @@
 .Message {
   background-color: $gray-1;
   border-left: 4px solid $gray-2;
+  border-radius: .3em;
   color: $gray-3;
   margin-bottom: 1rem;
   padding: 1rem;
+
+  &--Warning {
+    background-color: #fff3cd;
+    border-color: #f8e19e;
+    color: #856404;
+  }
 }
