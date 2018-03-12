@@ -1,12 +1,15 @@
 ---
 layout: default
 ---
-<article class="Post" itemscope itemtype="https://schema.org/Article">
+<article class="Post" itemscope itemtype="https://schema.org/BlogPosting">
   <header>
     <h1 class="Post__Title" itemprop="headline">{{ page.title }}</h1>
     <time class="Post__Date" itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">
       {{ page.date | date_to_long_string }}
     </time>
+    <meta itemprop="dateModified" content="{{ page.date | date_to_long_string }}">
+    <meta itemprop="mainEntityOfPage" content="{{ page.url }}">
+    {% include Meta.html %}
   </header>
   <section itemprop="articleBody">
     {{ content }}
