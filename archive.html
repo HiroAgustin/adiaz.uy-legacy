@@ -2,15 +2,18 @@
 layout: page
 title: Archive
 ---
-<ul class="Archive">
+<ul class="Archive" itemscope itemtype="http://schema.org/ItemList">
   {% for post in site.posts %}
-  <li class="Archive__Item">
-    <a class="lead Archive__Item__Link" href="{{ post.url }}">
-      {{ post.title }}
+  <li class="Archive__Item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a class="lead Archive__Item__Link" href="{{ post.url }}" itemprop="url">
+      <span itemprop="name">
+        {{ post.title }}
+      </span>
     </a>
     <time class="Archive__Item__Date" datetime="{{ post.date | date_to_xmlschema }}">
       {{ post.date | date_to_long_string }}
     </time>
+    <meta itemprop="position" content="{{ forloop.index }}">
   </li>
   {% endfor %}
 </ul>
