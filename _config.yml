@@ -37,6 +37,16 @@ social:
     - https://codepen.io/HiroAgustin/
     - https://linkedin.com/in/HiroAgustin/en/
 
+# Defaults
+defaults:
+  - scope:
+      path: ''
+    values:
+      image:
+                    path: https://adiaz.uy/public/Logo.jpg
+                    height: 300px
+                    width: 300px
+
 # Custom vars
 version:            2.0.0
 github:
