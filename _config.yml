@@ -43,7 +43,7 @@ defaults:
       path: ''
     values:
       image:
-                    path: https://adiaz.uy/public/Logo.jpg
+                    path: https://adiaz.uy/public/Logo.png
                     height: 300px
                     width: 300px
 
