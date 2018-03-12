@@ -19,10 +19,13 @@ sass:
 # About/contact
 author:
   name:             Agustín Díaz
-  url:              https://adiaz.uy/
+  url:              https://adiaz.uy
   email:            me@adiaz.uy
   twitter:          HiroAgustin
-  picture:          /public/Avatar.jpeg
+  picture:
+                    path: https://adiaz.uy/public/Avatar.jpg
+                    height: 300px
+                    width: 300px
 
 twitter:
   username:         HiroAgustin
