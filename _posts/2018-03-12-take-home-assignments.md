@@ -3,7 +3,7 @@ layout: post
 title: Take-Home Assignments
 ---
 
-Hot take: I love doing take home assignments when applying to a job.
+Hot take: I love doing take home assignments when applying for a job.
 
 Before you bite my head off let me start by saying that I understand people who don’t. This “challenges” usually take several hours to complete, which is not how anyone wants to spend their free time. They can also feel like unpaid labour if you are asked to, lets say, fix an issue on the company’s repo.
 
