@@ -11,7 +11,9 @@ title: Home
           {{ post.title }}
         </a>
       </h1>
-      <time class="Post__Date" itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+      <time class="Post__Date" itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">
+        {{ post.date | date_to_long_string }}
+      </time>
     </header>
     <section itemprop="articleBody">
       {{ post.content }}

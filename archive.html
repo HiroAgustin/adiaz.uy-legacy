@@ -8,7 +8,9 @@ title: Archive
     <a class="lead Archive__Item__Link" href="{{ post.url }}">
       {{ post.title }}
     </a>
-    <time class="Archive__Item__Date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+    <time class="Archive__Item__Date" datetime="{{ post.date | date_to_xmlschema }}">
+      {{ post.date | date_to_long_string }}
+    </time>
   </li>
   {% endfor %}
 </ul>

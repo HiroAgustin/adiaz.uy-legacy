@@ -4,7 +4,9 @@ layout: default
 <article class="Post" itemscope itemtype="https://schema.org/Article">
   <header>
     <h1 class="Post__Title" itemprop="headline">{{ page.title }}</h1>
-    <time class="Post__Date" itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+    <time class="Post__Date" itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">
+      {{ page.date | date_to_long_string }}
+    </time>
   </header>
   <section itemprop="articleBody">
     {{ content }}
