@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
   font-weight: 600;
   line-height: 1.25;
-  color: #313131;
+  color: $gray-5;
   text-rendering: optimizeLegibility;
 }
 
@@ -55,14 +55,14 @@ hr {
   position: relative;
   margin: 1.5rem 0;
   border: 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #fff;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $white;
 }
 
 abbr {
   font-size: 85%;
   font-weight: bold;
-  color: #555;
+  color: $gray-4;
   text-transform: uppercase;
 
   &[title] {
@@ -74,7 +74,7 @@ abbr {
 blockquote {
   border-left: .25rem solid $border-color;
   border-radius: .3em;
-  color: #7a7a7a;
+  color: $gray-3;
   margin: .8rem 0;
   padding: .5rem 1rem;
 
