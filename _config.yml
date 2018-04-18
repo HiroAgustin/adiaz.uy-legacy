@@ -4,8 +4,8 @@ paginate_path:      /:num/
 
 # Setup
 title:              adiaz.uy
-description:        Personal site and web development blog of @HiroAgustin.
-tagline:            HiroAgustin
+description:        Agustín Díaz (@HiroAgustin) · Web Development Blog.
+tagline:            (@HiroAgustin)
 url:                https://adiaz.uy
 paginate:           20
 
