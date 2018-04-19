@@ -41,7 +41,7 @@ p ~ pre[class*="language-"] {
 }
 
 code:not([class*="language-"]) {
-  background-color: #f9f9f9;
+  background-color: $code-background;
   border-radius: 3px;
   color: $code-color;
   font-family: $code-font-family;
