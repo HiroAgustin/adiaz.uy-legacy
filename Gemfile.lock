@@ -1,7 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    addressable (2.5.2)
+    addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.5)
@@ -9,8 +9,6 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
-    faraday (0.15.4)
-      multipart-post (>= 1.2, < 3)
     ffi (1.10.0)
     forwardable-extended (2.6.0)
     http_parser.rb (0.6.0)
@@ -31,8 +29,6 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-compose (0.10.1)
       jekyll (>= 3.7, < 5.0)
-    jekyll-gist (1.6.0)
-      octokit (~> 4.2)
     jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
@@ -49,9 +45,6 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
     mercenary (0.3.6)
-    multipart-post (2.0.0)
-    octokit (4.13.0)
-      sawyer (~> 0.8.0, >= 0.5.3)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (3.0.3)
@@ -66,9 +59,6 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    sawyer (0.8.1)
-      addressable (>= 2.3.5, < 2.6)
-      faraday (~> 0.8, < 1.0)
 
 PLATFORMS
   ruby
@@ -76,10 +66,9 @@ PLATFORMS
 DEPENDENCIES
   jekyll
   jekyll-compose
-  jekyll-gist
   jekyll-paginate
   jekyll-seo-tag
   jekyll-sitemap
 
 BUNDLED WITH
-   1.17.3
+   2.0.1
