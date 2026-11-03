@@ -1,0 +1,34 @@
+---
+const links = [
+  { href: "/about/", title: "About" },
+  { href: "/archive/", title: "Archive" },
+];
+---
+
+<header class="Header">
+  <div class="Container Header__Content">
+    <h3 class="Header__Title">
+      <a href="/" title="Home">
+        adiaz.uy
+      </a>
+      <small>(@HiroAgustin)</small>
+    </h3>
+    <ul class="Header__Nav">
+      {links.map(({ href, title }) => (
+        <li class="Header__Nav__Item">
+          <a
+            class:list={[
+              "Header__Nav__Link",
+              { "Header__Nav__Link--active": Astro.url.pathname === href },
+            ]}
+            href={href}
+            title={title}
+            aria-current={Astro.url.pathname === href ? "page" : undefined}
+          >
+            {title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>

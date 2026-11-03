@@ -1,0 +1,22 @@
+{
+  "name": "adiaz-uy",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "format": "prettier --write src astro.config.mjs",
+    "format:check": "prettier --check src astro.config.mjs",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^7.4.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.2",
+    "typescript": "^6.0.3"
+  }
+}

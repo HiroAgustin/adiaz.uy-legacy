@@ -1,0 +1,54 @@
+---
+import type { InferGetStaticPropsType } from "astro";
+import { render } from "astro:content";
+import BlogPost from "../components/BlogPost.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { getPosts } from "../lib/posts";
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post, index) => ({
+    params: { slug: post.id },
+    props: { post, previous: posts[index + 1], next: posts[index - 1] },
+  }));
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { post, previous, next } = Astro.props;
+const previousHref = previous ? `/${previous.id}/` : undefined;
+const nextHref = next ? `/${next.id}/` : undefined;
+const { Content } = await render(post);
+---
+
+<SiteLayout
+  title={post.data.title}
+  description={post.data.description}
+  type="BlogPosting"
+  publishedAt={post.data.pubDate}
+  previous={previousHref}
+  next={nextHref}
+>
+  <BlogPost post={post}>
+    <Content />
+  </BlogPost>
+  <nav class="Pagination" aria-label="Post navigation">
+    {previousHref ? (
+      <a
+        class="Pagination__Item Pagination__Item--Link Pagination__Item--Previous"
+        href={previousHref}
+      >
+        Previous
+      </a>
+    ) : (
+      <span class="Pagination__Item Pagination__Item--Previous">Previous</span>
+    )}
+    {nextHref ? (
+      <a class="Pagination__Item Pagination__Item--Link Pagination__Item--Next" href={nextHref}>
+        Next
+      </a>
+    ) : (
+      <span class="Pagination__Item Pagination__Item--Next">Next</span>
+    )}
+  </nav>
+</SiteLayout>

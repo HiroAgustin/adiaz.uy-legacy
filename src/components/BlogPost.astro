@@ -1,0 +1,52 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { formatDate } from "../lib/posts";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  linkedTitle?: boolean;
+}
+
+const { post, linkedTitle = false } = Astro.props;
+const href = `/${post.id}/`;
+const canonical = `https://adiaz.uy/${post.id}/`;
+---
+
+<article class="Post" itemscope itemtype="https://schema.org/BlogPosting">
+  <header>
+    <h1 class="Post__Title" itemprop="headline">
+      {linkedTitle ? <a href={href}>{post.data.title}</a> : post.data.title}
+    </h1>
+    <time class="Post__Date" itemprop="datePublished" datetime={post.data.pubDate.toISOString()}>
+      {formatDate(post.data.pubDate)}
+    </time>
+    <meta itemprop="dateModified" content={post.data.pubDate.toISOString()} />
+    <meta itemprop="mainEntityOfPage" content={canonical} />
+    <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://adiaz.uy/public/Avatar.jpg" />
+        <meta itemprop="width" content="300" />
+        <meta itemprop="height" content="300" />
+      </span>
+      <meta itemprop="name" content="adiaz.uy" />
+      <meta itemprop="url" content="https://adiaz.uy/" />
+    </span>
+    <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+      <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://adiaz.uy/public/Avatar.jpg" />
+        <meta itemprop="width" content="300" />
+        <meta itemprop="height" content="300" />
+      </span>
+      <meta itemprop="name" content="Agustín Díaz" />
+      <meta itemprop="url" content="https://adiaz.uy/" />
+    </span>
+    <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://adiaz.uy/public/Logo.png" />
+      <meta itemprop="width" content="300" />
+      <meta itemprop="height" content="300" />
+    </span>
+  </header>
+  <section itemprop="articleBody">
+    <slot />
+  </section>
+</article>

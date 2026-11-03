@@ -1,0 +1,19 @@
+---
+import { render } from "astro:content";
+import BlogPost from "../components/BlogPost.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { getPosts } from "../lib/posts";
+
+const posts = (await getPosts()).slice(0, 1);
+const articles = await Promise.all(posts.map(async (post) => ({ post, ...(await render(post)) })));
+---
+
+<SiteLayout type="Blog">
+  <div class="Posts">
+    {articles.map(({ post, Content }) => (
+      <BlogPost post={post} linkedTitle>
+        <Content />
+      </BlogPost>
+    ))}
+  </div>
+</SiteLayout>
