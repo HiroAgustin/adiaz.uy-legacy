@@ -42,6 +42,11 @@ selected branch in **Settings > Environments > github-pages** first.
 Every deployment replaces the same live site at `adiaz.uy`; GitHub Pages does
 not create separate branch previews. Pull requests do not deploy automatically.
 
+### Netlify previews
+
+`netlify.toml` overrides the previous Jekyll build command and publishes the
+repository root directly, so Netlify deploy previews need no build step.
+
 ## Resources
 
 In case you were wondering, this are some of the tools used to build the site.
