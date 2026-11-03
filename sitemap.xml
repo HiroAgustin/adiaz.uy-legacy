@@ -1,76 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://adiaz.uy/why-i-hate-images/</loc>
-<lastmod>2014-12-16T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/interview-trivia/</loc>
-<lastmod>2018-01-19T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/uyrobot/</loc>
-<lastmod>2018-02-05T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/flatten/</loc>
-<lastmod>2018-02-09T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/uniq/</loc>
-<lastmod>2018-02-13T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/hash/</loc>
-<lastmod>2018-02-21T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/chips/</loc>
-<lastmod>2018-02-26T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/pin/</loc>
-<lastmod>2018-03-06T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/take-home-assignments/</loc>
-<lastmod>2018-03-12T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/plectica/</loc>
-<lastmod>2018-04-02T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/social-sharing/</loc>
-<lastmod>2018-04-19T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/target-blank/</loc>
-<lastmod>2018-04-23T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/block-level-links/</loc>
-<lastmod>2018-05-22T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/webpack/</loc>
-<lastmod>2018-06-04T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/user-avatar/</loc>
-<lastmod>2020-01-04T21:26:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://adiaz.uy/about/</loc>
-</url>
-<url>
-<loc>https://adiaz.uy/archive/</loc>
-</url>
-<url>
-<loc>https://adiaz.uy/</loc>
-</url>
-<url>
-<loc>https://adiaz.uy/Resume.pdf</loc>
-<lastmod>2026-11-03T11:07:17+00:00</lastmod>
-</url>
+  <url>
+    <loc>https://adiaz.uy/why-i-hate-images/</loc>
+    <lastmod>2014-12-16T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/interview-trivia/</loc>
+    <lastmod>2018-01-19T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/uyrobot/</loc>
+    <lastmod>2018-02-05T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/flatten/</loc>
+    <lastmod>2018-02-09T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/uniq/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/hash/</loc>
+    <lastmod>2018-02-21T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/chips/</loc>
+    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/pin/</loc>
+    <lastmod>2018-03-06T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/take-home-assignments/</loc>
+    <lastmod>2018-03-12T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/plectica/</loc>
+    <lastmod>2018-04-02T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/social-sharing/</loc>
+    <lastmod>2018-04-19T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/target-blank/</loc>
+    <lastmod>2018-04-23T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/block-level-links/</loc>
+    <lastmod>2018-05-22T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/webpack/</loc>
+    <lastmod>2018-06-04T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/user-avatar/</loc>
+    <lastmod>2020-01-04T21:26:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/about/</loc>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/archive/</loc>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/</loc>
+  </url>
+  <url>
+    <loc>https://adiaz.uy/Resume.pdf</loc>
+    <lastmod>2026-11-03T11:07:17+00:00</lastmod>
+  </url>
 </urlset>

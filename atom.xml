@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>adiaz.uy</title>
-  <link href="https://adiaz.uy/atom.xml" rel="self"/>
-  <link href="https://adiaz.uy/"/>
+  <link href="https://adiaz.uy/atom.xml" rel="self" />
+  <link href="https://adiaz.uy/" />
   <updated>2026-11-03T11:15:47+00:00</updated>
   <id>https://adiaz.uy/</id>
   <author>
@@ -10,13 +10,12 @@
     <email>me@adiaz.uy</email>
   </author>
 
-
-    <entry>
-      <title>User Avatar</title>
-      <link href="https://adiaz.uy/user-avatar/"/>
-      <updated>2020-01-04T21:26:00+00:00</updated>
-      <id>https://adiaz.uy/user-avatar</id>
-      <content type="html">&lt;p&gt;If your app has users, I bet they have avatars. Rounded avatars are pretty much a standard on any UI, so you might be inclined to code something like this:&lt;/p&gt;
+  <entry>
+    <title>User Avatar</title>
+    <link href="https://adiaz.uy/user-avatar/" />
+    <updated>2020-01-04T21:26:00+00:00</updated>
+    <id>https://adiaz.uy/user-avatar</id>
+    <content type="html">&lt;p&gt;If your app has users, I bet they have avatars. Rounded avatars are pretty much a standard on any UI, so you might be inclined to code something like this:&lt;/p&gt;
 
 &lt;p class=&quot;flex&quot;&gt;
   &lt;img src=&quot;https://placekitten.com/200/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;round m-auto&quot; style=&quot;height: 100px; width: 100px;&quot; /&gt;
@@ -114,38 +113,38 @@
   &lt;/picture&gt;
 &lt;/p&gt;
 </content>
-    </entry>
+  </entry>
 
-    <entry>
-      <title>Webpack</title>
-      <link href="https://adiaz.uy/webpack/"/>
-      <updated>2018-06-04T00:00:00+00:00</updated>
-      <id>https://adiaz.uy/webpack</id>
-      <content type="html">&lt;p&gt;I was planning on writing a post on how to do a simple Webpack 4 setup, but while researching on how to actually do it, I found &lt;a href=&quot;https://hackernoon.com/a-tale-of-webpack-4-and-how-to-finally-configure-it-in-the-right-way-4e94c8e7e5c1&quot;&gt;this amazing article&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/riittagirl/&quot;&gt;@riittagirl&lt;/a&gt; that does a much better job than I could ever do.&lt;/p&gt;
+  <entry>
+    <title>Webpack</title>
+    <link href="https://adiaz.uy/webpack/" />
+    <updated>2018-06-04T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/webpack</id>
+    <content type="html">&lt;p&gt;I was planning on writing a post on how to do a simple Webpack 4 setup, but while researching on how to actually do it, I found &lt;a href=&quot;https://hackernoon.com/a-tale-of-webpack-4-and-how-to-finally-configure-it-in-the-right-way-4e94c8e7e5c1&quot;&gt;this amazing article&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/riittagirl/&quot;&gt;@riittagirl&lt;/a&gt; that does a much better job than I could ever do.&lt;/p&gt;
 
 &lt;p&gt;I created the repo &lt;a href=&quot;https://github.com/HiroAgustin/simple-webpack-setup/&quot;&gt;simple-webpack-setup&lt;/a&gt; and made some tweaks based on my personal preferences.&lt;/p&gt;
 </content>
-    </entry>
+  </entry>
 
-    <entry>
-      <title>Block Level Links</title>
-      <link href="https://adiaz.uy/block-level-links/"/>
-      <updated>2018-05-22T00:00:00+00:00</updated>
-      <id>https://adiaz.uy/block-level-links</id>
-      <content type="html">&lt;p&gt;As cool as it is to &lt;a href=&quot;https://davidwalsh.name/html5-elements-links&quot;&gt;wrap blocks of content inside of links&lt;/a&gt;, it does seem to come with some &lt;a href=&quot;http://www.html5accessibility.com/tests/blocklink.html&quot;&gt;accessibility drawbacks&lt;/a&gt;.&lt;/p&gt;
+  <entry>
+    <title>Block Level Links</title>
+    <link href="https://adiaz.uy/block-level-links/" />
+    <updated>2018-05-22T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/block-level-links</id>
+    <content type="html">&lt;p&gt;As cool as it is to &lt;a href=&quot;https://davidwalsh.name/html5-elements-links&quot;&gt;wrap blocks of content inside of links&lt;/a&gt;, it does seem to come with some &lt;a href=&quot;http://www.html5accessibility.com/tests/blocklink.html&quot;&gt;accessibility drawbacks&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;A simple workaround to get the best of both worlds is to use the link’s &lt;code&gt;::after&lt;/code&gt; pseudo element and place it on top of the entire block.&lt;/p&gt;
 
 &lt;p&gt;Check out the Pen &lt;a href=&quot;https://codepen.io/HiroAgustin/pen/VxqOGL/&quot;&gt;Alternative Block lvl Link&lt;/a&gt; to see the code.&lt;/p&gt;
 </content>
-    </entry>
+  </entry>
 
-    <entry>
-      <title>Target Blank</title>
-      <link href="https://adiaz.uy/target-blank/"/>
-      <updated>2018-04-23T00:00:00+00:00</updated>
-      <id>https://adiaz.uy/target-blank</id>
-      <content type="html">&lt;p&gt;Something I only recently came about was the &lt;a href=&quot;https://mathiasbynens.github.io/rel-noopener/&quot;&gt;vulnerability implications&lt;/a&gt; of &lt;code&gt;target=&quot;_blank&quot;&lt;/code&gt; links.&lt;/p&gt;
+  <entry>
+    <title>Target Blank</title>
+    <link href="https://adiaz.uy/target-blank/" />
+    <updated>2018-04-23T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/target-blank</id>
+    <content type="html">&lt;p&gt;Something I only recently came about was the &lt;a href=&quot;https://mathiasbynens.github.io/rel-noopener/&quot;&gt;vulnerability implications&lt;/a&gt; of &lt;code&gt;target=&quot;_blank&quot;&lt;/code&gt; links.&lt;/p&gt;
 
 &lt;p&gt;Pages opened this way have an access to the previous window context and are able to potentially inject malicious code.&lt;/p&gt;
 
@@ -155,14 +154,14 @@
   It might be worth asking if links should &lt;a href=&quot;https://www.smashingmagazine.com/2008/07/should-links-open-in-new-windows/&quot;&gt;open in a new window&lt;/a&gt; at all.
 &lt;/p&gt;
 </content>
-    </entry>
+  </entry>
 
-    <entry>
-      <title>Social Sharing</title>
-      <link href="https://adiaz.uy/social-sharing/"/>
-      <updated>2018-04-19T00:00:00+00:00</updated>
-      <id>https://adiaz.uy/social-sharing</id>
-      <content type="html">&lt;p&gt;There’s a simple, clean, JavaScript-less way to add social sharing links to your site: both Twitter and Facebook provide url endpoints you can use without having to load their widgets.&lt;/p&gt;
+  <entry>
+    <title>Social Sharing</title>
+    <link href="https://adiaz.uy/social-sharing/" />
+    <updated>2018-04-19T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/social-sharing</id>
+    <content type="html">&lt;p&gt;There’s a simple, clean, JavaScript-less way to add social sharing links to your site: both Twitter and Facebook provide url endpoints you can use without having to load their widgets.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -179,23 +178,23 @@
   Feel free to &lt;a href=&quot;https://twitter.com/intent/tweet?text=Add social sharing links with no JS&amp;amp;url=https://adiaz.uy/social-sharing/&amp;amp;via=HiroAgustin&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Tweet&lt;/a&gt; or &lt;a href=&quot;https://www.facebook.com/sharer.php?u=https://adiaz.uy/social-sharing/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Share&lt;/a&gt; this post.
 &lt;/p&gt;
 </content>
-    </entry>
+  </entry>
 
-    <entry>
-      <title>Plectica</title>
-      <link href="https://adiaz.uy/plectica/"/>
-      <updated>2018-04-02T00:00:00+00:00</updated>
-      <id>https://adiaz.uy/plectica</id>
-      <content type="html">&lt;p&gt;As of today I’m joining &lt;a href=&quot;https://www.plectica.com/&quot;&gt;Plectica&lt;/a&gt; as their new Frontend Engineer! I’m really happy about this opportunity and eager to collaborate on making this awesome product even better.&lt;/p&gt;
+  <entry>
+    <title>Plectica</title>
+    <link href="https://adiaz.uy/plectica/" />
+    <updated>2018-04-02T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/plectica</id>
+    <content type="html">&lt;p&gt;As of today I’m joining &lt;a href=&quot;https://www.plectica.com/&quot;&gt;Plectica&lt;/a&gt; as their new Frontend Engineer! I’m really happy about this opportunity and eager to collaborate on making this awesome product even better.&lt;/p&gt;
 </content>
-    </entry>
+  </entry>
 
-    <entry>
-      <title>Take-Home Assignments</title>
-      <link href="https://adiaz.uy/take-home-assignments/"/>
-      <updated>2018-03-12T00:00:00+00:00</updated>
-      <id>https://adiaz.uy/take-home-assignments</id>
-      <content type="html">&lt;p&gt;Hot take: I love doing take home assignments when applying for a job.&lt;/p&gt;
+  <entry>
+    <title>Take-Home Assignments</title>
+    <link href="https://adiaz.uy/take-home-assignments/" />
+    <updated>2018-03-12T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/take-home-assignments</id>
+    <content type="html">&lt;p&gt;Hot take: I love doing take home assignments when applying for a job.&lt;/p&gt;
 
 &lt;p&gt;Before you bite my head off let me start by saying that I understand people who don’t. This “challenges” usually take several hours to complete, which is not how anyone wants to spend their free time. They can also feel like unpaid labour if you are asked to, lets say, fix an issue on the company’s repo.&lt;/p&gt;
 
@@ -205,14 +204,14 @@
 
 &lt;p&gt;Take home assignments are not everyone’s cup of tea, but they are mine.&lt;/p&gt;
 </content>
-    </entry>
+  </entry>
 
-    <entry>
-      <title>Pin</title>
-      <link href="https://adiaz.uy/pin/"/>
-      <updated>2018-03-06T00:00:00+00:00</updated>
-      <id>https://adiaz.uy/pin</id>
-      <content type="html">&lt;p&gt;You can easily pin a list item to the top of the list using flexbox…&lt;/p&gt;
+  <entry>
+    <title>Pin</title>
+    <link href="https://adiaz.uy/pin/" />
+    <updated>2018-03-06T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/pin</id>
+    <content type="html">&lt;p&gt;You can easily pin a list item to the top of the list using flexbox…&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;ul class=&quot;List&quot;&amp;gt;
   &amp;lt;li class=&quot;List__Item&quot;&amp;gt;First&amp;lt;/li&amp;gt;
@@ -238,14 +237,14 @@
   Beware of the accessibility implications this entails. The order will only change visually, not when navigating through keyboard.
 &lt;/p&gt;
 </content>
-    </entry>
+  </entry>
 
-    <entry>
-      <title>Chips</title>
-      <link href="https://adiaz.uy/chips/"/>
-      <updated>2018-02-26T00:00:00+00:00</updated>
-      <id>https://adiaz.uy/chips</id>
-      <content type="html">&lt;p&gt;’Twas an idle Sunday afternoon and I was looking for some images of Poker Chips to use on a brewing side project. After a quick search I couldn’t find any that quite fit my imaginary requirements, so as a way to procrastinate any actual work, I decided to make my own.&lt;/p&gt;
+  <entry>
+    <title>Chips</title>
+    <link href="https://adiaz.uy/chips/" />
+    <updated>2018-02-26T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/chips</id>
+    <content type="html">&lt;p&gt;’Twas an idle Sunday afternoon and I was looking for some images of Poker Chips to use on a brewing side project. After a quick search I couldn’t find any that quite fit my imaginary requirements, so as a way to procrastinate any actual work, I decided to make my own.&lt;/p&gt;
 
 &lt;p&gt;I found &lt;a href=&quot;https://design.tutsplus.com/tutorials/how-to-create-a-stack-of-poker-chips--vector-2320/&quot;&gt;this neat tutorial&lt;/a&gt; and went over to &lt;a href=&quot;https://svg-edit.github.io/svgedit/releases/svg-edit-2.8.1/svg-editor.html&quot;&gt;SVG-Edit&lt;/a&gt; figuring it would be pretty straight forward. After fumbling with the editor for an hour I remembered my fondness to &lt;a href=&quot;https://codepen.io/HiroAgustin/pen/Atgic/?editors=0010#0&quot;&gt;coding shapes&lt;/a&gt;, the chip is just a circle with stripes after all.&lt;/p&gt;
 
@@ -344,14 +343,14 @@
 
 &lt;p&gt;Checkout the Pen &lt;a href=&quot;https://codepen.io/HiroAgustin/pen/YeOEyb/&quot;&gt;Chips&lt;/a&gt; to see the end result.&lt;/p&gt;
 </content>
-    </entry>
+  </entry>
 
-    <entry>
-      <title>Hash</title>
-      <link href="https://adiaz.uy/hash/"/>
-      <updated>2018-02-21T00:00:00+00:00</updated>
-      <id>https://adiaz.uy/hash</id>
-      <content type="html">&lt;p&gt;Continuing the interview questions thread, a while back I was presented with a fun take-home assignment:&lt;/p&gt;
+  <entry>
+    <title>Hash</title>
+    <link href="https://adiaz.uy/hash/" />
+    <updated>2018-02-21T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/hash</id>
+    <content type="html">&lt;p&gt;Continuing the interview questions thread, a while back I was presented with a fun take-home assignment:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Write JavaScript code to find a 9 letter string of characters that contains only letters from: ‘acdegilmnoprstuw’ such that &lt;code&gt;hash(the_string)&lt;/code&gt; is 956446786872726.&lt;/p&gt;
@@ -396,14 +395,14 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 </content>
-    </entry>
+  </entry>
 
-    <entry>
-      <title>uniq</title>
-      <link href="https://adiaz.uy/uniq/"/>
-      <updated>2018-02-13T00:00:00+00:00</updated>
-      <id>https://adiaz.uy/uniq</id>
-      <content type="html">&lt;p&gt;Another question I’m frequently encountering is to implement a function that, given an array of integers, removes the duplicates. This can be achieved by storing the items as we filter the collection and leave out the ones that are already in our stash.&lt;/p&gt;
+  <entry>
+    <title>uniq</title>
+    <link href="https://adiaz.uy/uniq/" />
+    <updated>2018-02-13T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/uniq</id>
+    <content type="html">&lt;p&gt;Another question I’m frequently encountering is to implement a function that, given an array of integers, removes the duplicates. This can be achieved by storing the items as we filter the collection and leave out the ones that are already in our stash.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;function uniq (collection = []) {
   const stash = {}
@@ -441,14 +440,14 @@
 
 &lt;p&gt;Because we are assured just one item will show up without a matching pair, by deleting the prop each time a second occurrence appears, the single remaining key will be the value we were looking for.&lt;/p&gt;
 </content>
-    </entry>
+  </entry>
 
-    <entry>
-      <title>Flatten</title>
-      <link href="https://adiaz.uy/flatten/"/>
-      <updated>2018-02-09T00:00:00+00:00</updated>
-      <id>https://adiaz.uy/flatten</id>
-      <content type="html">&lt;p&gt;Every other interview I’m asked to implement a &lt;code&gt;flatten&lt;/code&gt; function that receives an array and returns a flattened version of it. They may request different ways to handle edge cases, but my usual answer is in the lines of…&lt;/p&gt;
+  <entry>
+    <title>Flatten</title>
+    <link href="https://adiaz.uy/flatten/" />
+    <updated>2018-02-09T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/flatten</id>
+    <content type="html">&lt;p&gt;Every other interview I’m asked to implement a &lt;code&gt;flatten&lt;/code&gt; function that receives an array and returns a flattened version of it. They may request different ways to handle edge cases, but my usual answer is in the lines of…&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;function flatten (collection = []) {
   let result = []
@@ -468,14 +467,14 @@
 
 &lt;p&gt;I’m still glad this comes up more often than implementing &lt;code&gt;mergeSort&lt;/code&gt;.&lt;/p&gt;
 </content>
-    </entry>
+  </entry>
 
-    <entry>
-      <title>UYRobot</title>
-      <link href="https://adiaz.uy/uyrobot/"/>
-      <updated>2018-02-05T00:00:00+00:00</updated>
-      <id>https://adiaz.uy/uyrobot</id>
-      <content type="html">&lt;p&gt;A project I’m very proud to have been involved with is finally live: &lt;a href=&quot;http://www.uyrobot.com.uy/&quot;&gt;UYRobot&lt;/a&gt;. Among other things, they teach both kids and adults how to build robots.&lt;/p&gt;
+  <entry>
+    <title>UYRobot</title>
+    <link href="https://adiaz.uy/uyrobot/" />
+    <updated>2018-02-05T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/uyrobot</id>
+    <content type="html">&lt;p&gt;A project I’m very proud to have been involved with is finally live: &lt;a href=&quot;http://www.uyrobot.com.uy/&quot;&gt;UYRobot&lt;/a&gt;. Among other things, they teach both kids and adults how to build robots.&lt;/p&gt;
 
 &lt;p&gt;The site was a collaborative effort with designer &lt;a href=&quot;https://www.flaviacalandria.com/&quot;&gt;Flavia Calandria&lt;/a&gt;.&lt;/p&gt;
 
@@ -483,14 +482,14 @@
 
 &lt;p&gt;The full source code of the site is available on &lt;a href=&quot;https://github.com/HiroAgustin/uy-robot/&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 </content>
-    </entry>
+  </entry>
 
-    <entry>
-      <title>Interview Trivia</title>
-      <link href="https://adiaz.uy/interview-trivia/"/>
-      <updated>2018-01-19T00:00:00+00:00</updated>
-      <id>https://adiaz.uy/interview-trivia</id>
-      <content type="html">&lt;p&gt;While interviewing for a new job I was asked a few JavaScript Trivia questions. Following are my answers.&lt;/p&gt;
+  <entry>
+    <title>Interview Trivia</title>
+    <link href="https://adiaz.uy/interview-trivia/" />
+    <updated>2018-01-19T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/interview-trivia</id>
+    <content type="html">&lt;p&gt;While interviewing for a new job I was asked a few JavaScript Trivia questions. Following are my answers.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;What is ES6?&lt;/p&gt;
@@ -538,14 +537,14 @@ class Car extends Vehicle {
 }
 &lt;/code&gt;&lt;/pre&gt;
 </content>
-    </entry>
+  </entry>
 
-    <entry>
-      <title>Why I Hate Images</title>
-      <link href="https://adiaz.uy/why-i-hate-images/"/>
-      <updated>2014-12-16T00:00:00+00:00</updated>
-      <id>https://adiaz.uy/why-i-hate-images</id>
-      <content type="html">&lt;p&gt;According to &lt;a href=&quot;http://httparchive.org/interesting.php?a=All&amp;amp;l=Dec%201%202014&quot;&gt;HTTP Archive&lt;/a&gt; today’s average web page size is 1.9MB. Almost 64% of that weight comes from images. As someone who is used to browsing the web on a cellphone through a 3G connection, that really sucks.&lt;/p&gt;
+  <entry>
+    <title>Why I Hate Images</title>
+    <link href="https://adiaz.uy/why-i-hate-images/" />
+    <updated>2014-12-16T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/why-i-hate-images</id>
+    <content type="html">&lt;p&gt;According to &lt;a href=&quot;http://httparchive.org/interesting.php?a=All&amp;amp;l=Dec%201%202014&quot;&gt;HTTP Archive&lt;/a&gt; today’s average web page size is 1.9MB. Almost 64% of that weight comes from images. As someone who is used to browsing the web on a cellphone through a 3G connection, that really sucks.&lt;/p&gt;
 
 &lt;p&gt;Images are one of the main reasons why the web became popular. Could you picture today’s websites without them? How many wouldn’t even exist? It’s interesting to read the &lt;a href=&quot;http://diveintohtml5.info/past.html#history-of-the-img-element&quot;&gt;history of the img element&lt;/a&gt; and see how the initial pitch became the standard we ended up using for the past twenty years.&lt;/p&gt;
 
@@ -585,6 +584,6 @@ class Car extends Vehicle {
 
 &lt;p&gt;Even if you are using regular images there’s a lot you can do to improve your page size. Addy Osmani has a list of &lt;a href=&quot;http://addyosmani.com/blog/image-optimization-tools/&quot;&gt;tools for image optimization&lt;/a&gt;. To that list I would add his own &lt;a href=&quot;https://github.com/addyosmani/tmi&quot;&gt;too many images&lt;/a&gt; which helps developers figure out the weight of their pages.&lt;/p&gt;
 </content>
-    </entry>
+  </entry>
 
 </feed>

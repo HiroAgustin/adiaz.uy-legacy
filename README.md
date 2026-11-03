@@ -27,12 +27,6 @@ the repository root; `.nojekyll` disables Jekyll processing. Keep `CNAME` for th
 custom domain and configure other hosts to serve `404.html` for missing URLs.
 The existing images, `Resume.pdf`, feed, sitemap, and manifest are included.
 
-To check the static routes, links, metadata, and feed without dependencies:
-
-```sh
-python3 -m unittest discover -s tests
-```
-
 ## Resources
 
 In case you were wondering, this are some of the tools used to build the site.
