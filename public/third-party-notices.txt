@@ -1,4 +1,9 @@
-# Released under MIT License
+Third-party notice: Poole
+
+The following license applies to the Poole-derived portions of
+public/styles.css, not to the site's original code or blog content.
+
+MIT License
 
 Copyright (c) 2013 Mark Otto.
 

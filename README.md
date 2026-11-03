@@ -55,3 +55,9 @@ Some resources used by the site:
 - Build-time syntax highlighting by [Shiki](https://shiki.style/).
 - Brand icons by [Simple Icons](https://simpleicons.org/).
 - Coded on [Atom](https://atom.io/).
+
+## Licensing
+
+No project-wide reuse license is granted for the site's original code or content.
+Third-party material retains its applicable license; the Poole notice is preserved in
+`public/third-party-notices.txt` and published at `/third-party-notices.txt`.
