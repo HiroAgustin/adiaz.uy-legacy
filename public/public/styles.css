@@ -420,37 +420,6 @@ main {
   @view-transition {
     navigation: auto;
   }
-
-  .Post {
-    view-transition-name: blog-post;
-  }
-
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation: none;
-  }
-
-  ::view-transition-old(blog-post) {
-    animation: post-leave 180ms ease-in both;
-  }
-
-  ::view-transition-new(blog-post) {
-    animation: post-enter 250ms ease-out both;
-  }
-}
-
-@keyframes post-leave {
-  to {
-    opacity: 0;
-    transform: translateY(-.5rem);
-  }
-}
-
-@keyframes post-enter {
-  from {
-    opacity: 0;
-    transform: translateY(.5rem);
-  }
 }
 
 .Page li + li, .Post li + li {

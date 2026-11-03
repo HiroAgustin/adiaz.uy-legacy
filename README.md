@@ -26,8 +26,9 @@ newest first. The homepage shows only the latest post; the archive lists all pos
 native `.astro` files in `src/pages/`. Shared layout and post markup live in `src/layouts/` and
 `src/components/`.
 
-Post navigation uses CSS-only cross-document view transitions in supported browsers. Animations
-respect reduced-motion preferences and require no JavaScript.
+Site-wide navigation uses the browser's default CSS-only cross-document view transitions in supported
+browsers, with no targeted elements. Animations respect reduced-motion preferences and require no
+JavaScript.
 
 The shared layout declares `color-scheme: light dark` through a meta tag. Styles use `light-dark()`
 colors to follow the user's system preference automatically, without a toggle or JavaScript.
