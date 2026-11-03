@@ -1,5 +1,6 @@
 # adiaz.uy
 
+A static personal website: plain HTML and CSS, with no generator or build step.
 My corner of the web.
 
 ## Local preview
@@ -44,7 +45,7 @@ not create separate branch previews. Pull requests do not deploy automatically.
 
 ## Resources
 
-In case you were wondering, this are some of the tools used to build the site.
+Some resources used by the site:
 
 * Theme foundation by [Poole](http://getpoole.com/).
 * Syntax highlighting by [Prism](http://prismjs.com/).
