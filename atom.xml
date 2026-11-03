@@ -1,25 +1,589 @@
----
-layout: null
----
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ site.title }}</title>
-  <link href="{{ site.url }}/atom.xml" rel="self"/>
-  <link href="{{ site.url }}/"/>
-  <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>{{ site.url }}/</id>
+  <title>adiaz.uy</title>
+  <link href="https://adiaz.uy/atom.xml" rel="self" />
+  <link href="https://adiaz.uy/" />
+  <updated>2026-11-03T11:15:47+00:00</updated>
+  <id>https://adiaz.uy/</id>
   <author>
-    <name>{{ site.author.name }}</name>
-    <email>{{ site.author.email }}</email>
+    <name>Agustín Díaz</name>
+    <email>me@adiaz.uy</email>
   </author>
 
-  {% for post in site.posts %}
-    <entry>
-      <title>{{ post.title | xml_escape }}</title>
-      <link href="{{ site.url }}{{ post.url }}"/>
-      <updated>{{ post.date | date_to_xmlschema }}</updated>
-      <id>{{ site.url }}{{ post.id }}</id>
-      <content type="html">{{ post.content | xml_escape }}</content>
-    </entry>
-  {% endfor %}
+  <entry>
+    <title>User Avatar</title>
+    <link href="https://adiaz.uy/user-avatar/" />
+    <updated>2020-01-04T21:26:00+00:00</updated>
+    <id>https://adiaz.uy/user-avatar</id>
+    <content type="html">&lt;p&gt;If your app has users, I bet they have avatars. Rounded avatars are pretty much a standard on any UI, so you might be inclined to code something like this:&lt;/p&gt;
+
+&lt;p class=&quot;flex&quot;&gt;
+  &lt;img src=&quot;https://picsum.photos/seed/avatar/200/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;round m-auto&quot; style=&quot;height: 100px; width: 100px;&quot; /&gt;
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;img
+  class=&quot;Avatar&quot;
+  src=&quot;https://picsum.photos/seed/avatar/200/200&quot;
+  alt=&quot;User avatar&quot;
+&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;.Avatar {
+  height: 100px;
+  border-radius: 50%;
+  width: 100px;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Done, right? Push that commit, merge it to master, deploy it to prod, and go grab that well earned chocolate chip cookie.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-about-non-square-images&quot;&gt;What about non-square images?&lt;/h2&gt;
+
+&lt;p&gt;Fuck.&lt;/p&gt;
+
+&lt;p class=&quot;flex&quot;&gt;
+  &lt;img src=&quot;https://picsum.photos/seed/avatar/150/200?grayscale&quot; alt=&quot;User avatar placeholder&quot; class=&quot;round m-0&quot; style=&quot;height: 100px; width: 100px;&quot; /&gt;
+  &lt;img src=&quot;https://picsum.photos/seed/avatar/300/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;round m-0&quot; style=&quot;height: 100px; width: 100px;&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;You could add one of those modals where the user edits their own avatar and store a cropped version of the image; I much rather use some CSS magic:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;picture class=&quot;Avatar&quot;&amp;gt;
+  &amp;lt;img
+    src=&quot;https://picsum.photos/seed/avatar/200/200&quot;
+    alt=&quot;User avatar&quot;
+  &amp;gt;
+&amp;lt;/picture&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;.Avatar {
+  border-radius: 50%;
+  height: 100px;
+  overflow: hidden;
+  width: 100px;
+}
+
+.Avatar &amp;gt; img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p class=&quot;flex&quot;&gt;
+  &lt;picture class=&quot;round&quot; style=&quot;height: 100px; overflow: hidden; width: 100px;&quot;&gt;
+    &lt;img src=&quot;https://picsum.photos/seed/avatar/200/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
+  &lt;/picture&gt;
+  &lt;picture class=&quot;round&quot; style=&quot;height: 100px; overflow: hidden; width: 100px;&quot;&gt;
+    &lt;img src=&quot;https://picsum.photos/seed/avatar/150/200?grayscale&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
+  &lt;/picture&gt;
+  &lt;picture class=&quot;round&quot; style=&quot;height: 100px; overflow: hidden; width: 100px;&quot;&gt;
+    &lt;img src=&quot;https://picsum.photos/seed/avatar/300/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
+  &lt;/picture&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Using &lt;code&gt;object-fit: cover&lt;/code&gt; on the &lt;code&gt;img&lt;/code&gt; element makes it fit nicely inside its container, and we use &lt;code&gt;overflow: hidden&lt;/code&gt; literally to cut corners. All achieved without the use of annoying modals or pesky JS. Now go get that cookie.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bonus tip:&lt;/strong&gt; use CSS Variables to create modifiers for the different types and sizes of avatars you’ll need:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;.Avatar {
+  --avatar-size: 100px;
+  --avatar-radius: 50%;
+
+  border-radius: var(--avatar-radius);
+  height: var(--avatar-size);
+  overflow: hidden;
+  width: var(--avatar-size);
+}
+
+.Avatar--square { --avatar-radius: 8px; }
+.Avatar--small { --avatar-size: 50px; }
+.Avatar--large { --avatar-size: 150px; }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p class=&quot;flex&quot;&gt;
+  &lt;picture style=&quot;border-radius: 8px; height: 100px; overflow: hidden; width: 100px;&quot;&gt;
+    &lt;img src=&quot;https://picsum.photos/seed/avatar/200/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
+  &lt;/picture&gt;
+  &lt;picture class=&quot;round&quot; style=&quot;height: 50px; overflow: hidden; width: 50px;&quot;&gt;
+    &lt;img src=&quot;https://picsum.photos/seed/avatar/150/200?grayscale&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
+  &lt;/picture&gt;
+  &lt;picture class=&quot;round&quot; style=&quot;height: 150px; overflow: hidden; width: 150px;&quot;&gt;
+    &lt;img src=&quot;https://picsum.photos/seed/avatar/300/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
+  &lt;/picture&gt;
+&lt;/p&gt;
+</content>
+  </entry>
+
+  <entry>
+    <title>Webpack</title>
+    <link href="https://adiaz.uy/webpack/" />
+    <updated>2018-06-04T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/webpack</id>
+    <content type="html">&lt;p&gt;I was planning on writing a post on how to do a simple Webpack 4 setup, but while researching on how to actually do it, I found &lt;a href=&quot;https://hackernoon.com/a-tale-of-webpack-4-and-how-to-finally-configure-it-in-the-right-way-4e94c8e7e5c1&quot;&gt;this amazing article&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/riittagirl/&quot;&gt;@riittagirl&lt;/a&gt; that does a much better job than I could ever do.&lt;/p&gt;
+
+&lt;p&gt;I created the repo &lt;a href=&quot;https://github.com/HiroAgustin/simple-webpack-setup/&quot;&gt;simple-webpack-setup&lt;/a&gt; and made some tweaks based on my personal preferences.&lt;/p&gt;
+</content>
+  </entry>
+
+  <entry>
+    <title>Block Level Links</title>
+    <link href="https://adiaz.uy/block-level-links/" />
+    <updated>2018-05-22T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/block-level-links</id>
+    <content type="html">&lt;p&gt;As cool as it is to &lt;a href=&quot;https://davidwalsh.name/html5-elements-links&quot;&gt;wrap blocks of content inside of links&lt;/a&gt;, it does seem to come with some &lt;a href=&quot;http://www.html5accessibility.com/tests/blocklink.html&quot;&gt;accessibility drawbacks&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A simple workaround to get the best of both worlds is to use the link’s &lt;code&gt;::after&lt;/code&gt; pseudo element and place it on top of the entire block.&lt;/p&gt;
+
+&lt;p&gt;Check out the Pen &lt;a href=&quot;https://codepen.io/HiroAgustin/pen/VxqOGL/&quot;&gt;Alternative Block lvl Link&lt;/a&gt; to see the code.&lt;/p&gt;
+</content>
+  </entry>
+
+  <entry>
+    <title>Target Blank</title>
+    <link href="https://adiaz.uy/target-blank/" />
+    <updated>2018-04-23T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/target-blank</id>
+    <content type="html">&lt;p&gt;Something I only recently came about was the &lt;a href=&quot;https://mathiasbynens.github.io/rel-noopener/&quot;&gt;vulnerability implications&lt;/a&gt; of &lt;code&gt;target=&quot;_blank&quot;&lt;/code&gt; links.&lt;/p&gt;
+
+&lt;p&gt;Pages opened this way have an access to the previous window context and are able to potentially inject malicious code.&lt;/p&gt;
+
+&lt;p&gt;The solution is simple, just add &lt;code&gt;rel=&quot;noopener noreferrer&quot;&lt;/code&gt; to those links and you should be good to go.&lt;/p&gt;
+
+&lt;p class=&quot;Message Message--Warning&quot;&gt;
+  It might be worth asking if links should &lt;a href=&quot;https://www.smashingmagazine.com/2008/07/should-links-open-in-new-windows/&quot;&gt;open in a new window&lt;/a&gt; at all.
+&lt;/p&gt;
+</content>
+  </entry>
+
+  <entry>
+    <title>Social Sharing</title>
+    <link href="https://adiaz.uy/social-sharing/" />
+    <updated>2018-04-19T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/social-sharing</id>
+    <content type="html">&lt;p&gt;There’s a simple, clean, JavaScript-less way to add social sharing links to your site: both Twitter and Facebook provide url endpoints you can use without having to load their widgets.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dev.twitter.com/web/tweet-button/web-intent&quot;&gt;Twitter’s Web Intent&lt;/a&gt; allows you to compose a tweet from parameters.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://developers.facebook.com/docs/workplace/integrations/sharing/#sharedialogvialink&quot;&gt;Facebook’s Share Dialog&lt;/a&gt; lets you set an url to be shared.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The tradeoff being the loss of the nice on-screen pop-up windows…&lt;/p&gt;
+
+&lt;p&gt;
+  Feel free to &lt;a href=&quot;https://twitter.com/intent/tweet?text=Add social sharing links with no JS&amp;amp;url=https://adiaz.uy/social-sharing/&amp;amp;via=HiroAgustin&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Tweet&lt;/a&gt; or &lt;a href=&quot;https://www.facebook.com/sharer.php?u=https://adiaz.uy/social-sharing/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Share&lt;/a&gt; this post.
+&lt;/p&gt;
+</content>
+  </entry>
+
+  <entry>
+    <title>Plectica</title>
+    <link href="https://adiaz.uy/plectica/" />
+    <updated>2018-04-02T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/plectica</id>
+    <content type="html">&lt;p&gt;As of today I’m joining &lt;a href=&quot;https://www.plectica.com/&quot;&gt;Plectica&lt;/a&gt; as their new Frontend Engineer! I’m really happy about this opportunity and eager to collaborate on making this awesome product even better.&lt;/p&gt;
+</content>
+  </entry>
+
+  <entry>
+    <title>Take-Home Assignments</title>
+    <link href="https://adiaz.uy/take-home-assignments/" />
+    <updated>2018-03-12T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/take-home-assignments</id>
+    <content type="html">&lt;p&gt;Hot take: I love doing take home assignments when applying for a job.&lt;/p&gt;
+
+&lt;p&gt;Before you bite my head off let me start by saying that I understand people who don’t. This “challenges” usually take several hours to complete, which is not how anyone wants to spend their free time. They can also feel like unpaid labour if you are asked to, lets say, fix an issue on the company’s repo.&lt;/p&gt;
+
+&lt;p&gt;But as someone who has always worked on proprietary code and lacks a real portfolio, they provide me with the opportunity to show off my skills. I usually get to decide how much time and effort to spend based on how badly I want the job, and more often than not I end up learning some new technique or pattern I didn’t know about.&lt;/p&gt;
+
+&lt;p&gt;Pairing is a comparable interview method that I enjoy doing as well, but it has the added pressure of someone judging everything you say and do. When I first dive into an unfamiliar codebase I ask myself the dumbest questions and do a lot of poking around just to make sure I fully understand its behavior. I’m afraid this approach may be interpreted as a lack of basic knowledge on a short lived pairing session.&lt;/p&gt;
+
+&lt;p&gt;Take home assignments are not everyone’s cup of tea, but they are mine.&lt;/p&gt;
+</content>
+  </entry>
+
+  <entry>
+    <title>Pin</title>
+    <link href="https://adiaz.uy/pin/" />
+    <updated>2018-03-06T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/pin</id>
+    <content type="html">&lt;p&gt;You can easily pin a list item to the top of the list using flexbox…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;ul class=&quot;List&quot;&amp;gt;
+  &amp;lt;li class=&quot;List__Item&quot;&amp;gt;First&amp;lt;/li&amp;gt;
+  &amp;lt;li class=&quot;List__Item&quot;&amp;gt;Second&amp;lt;/li&amp;gt;
+  &amp;lt;li class=&quot;List__Item List__Item--Pinned&quot;&amp;gt;Pinned&amp;lt;/li&amp;gt;
+  &amp;lt;li class=&quot;List__Item&quot;&amp;gt;Last&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;…by setting the order of the pinned item to &lt;code&gt;-1&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;.List {
+  display: flex;
+  flex-direction: column;
+}
+
+.List__Item--Pinned {
+  order: -1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p class=&quot;Message Message--Warning&quot;&gt;
+  Beware of the accessibility implications this entails. The order will only change visually, not when navigating through keyboard.
+&lt;/p&gt;
+</content>
+  </entry>
+
+  <entry>
+    <title>Chips</title>
+    <link href="https://adiaz.uy/chips/" />
+    <updated>2018-02-26T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/chips</id>
+    <content type="html">&lt;p&gt;’Twas an idle Sunday afternoon and I was looking for some images of Poker Chips to use on a brewing side project. After a quick search I couldn’t find any that quite fit my imaginary requirements, so as a way to procrastinate any actual work, I decided to make my own.&lt;/p&gt;
+
+&lt;p&gt;I found &lt;a href=&quot;https://design.tutsplus.com/tutorials/how-to-create-a-stack-of-poker-chips--vector-2320/&quot;&gt;this neat tutorial&lt;/a&gt; and went over to &lt;a href=&quot;https://svg-edit.github.io/svgedit/releases/svg-edit-2.8.1/svg-editor.html&quot;&gt;SVG-Edit&lt;/a&gt; figuring it would be pretty straight forward. After fumbling with the editor for an hour I remembered my fondness to &lt;a href=&quot;https://codepen.io/HiroAgustin/pen/Atgic/?editors=0010#0&quot;&gt;coding shapes&lt;/a&gt;, the chip is just a circle with stripes after all.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;!-- Chip --&amp;gt;
+&amp;lt;circle fill=&quot;white&quot; stroke=&quot;black&quot; cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;89&quot; /&amp;gt;
+&amp;lt;!-- Large Stripe --&amp;gt;
+&amp;lt;circle fill=&quot;none&quot; stroke=&quot;navy&quot; stroke-width=&quot;20&quot; cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;80&quot; /&amp;gt;
+&amp;lt;!-- Small Stripe --&amp;gt;
+&amp;lt;circle fill=&quot;none&quot; stroke=&quot;navy&quot; stroke-width=&quot;5&quot; cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;60&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot; class=&quot;d-block m-auto&quot; width=&quot;100%&quot; height=&quot;250px&quot;&gt;
+    &lt;!-- Chip --&gt;
+    &lt;circle fill=&quot;white&quot; stroke=&quot;black&quot; cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;89&quot; /&gt;
+    &lt;!-- Large Stripe --&gt;
+    &lt;circle stroke=&quot;navy&quot; stroke-width=&quot;20&quot; cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;none&quot; /&gt;
+    &lt;!-- Small Stripe --&gt;
+    &lt;circle stroke=&quot;navy&quot; stroke-width=&quot;5&quot; cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;60&quot; fill=&quot;none&quot; /&gt;
+  &lt;/svg&gt;
+&lt;/p&gt;
+
+&lt;p&gt;We can then use the &lt;code&gt;stroke-dasharray&lt;/code&gt; attribute on the stripes to match the chip pattern. We want 6 painted sections and 6 white ones on the large stripe and twice as many for the small one. Given the formula to calculate the circumference (2πr) we know each section on the large stripe should be of length 42 (2π × 80 ÷ 12) and 15.7 (2π × 60 ÷ 24) for the small one. To manually tweak the alignment of the dashes we can set the &lt;code&gt;stroke-dashoffset&lt;/code&gt; value on each stripe.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;!-- Large Stripe --&amp;gt;
+&amp;lt;circle fill=&quot;none&quot; stroke=&quot;navy&quot; stroke-width=&quot;20&quot; stroke-dasharray=&quot;42&quot; stroke-dashoffset=&quot;20&quot; cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;80&quot; /&amp;gt;
+&amp;lt;!-- Small Stripe --&amp;gt;
+&amp;lt;circle fill=&quot;none&quot; stroke=&quot;navy&quot; stroke-width=&quot;5&quot; stroke-dasharray=&quot;15.7&quot; stroke-dashoffset=&quot;7&quot; cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;60&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot; class=&quot;d-block m-auto&quot; width=&quot;100%&quot; height=&quot;250px&quot;&gt;
+    &lt;!-- Chip --&gt;
+    &lt;circle fill=&quot;white&quot; stroke=&quot;black&quot; cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;89&quot; /&gt;
+    &lt;!-- Large Stripe --&gt;
+    &lt;circle fill=&quot;none&quot; stroke=&quot;navy&quot; stroke-width=&quot;20&quot; stroke-dasharray=&quot;42&quot; stroke-dashoffset=&quot;20&quot; cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;80&quot; /&gt;
+    &lt;!-- Small Stripe --&gt;
+    &lt;circle fill=&quot;none&quot; stroke=&quot;navy&quot; stroke-width=&quot;5&quot; stroke-dasharray=&quot;15.7&quot; stroke-dashoffset=&quot;7&quot; cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;60&quot; /&gt;
+  &lt;/svg&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Finally, we want to be able to have multiple chips of different colors. To achieve it, we can leverage SVG’s &lt;code&gt;symbol&lt;/code&gt; and &lt;code&gt;use&lt;/code&gt; tags to allow for multiple copies of the same image without duplicating our code. Then using CSS variables we can set the body and stripe color for each chip.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;svg style=&quot;display: none;&quot;&amp;gt;
+  &amp;lt;symbol id=&quot;Chip&quot; viewBox=&quot;0 0 200 200&quot;&amp;gt;
+    &amp;lt;!-- Chip --&amp;gt;
+    &amp;lt;circle class=&quot;Chip__Body&quot; cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;89&quot; /&amp;gt;
+    &amp;lt;!-- Large Stripe --&amp;gt;
+    &amp;lt;circle class=&quot;Chip__Strip&quot; stroke-width=&quot;20&quot; stroke-dasharray=&quot;42&quot; stroke-dashoffset=&quot;20&quot; cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;80&quot; /&amp;gt;
+    &amp;lt;!-- Small Stripe --&amp;gt;
+    &amp;lt;circle class=&quot;Chip__Strip&quot; stroke-width=&quot;5&quot; stroke-dasharray=&quot;15.7&quot; stroke-dashoffset=&quot;7&quot; cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;60&quot; /&amp;gt;
+  &amp;lt;/symbol&amp;gt;
+&amp;lt;/svg&amp;gt;
+
+&amp;lt;svg class=&quot;Chip Chip--White&quot;&amp;gt;
+  &amp;lt;use xlink:href=&quot;#Chip&quot; /&amp;gt;
+&amp;lt;/svg&amp;gt;
+&amp;lt;svg class=&quot;Chip Chip--Red&quot;&amp;gt;
+  &amp;lt;use xlink:href=&quot;#Chip&quot; /&amp;gt;
+&amp;lt;/svg&amp;gt;
+&amp;lt;svg class=&quot;Chip Chip--Green&quot;&amp;gt;
+  &amp;lt;use xlink:href=&quot;#Chip&quot; /&amp;gt;
+&amp;lt;/svg&amp;gt;
+&amp;lt;svg class=&quot;Chip Chip--Black&quot;&amp;gt;
+  &amp;lt;use xlink:href=&quot;#Chip&quot; /&amp;gt;
+&amp;lt;/svg&amp;gt;
+&amp;lt;svg class=&quot;Chip Chip--Blue&quot;&amp;gt;
+  &amp;lt;use xlink:href=&quot;#Chip&quot; /&amp;gt;
+&amp;lt;/svg&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The reason why we need to use css variables is because of how &lt;code&gt;use&lt;/code&gt; works. Basically we can’t just write &lt;code&gt;.Chip--White .Chip__Body&lt;/code&gt; to set the color because that DOM structure doesn’t exist. But by setting the variables in the parent element the values are inherited.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;.Chip {
+  --strip-color: white;
+
+  &amp;amp;__Body {
+    fill: var(--chip-color);
+    stroke: black;
+  }
+
+  &amp;amp;__Strip {
+    fill: none;
+    stroke: var(--strip-color);
+  }
+
+  &amp;amp;--White {
+    --chip-color: white;
+    --strip-color: navy;
+  }
+
+  &amp;amp;--Red { --chip-color: red; }
+  &amp;amp;--Green { --chip-color: green; }
+  &amp;amp;--Black { --chip-color: black; }
+  &amp;amp;--Blue { --chip-color: blue; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Checkout the Pen &lt;a href=&quot;https://codepen.io/HiroAgustin/pen/YeOEyb/&quot;&gt;Chips&lt;/a&gt; to see the end result.&lt;/p&gt;
+</content>
+  </entry>
+
+  <entry>
+    <title>Hash</title>
+    <link href="https://adiaz.uy/hash/" />
+    <updated>2018-02-21T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/hash</id>
+    <content type="html">&lt;p&gt;Continuing the interview questions thread, a while back I was presented with a fun take-home assignment:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Write JavaScript code to find a 9 letter string of characters that contains only letters from: ‘acdegilmnoprstuw’ such that &lt;code&gt;hash(the_string)&lt;/code&gt; is 956446786872726.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;function hash (alphabet, s) {
+  let h = 7
+
+  for (let i = 0; i &amp;lt; s.length; i++)
+    h = h * 37 + alphabet.indexOf(s[i])
+
+  return h
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I needed to find a string that, given this hashing algorithm, would return a specific number. Therefore I had to build a &lt;code&gt;decrypt&lt;/code&gt; method that would reverse the encryption so I could pass in the number and get the string.&lt;/p&gt;
+
+&lt;p&gt;Looking at the algorithm you can see the interval between each letter is composed of the previous number multiplied by 37 plus the index of the letter in the alphabet.&lt;/p&gt;
+
+&lt;p&gt;By decreasing &lt;code&gt;helper&lt;/code&gt; until it was a multiple of 37 I was able to find that difference. Once I knew the index of the letter, I just prepended it to the resulting string.&lt;/p&gt;
+
+&lt;p&gt;All that remained to do then was to divide &lt;code&gt;number&lt;/code&gt; by 37 and repeat until I hit the initial value of 7. And of course, turn the array into a string.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;function decrypt(alphabet, number) {
+  const result = []
+  let helper = number
+
+  while (number !== 7) {
+    while (helper % 37 !== 0)
+      helper--
+
+    result.unshift(
+      alphabet[number - helper]
+    )
+
+    number = helper /= 37
+  }
+
+  return result.join(&apos;&apos;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+
+  <entry>
+    <title>uniq</title>
+    <link href="https://adiaz.uy/uniq/" />
+    <updated>2018-02-13T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/uniq</id>
+    <content type="html">&lt;p&gt;Another question I’m frequently encountering is to implement a function that, given an array of integers, removes the duplicates. This can be achieved by storing the items as we filter the collection and leave out the ones that are already in our stash.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;function uniq (collection = []) {
+  const stash = {}
+
+  return collection.filter(item =&amp;gt; {
+    if (stash.hasOwnProperty(item))
+      return false
+
+    stash[item] = true
+
+    return true
+  })
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once again underscore.js offers a more &lt;a href=&quot;http://underscorejs.org/docs/underscore.html#section-60&quot;&gt;roboust solution&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;A slightly different problem that can be solved with almost the same code is: Given an array of integers, of which only a single one appears an odd amount of times, return that number.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;function findOdd (collection = []) {
+  const stash = {}
+
+  collection.forEach(item =&amp;gt; {
+    if (stash.hasOwnProperty(item))
+      delete stash[item]
+    else
+      stash[item] = true
+  })
+
+  return Object.keys(stash)[0]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Because we are assured just one item will show up without a matching pair, by deleting the prop each time a second occurrence appears, the single remaining key will be the value we were looking for.&lt;/p&gt;
+</content>
+  </entry>
+
+  <entry>
+    <title>Flatten</title>
+    <link href="https://adiaz.uy/flatten/" />
+    <updated>2018-02-09T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/flatten</id>
+    <content type="html">&lt;p&gt;Every other interview I’m asked to implement a &lt;code&gt;flatten&lt;/code&gt; function that receives an array and returns a flattened version of it. They may request different ways to handle edge cases, but my usual answer is in the lines of…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;function flatten (collection = []) {
+  let result = []
+
+  collection.forEach(item =&amp;gt; {
+    if (Array.isArray(item))
+      result = result.concat(flatten(item))
+    else
+      result.push(item)
+  })
+
+  return result
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Are there better ways to do it? &lt;a href=&quot;http://underscorejs.org/docs/underscore.html#section-56&quot;&gt;Definitely&lt;/a&gt;, but at an early interview stage this is usually good enough.&lt;/p&gt;
+
+&lt;p&gt;I’m still glad this comes up more often than implementing &lt;code&gt;mergeSort&lt;/code&gt;.&lt;/p&gt;
+</content>
+  </entry>
+
+  <entry>
+    <title>UYRobot</title>
+    <link href="https://adiaz.uy/uyrobot/" />
+    <updated>2018-02-05T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/uyrobot</id>
+    <content type="html">&lt;p&gt;A project I’m very proud to have been involved with is finally live: &lt;a href=&quot;http://www.uyrobot.com.uy/&quot;&gt;UYRobot&lt;/a&gt;. Among other things, they teach both kids and adults how to build robots.&lt;/p&gt;
+
+&lt;p&gt;The site was a collaborative effort with designer &lt;a href=&quot;https://www.flaviacalandria.com/&quot;&gt;Flavia Calandria&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The tech used was React (through Create React App) &amp;amp; SASS, with Express on the backend. Although I’m currently thinking of migrating it to Next.js to provide server side rendering. The site is also hosted on Heroku for staging.&lt;/p&gt;
+
+&lt;p&gt;The full source code of the site is available on &lt;a href=&quot;https://github.com/HiroAgustin/uy-robot/&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+
+  <entry>
+    <title>Interview Trivia</title>
+    <link href="https://adiaz.uy/interview-trivia/" />
+    <updated>2018-01-19T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/interview-trivia</id>
+    <content type="html">&lt;p&gt;While interviewing for a new job I was asked a few JavaScript Trivia questions. Following are my answers.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What is ES6?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ES6 (aka EcmaScript 2015) is the 6th edition of the JavaScript language specification. EcmaScript was created as a way to standardize the implementation of JavaScript across browsers and reduce its incompatibilities. ES6 defines new functionality like arrow functions, let &amp;amp; const variable constructs, template strings, classes, destructuring assignments and more.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Where can JavaScript be run?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://johnny-five.io/&quot;&gt;Everywhere!&lt;/a&gt; While originally bound to the client-side of web browsers, JS can now be run on anything that has support for a JavaScript engine (usually Chrome’s V8). Also thanks to the popularity of Node.js, is now pretty common to find JS running server-side.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What is the difference between ‘currentTarget’ and ‘target’ when talking about events?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;event.currentTarget&lt;/code&gt; identifies the DOM element to which the triggered event listener was attached to, whereas &lt;code&gt;event.target&lt;/code&gt; references the element where the event originally occurred. Unless a different context is specifically bound to the handling function, &lt;code&gt;currentTarget&lt;/code&gt; should match the &lt;code&gt;this&lt;/code&gt; keyword in the handler.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What is the benefit to using a library like React/Vue/Angular vs using plain old JavaScript?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The goal of a JavaScript framework is to lay some groundwork and provide developers with building blocks that follow standardized software design patterns. This allows devs not only to get a head start on a project but to come up with (in theory) a more robust solution.&lt;/p&gt;
+
+&lt;p&gt;As web development grew from building simple websites to complex web apps, so did the responsibility to build maintainable, scalable code. Libraries and frameworks help with just that. Choosing one the right one for your team and project is a &lt;a href=&quot;http://www.commitstrip.com/en/2015/09/16/how-to-choose-the-right-javascript-framework/&quot;&gt;different story&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Can you give an example of prototypal inheritance?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Using the latest version of the spec, one can simply use the &lt;code&gt;extend&lt;/code&gt; keyword to create a
+subclass and inherit the prototype of the parent class:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;class Vehicle {
+  constructor(wheels) {
+    this.wheels = wheels
+  }
+}
+
+class Car extends Vehicle {
+  constructor() {
+    super(4)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+
+  <entry>
+    <title>Why I Hate Images</title>
+    <link href="https://adiaz.uy/why-i-hate-images/" />
+    <updated>2014-12-16T00:00:00+00:00</updated>
+    <id>https://adiaz.uy/why-i-hate-images</id>
+    <content type="html">&lt;p&gt;According to &lt;a href=&quot;http://httparchive.org/interesting.php?a=All&amp;amp;l=Dec%201%202014&quot;&gt;HTTP Archive&lt;/a&gt; today’s average web page size is 1.9MB. Almost 64% of that weight comes from images. As someone who is used to browsing the web on a cellphone through a 3G connection, that really sucks.&lt;/p&gt;
+
+&lt;p&gt;Images are one of the main reasons why the web became popular. Could you picture today’s websites without them? How many wouldn’t even exist? It’s interesting to read the &lt;a href=&quot;http://diveintohtml5.info/past.html#history-of-the-img-element&quot;&gt;history of the img element&lt;/a&gt; and see how the initial pitch became the standard we ended up using for the past twenty years.&lt;/p&gt;
+
+&lt;p&gt;Images also helped push the boundaries of what was achievable with CSS: border radius, box shadow, custom fonts, gradient backgrounds. These  effects were only possible using images and were translated into web standards thanks to their popularity (and then &lt;a href=&quot;http://en.wikipedia.org/wiki/Flat_Design&quot;&gt;Flat Design&lt;/a&gt; became a thing).&lt;/p&gt;
+
+&lt;p&gt;But when did image obesity started to become a problem?&lt;/p&gt;
+
+&lt;h2 id=&quot;the-fat-web&quot;&gt;The Fat Web&lt;/h2&gt;
+
+&lt;p&gt;When the iPhone 4 came out, Apple introduced the “Retina Display”. In theory, this meant beautifully rendered images however in practice, all of the images on the web started to look fuzzy. Retina displays basically double the amount of pixels on the screen, so images now require twice as many pixels to look sharp.&lt;/p&gt;
+
+&lt;p&gt;Easy fix, right? Say you have a 30x60 image and you want it to look good on retina displays, just create it as a 60x120 and halve its size with some CSS magic. Do that for all the images on your site and you are done, home early for dinner. Oh, one more thing, all of your users are now complaining the site is slow, even the small ungrateful bunch that have retina displays.&lt;/p&gt;
+
+&lt;p&gt;Having problems because of a shift in technology is one thing, creating them ourselves to follow design trends is just irresponsible. Features such as banner sliders, cover images and image galleries done poorly  come with an expensive performance cost.&lt;/p&gt;
+
+&lt;h3 id=&quot;alternative-paths&quot;&gt;Alternative Paths&lt;/h3&gt;
+
+&lt;p&gt;Where traditionally images are used, any of the following approaches may be better suited:&lt;/p&gt;
+
+&lt;p&gt;Data URIs allows us to embed images inline using Base64 encoding. This should only be applied to small images as the resulting amount of characters from the encoding may not worth it. You can use &lt;a href=&quot;http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/&quot;&gt;this tool&lt;/a&gt; to convert your images.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SVGs&lt;/strong&gt; have been &lt;a href=&quot;http://caniuse.com/#search=svg&quot;&gt;widely supported&lt;/a&gt; for a while now. It can reduce the image size considerably and, if embedded into the HTML is one less HTTP Request. SVGs come with other advantages, as they can be styled and &lt;a href=&quot;http://davidwalsh.name/svg-animation&quot;&gt;animated&lt;/a&gt; using CSS/JS.&lt;/p&gt;
+
+&lt;p&gt;UTF8 provides a set of symbols which, although limited, can be very useful as they can be styled as text with virtually no performance cost. You can find some of them at &lt;a href=&quot;http://www.utf8icons.com/&quot;&gt;utf8icons&lt;/a&gt; or &lt;a href=&quot;http://www.fileformat.info/info/unicode/block/miscellaneous_symbols/utf8test.htm&quot;&gt;fileformat&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Icon fonts are an amazing example of developer creativity. As custom fonts were available on the web, someone decided to use a font of icons instead of text. &lt;a href=&quot;http://fontawesome.io/&quot;&gt;Font Awesome&lt;/a&gt; is a free font with an outstanding set of icons which you can include in your website from their CDN.&lt;/p&gt;
+
+&lt;p&gt;Yet, you might say: “All of this is nice, but in the &lt;em&gt;real world&lt;/em&gt; I need to use images”…&lt;/p&gt;
+
+&lt;h3 id=&quot;if-you-must-then-do-it-right&quot;&gt;If you must, then do it right&lt;/h3&gt;
+
+&lt;p&gt;Google released their own image format called &lt;a href=&quot;https://developers.google.com/speed/webp/&quot;&gt;Webp&lt;/a&gt; which is &lt;a href=&quot;https://www.youtube.com/watch?v=rz5TGN7eUcM&quot;&gt;apparently&lt;/a&gt; much smaller. Although browser support comes down to Chrome and Opera, people are &lt;a href=&quot;https://github.com/msemenistyi/connect-image-optimus&quot;&gt;building tools&lt;/a&gt; to automatically serve webp images when supported, with fallback to regular image formats.&lt;/p&gt;
+
+&lt;p&gt;Progressive JPEGs are not news, yet they are still a good way to go. They don’t improve performance but the &lt;a href=&quot;http://youtu.be/znjy4Kl3IfU&quot;&gt;perception of speed&lt;/a&gt;. Where is the magic? Instead of rendering top-to-bottom they render as a low quality version of the image and improve over time as data is downloaded.&lt;/p&gt;
+
+&lt;p&gt;There are a few techniques to deal with the annoying retina displays: you can sniff for the user’s pixel density using &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries#resolution&quot;&gt;media queries&lt;/a&gt; and based on that load the most appropriate image, and a new HTML5 spec allows us to define a set of images using the &lt;code&gt;srcset&lt;/code&gt; attribute. There is a great article on that at &lt;a href=&quot;http://www.smashingmagazine.com/2014/05/14/responsive-images-done-right-guide-picture-srcset/&quot;&gt;Smashing Magazine&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Even if you are using regular images there’s a lot you can do to improve your page size. Addy Osmani has a list of &lt;a href=&quot;http://addyosmani.com/blog/image-optimization-tools/&quot;&gt;tools for image optimization&lt;/a&gt;. To that list I would add his own &lt;a href=&quot;https://github.com/addyosmani/tmi&quot;&gt;too many images&lt;/a&gt; which helps developers figure out the weight of their pages.&lt;/p&gt;
+</content>
+  </entry>
+
 </feed>
