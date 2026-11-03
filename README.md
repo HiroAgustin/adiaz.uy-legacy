@@ -22,10 +22,25 @@ Post content also appears on `index.html` and in `atom.xml`; keep those copies,
 the archive, previous/next links, and `sitemap.xml` in sync when changing posts.
 Interactive examples retain their inline styles, and Prism still highlights code.
 
-Publish this directory as-is on any static host. For GitHub Pages, publish from
-the repository root; `.nojekyll` disables Jekyll processing. Keep `CNAME` for the
-custom domain and configure other hosts to serve `404.html` for missing URLs.
+Publish this directory as-is on any static host. `.nojekyll` disables Jekyll
+processing. Keep `CNAME` for the custom domain and configure other hosts to
+serve `404.html` for missing URLs.
 The existing images, `Resume.pdf`, feed, sitemap, and manifest are included.
+
+### GitHub Pages
+
+In **Settings > Pages**, set **Build and deployment > Source** to
+**GitHub Actions** and keep the custom domain set to `adiaz.uy`.
+The workflow in `.github/workflows/pages.yml` uploads the static files directly,
+without Jekyll or a build step, and deploys on pushes to `master`.
+
+Once the workflow is on `master`, you can also select **Actions > Deploy static
+site to GitHub Pages > Run workflow** and choose a branch to deploy manually.
+If the `github-pages` environment restricts deployment branches, allow the
+selected branch in **Settings > Environments > github-pages** first.
+
+Every deployment replaces the same live site at `adiaz.uy`; GitHub Pages does
+not create separate branch previews. Pull requests do not deploy automatically.
 
 ## Resources
 
