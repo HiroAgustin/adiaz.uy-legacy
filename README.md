@@ -29,6 +29,9 @@ native `.astro` files in `src/pages/`. Shared layout and post markup live in `sr
 Post navigation uses CSS-only cross-document view transitions in supported browsers. Animations
 respect reduced-motion preferences and require no JavaScript.
 
+The shared layout declares `color-scheme: light dark` through a meta tag. Styles use `light-dark()`
+colors to follow the user's system preference automatically, without a toggle or JavaScript.
+
 The existing Atom feed and sitemap are static files in `public/`; keep them synchronized when adding
 or updating posts. Static assets, manifest, resume, and custom domain file are also served from
 `public/`.
