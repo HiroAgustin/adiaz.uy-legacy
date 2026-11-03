@@ -33,19 +33,14 @@ The existing Atom feed and sitemap are static files in `public/`; keep them sync
 or updating posts. Static assets, manifest, resume, and custom domain file are also served from
 `public/`.
 
-### GitHub Pages
+### Netlify
 
-In **Settings > Pages**, set **Build and deployment > Source** to **GitHub Actions** and keep the
-custom domain set to `adiaz.uy`. The workflow in `.github/workflows/pages.yml` builds the Astro site
-and deploys the generated `dist/` directory on pushes to `master`.
+The site is hosted on Netlify at `adiaz.uy`. Netlify builds the Astro site with `npm run build`
+and publishes the generated `dist/` directory.
 
-Once the workflow is on `master`, you can also select **Actions > Deploy static site to GitHub
-Pages > Run workflow** and choose a branch to deploy manually. If the `github-pages` environment
-restricts deployment branches, allow the selected branch in **Settings > Environments >
-github-pages** first.
-
-Every deployment replaces the same live site at `adiaz.uy`; GitHub Pages does not create separate
-branch previews. Pull requests do not deploy automatically.
+Keep GitHub Pages disabled in **Settings > Pages > Build and deployment > Source > Deploy from
+a branch > Branch > None**. GitHub Pages' legacy Jekyll builder cannot build the Astro source
+files and can send failure notifications even when the Netlify deployment succeeds.
 
 ## Resources
 
