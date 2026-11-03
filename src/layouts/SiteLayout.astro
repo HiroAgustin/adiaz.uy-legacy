@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../styles.css";
 
 interface Props {
   title?: string;
@@ -97,7 +98,6 @@ const structuredData = {
     <link rel="alternate" type="application/atom+xml" title="adiaz.uy" href="/atom.xml" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#202020" />
-    <link rel="stylesheet" href="/public/styles.css" />
   </head>
   <body>
     <Header />
