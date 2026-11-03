@@ -34,8 +34,11 @@ svg {
   fill: currentColor;
 }
 
-p ~ pre[class*="language-"] {
+.astro-code {
+  border-radius: .3em;
   margin: 1rem 0;
+  overflow: auto;
+  padding: 1em;
 }
 
 code:not([class*="language-"]) {
@@ -45,6 +48,14 @@ code:not([class*="language-"]) {
   font-family: Menlo, Monaco, "Courier New", monospace;
   font-size: 85%;
   padding: .25em .5em;
+}
+
+.astro-code code {
+  background: none;
+  border-radius: 0;
+  color: inherit;
+  font-size: 1rem;
+  padding: 0;
 }
 
 a {
@@ -398,6 +409,43 @@ main {
   margin-bottom: 4em;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  .Post {
+    view-transition-name: blog-post;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+
+  ::view-transition-old(blog-post) {
+    animation: post-leave 180ms ease-in both;
+  }
+
+  ::view-transition-new(blog-post) {
+    animation: post-enter 250ms ease-out both;
+  }
+}
+
+@keyframes post-leave {
+  to {
+    opacity: 0;
+    transform: translateY(-.5rem);
+  }
+}
+
+@keyframes post-enter {
+  from {
+    opacity: 0;
+    transform: translateY(.5rem);
+  }
+}
+
 .Page li + li, .Post li + li {
   margin-top: .25rem;
 }
@@ -481,6 +529,10 @@ main {
   background-color: #fff3cd;
   border-color: #f8e19e;
   color: #856404;
+}
+
+.Message > :last-child {
+  margin-bottom: 0;
 }
 
 .Archive {
