@@ -1,0 +1,10 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { getNotFoundPage } from "../lib/pages";
+
+const page = getNotFoundPage();
+---
+
+<SiteLayout page={page}>
+  <Fragment set:html={page.content} />
+</SiteLayout>

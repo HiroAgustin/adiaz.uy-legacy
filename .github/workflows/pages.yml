@@ -25,24 +25,25 @@ jobs:
       - name: Check out site
         uses: actions/checkout@v4
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Astro site
+        run: npm run build
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-
-      - name: Prepare static files
-        run: |
-          mkdir _site
-          cp -R -- public _site/
-          for page in */index.html; do
-            directory="${page%/index.html}"
-            mkdir "_site/$directory"
-            cp -- "$page" "_site/$page"
-          done
-          cp -- index.html 404.html atom.xml sitemap.xml robots.txt manifest.json Resume.pdf CNAME .nojekyll _site/
 
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: dist
 
       - name: Deploy to GitHub Pages
         id: deployment
