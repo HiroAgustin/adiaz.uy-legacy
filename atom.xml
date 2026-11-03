@@ -18,12 +18,12 @@
     <content type="html">&lt;p&gt;If your app has users, I bet they have avatars. Rounded avatars are pretty much a standard on any UI, so you might be inclined to code something like this:&lt;/p&gt;
 
 &lt;p class=&quot;flex&quot;&gt;
-  &lt;img src=&quot;https://placekitten.com/200/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;round m-auto&quot; style=&quot;height: 100px; width: 100px;&quot; /&gt;
+  &lt;img src=&quot;https://picsum.photos/seed/avatar/200/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;round m-auto&quot; style=&quot;height: 100px; width: 100px;&quot; /&gt;
 &lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;img
   class=&quot;Avatar&quot;
-  src=&quot;https://placekitten.com/200/200&quot;
+  src=&quot;https://picsum.photos/seed/avatar/200/200&quot;
   alt=&quot;User avatar&quot;
 &amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -42,15 +42,15 @@
 &lt;p&gt;Fuck.&lt;/p&gt;
 
 &lt;p class=&quot;flex&quot;&gt;
-  &lt;img src=&quot;https://placekitten.com/g/150/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;round m-0&quot; style=&quot;height: 100px; width: 100px;&quot; /&gt;
-  &lt;img src=&quot;https://placekitten.com/300/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;round m-0&quot; style=&quot;height: 100px; width: 100px;&quot; /&gt;
+  &lt;img src=&quot;https://picsum.photos/seed/avatar/150/200?grayscale&quot; alt=&quot;User avatar placeholder&quot; class=&quot;round m-0&quot; style=&quot;height: 100px; width: 100px;&quot; /&gt;
+  &lt;img src=&quot;https://picsum.photos/seed/avatar/300/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;round m-0&quot; style=&quot;height: 100px; width: 100px;&quot; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;You could add one of those modals where the user edits their own avatar and store a cropped version of the image; I much rather use some CSS magic:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;picture class=&quot;Avatar&quot;&amp;gt;
   &amp;lt;img
-    src=&quot;https://placekitten.com/200/200&quot;
+    src=&quot;https://picsum.photos/seed/avatar/200/200&quot;
     alt=&quot;User avatar&quot;
   &amp;gt;
 &amp;lt;/picture&amp;gt;
@@ -72,13 +72,13 @@
 
 &lt;p class=&quot;flex&quot;&gt;
   &lt;picture class=&quot;round&quot; style=&quot;height: 100px; overflow: hidden; width: 100px;&quot;&gt;
-    &lt;img src=&quot;https://placekitten.com/200/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
+    &lt;img src=&quot;https://picsum.photos/seed/avatar/200/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
   &lt;/picture&gt;
   &lt;picture class=&quot;round&quot; style=&quot;height: 100px; overflow: hidden; width: 100px;&quot;&gt;
-    &lt;img src=&quot;https://placekitten.com/g/150/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
+    &lt;img src=&quot;https://picsum.photos/seed/avatar/150/200?grayscale&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
   &lt;/picture&gt;
   &lt;picture class=&quot;round&quot; style=&quot;height: 100px; overflow: hidden; width: 100px;&quot;&gt;
-    &lt;img src=&quot;https://placekitten.com/300/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
+    &lt;img src=&quot;https://picsum.photos/seed/avatar/300/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
   &lt;/picture&gt;
 &lt;/p&gt;
 
@@ -103,13 +103,13 @@
 
 &lt;p class=&quot;flex&quot;&gt;
   &lt;picture style=&quot;border-radius: 8px; height: 100px; overflow: hidden; width: 100px;&quot;&gt;
-    &lt;img src=&quot;https://placekitten.com/200/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
+    &lt;img src=&quot;https://picsum.photos/seed/avatar/200/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
   &lt;/picture&gt;
   &lt;picture class=&quot;round&quot; style=&quot;height: 50px; overflow: hidden; width: 50px;&quot;&gt;
-    &lt;img src=&quot;https://placekitten.com/g/150/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
+    &lt;img src=&quot;https://picsum.photos/seed/avatar/150/200?grayscale&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
   &lt;/picture&gt;
   &lt;picture class=&quot;round&quot; style=&quot;height: 150px; overflow: hidden; width: 150px;&quot;&gt;
-    &lt;img src=&quot;https://placekitten.com/300/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
+    &lt;img src=&quot;https://picsum.photos/seed/avatar/300/200&quot; alt=&quot;User avatar placeholder&quot; class=&quot;m-0&quot; style=&quot;height: 100%; object-fit: cover; width: 100%;&quot; /&gt;
   &lt;/picture&gt;
 &lt;/p&gt;
 </content>
