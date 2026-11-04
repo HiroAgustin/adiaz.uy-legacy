@@ -30,11 +30,11 @@ const image = new URL(siteMetadata.logo.path, Astro.site);
     </time>
     <meta itemprop="dateModified" content={post.data.pubDate.toISOString()} />
     <meta itemprop="mainEntityOfPage" content={canonical} />
-    <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
       <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content={avatar} />
-        <meta itemprop="width" content={String(siteMetadata.avatar.width)} />
-        <meta itemprop="height" content={String(siteMetadata.avatar.height)} />
+        <meta itemprop="width" content={`${siteMetadata.avatar.width} px`} />
+        <meta itemprop="height" content={`${siteMetadata.avatar.height} px`} />
       </span>
       <meta itemprop="name" content={siteMetadata.title} />
       <meta itemprop="url" content={Astro.site} />
@@ -42,16 +42,16 @@ const image = new URL(siteMetadata.logo.path, Astro.site);
     <span itemprop="author" itemscope itemtype="https://schema.org/Person">
       <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content={avatar} />
-        <meta itemprop="width" content={String(siteMetadata.avatar.width)} />
-        <meta itemprop="height" content={String(siteMetadata.avatar.height)} />
+        <meta itemprop="width" content={`${siteMetadata.avatar.width} px`} />
+        <meta itemprop="height" content={`${siteMetadata.avatar.height} px`} />
       </span>
       <meta itemprop="name" content={siteMetadata.author.name} />
       <meta itemprop="url" content={Astro.site} />
     </span>
     <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content={image} />
-      <meta itemprop="width" content={String(siteMetadata.logo.width)} />
-      <meta itemprop="height" content={String(siteMetadata.logo.height)} />
+      <meta itemprop="width" content={`${siteMetadata.logo.width} px`} />
+      <meta itemprop="height" content={`${siteMetadata.logo.height} px`} />
     </span>
   </header>
   <section itemprop="articleBody">
