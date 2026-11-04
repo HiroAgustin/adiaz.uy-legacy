@@ -7,7 +7,7 @@ import "../styles.css";
 interface Props {
   title?: string;
   description?: string;
-  type?: "Blog" | "WebSite" | "WebPage" | "BlogPosting";
+  type?: "Blog" | "WebSite" | "WebPage" | "BlogPosting" | "AboutPage";
   publishedAt?: Date;
   previous?: string;
   next?: string;
@@ -38,11 +38,11 @@ const structuredData = {
   image: {
     "@type": "ImageObject",
     url: image.href,
-    height: siteMetadata.logo.height,
-    width: siteMetadata.logo.width,
+    height: `${siteMetadata.logo.height} px`,
+    width: `${siteMetadata.logo.width} px`,
   },
   author: { "@type": "Person", name: siteMetadata.author.name },
-  ...((type === "Blog" || type === "WebSite") && {
+  ...((type === "Blog" || type === "WebSite" || type === "AboutPage") && {
     sameAs: siteMetadata.socialLinks,
   }),
   ...(publishedAt && {

@@ -8,13 +8,13 @@ const posts = await getPosts();
 <SiteLayout title="Archive">
   <article class="Page">
     <h1 class="Page__Title">Archive</h1>
-    <ul class="Archive" itemscope itemtype="http://schema.org/ItemList">
+    <ul class="Archive" itemscope itemtype="https://schema.org/ItemList">
       {posts.map((post, index) => (
         <li
           class="Archive__Item"
           itemprop="itemListElement"
           itemscope
-          itemtype="http://schema.org/ListItem"
+          itemtype="https://schema.org/ListItem"
         >
           <a class="lead Archive__Item__Link" href={`/${post.id}/`} itemprop="url">
             <span itemprop="name">{post.data.title}</span>
