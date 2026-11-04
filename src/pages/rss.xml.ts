@@ -19,15 +19,12 @@ export const GET: APIRoute = async ({ site }) => {
         throw new Error(`Missing rendered content for blog post "${post.id}".`);
       }
 
-      const guid = new URL(`/${post.id}`, site).href.replaceAll("&", "&amp;");
-
       return {
         title: post.data.title,
         description: post.data.description,
         pubDate: post.data.pubDate,
         link: `/${post.id}/`,
         content: post.rendered.html,
-        customData: `<guid isPermaLink="true">${guid}</guid>`,
       };
     }),
   });
