@@ -47,6 +47,12 @@ Keep GitHub Pages disabled in **Settings > Pages > Build and deployment > Source
 a branch > Branch > None**. GitHub Pages' legacy Jekyll builder cannot build the Astro source
 files and can send failure notifications even when the Netlify deployment succeeds.
 
+### Sitemap
+
+The sitemap at `/sitemap-index.xml` is generated from Astro's routes at build time and includes
+`/Resume.pdf` as a custom entry. It is advertised in `robots.txt` and the shared layout.
+The previous `/sitemap.xml` URL is no longer served.
+
 ## Resources
 
 Some resources used by the site:
