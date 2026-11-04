@@ -1,4 +1,6 @@
 ---
+import { siteMetadata } from "../lib/site";
+
 const links = [
   { href: "/about/", title: "About" },
   { href: "/archive/", title: "Archive" },
@@ -9,9 +11,9 @@ const links = [
   <div class="Container Header__Content">
     <h3 class="Header__Title">
       <a href="/" title="Home">
-        adiaz.uy
+        {siteMetadata.title}
       </a>
-      <small>(@HiroAgustin)</small>
+      <small>({siteMetadata.author.handle})</small>
     </h3>
     <ul class="Header__Nav">
       {links.map(({ href, title }) => (

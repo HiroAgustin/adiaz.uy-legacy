@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { formatDate } from "../lib/posts";
+import { siteMetadata } from "../lib/site";
 
 interface Props {
   post: CollectionEntry<"blog">;
@@ -9,7 +10,14 @@ interface Props {
 
 const { post, linkedTitle = false } = Astro.props;
 const href = `/${post.id}/`;
-const canonical = `https://adiaz.uy/${post.id}/`;
+
+if (!Astro.site) {
+  throw new Error("Configure the site URL before building the site.");
+}
+
+const canonical = new URL(href, Astro.site);
+const avatar = new URL(siteMetadata.avatar.path, Astro.site);
+const image = new URL(siteMetadata.logo.path, Astro.site);
 ---
 
 <article class="Post" itemscope itemtype="https://schema.org/BlogPosting">
@@ -24,26 +32,26 @@ const canonical = `https://adiaz.uy/${post.id}/`;
     <meta itemprop="mainEntityOfPage" content={canonical} />
     <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-        <meta itemprop="url" content="https://adiaz.uy/public/Avatar.jpg" />
-        <meta itemprop="width" content="300" />
-        <meta itemprop="height" content="300" />
+        <meta itemprop="url" content={avatar} />
+        <meta itemprop="width" content={String(siteMetadata.avatar.width)} />
+        <meta itemprop="height" content={String(siteMetadata.avatar.height)} />
       </span>
-      <meta itemprop="name" content="adiaz.uy" />
-      <meta itemprop="url" content="https://adiaz.uy/" />
+      <meta itemprop="name" content={siteMetadata.title} />
+      <meta itemprop="url" content={Astro.site} />
     </span>
     <span itemprop="author" itemscope itemtype="https://schema.org/Person">
       <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-        <meta itemprop="url" content="https://adiaz.uy/public/Avatar.jpg" />
-        <meta itemprop="width" content="300" />
-        <meta itemprop="height" content="300" />
+        <meta itemprop="url" content={avatar} />
+        <meta itemprop="width" content={String(siteMetadata.avatar.width)} />
+        <meta itemprop="height" content={String(siteMetadata.avatar.height)} />
       </span>
-      <meta itemprop="name" content="Agustín Díaz" />
-      <meta itemprop="url" content="https://adiaz.uy/" />
+      <meta itemprop="name" content={siteMetadata.author.name} />
+      <meta itemprop="url" content={Astro.site} />
     </span>
     <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://adiaz.uy/public/Logo.png" />
-      <meta itemprop="width" content="300" />
-      <meta itemprop="height" content="300" />
+      <meta itemprop="url" content={image} />
+      <meta itemprop="width" content={String(siteMetadata.logo.width)} />
+      <meta itemprop="height" content={String(siteMetadata.logo.height)} />
     </span>
   </header>
   <section itemprop="articleBody">

@@ -1,6 +1,7 @@
 import type { APIRoute } from "astro";
 import rss from "@astrojs/rss";
 import { getPosts } from "../lib/posts";
+import { siteMetadata } from "../lib/site";
 
 export const GET: APIRoute = async ({ site }) => {
   if (!site) {
@@ -10,8 +11,8 @@ export const GET: APIRoute = async ({ site }) => {
   const posts = await getPosts();
 
   return rss({
-    title: "adiaz.uy",
-    description: "Agustín Díaz (@HiroAgustin) · Web Development Blog.",
+    title: siteMetadata.title,
+    description: siteMetadata.description,
     site,
     customData: "<language>en</language>",
     items: posts.map((post) => {
