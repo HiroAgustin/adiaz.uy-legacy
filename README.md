@@ -21,6 +21,9 @@ Blog posts live in `src/content/blog/` as Markdown files with validated `title`,
 `pubDate` frontmatter. Use Markdown for prose, links, headings, lists, and fenced code blocks. Astro
 highlights code at build time; raw HTML is reserved for live SVG/CSS examples and warning callouts.
 
+The RSS feed at `/rss.xml` is generated from the blog collection at build time, including full
+rendered posts in RSS 2.0 format. The previous `/atom.xml` URL is no longer served.
+
 The homepage, archive, and previous/next navigation are generated from the same collection, ordered
 newest first. The homepage shows only the latest post; the archive lists all posts. Other pages are
 native `.astro` files in `src/pages/`. Shared layout and post markup live in `src/layouts/` and
@@ -33,11 +36,7 @@ JavaScript.
 The shared layout declares `color-scheme: light dark` through a meta tag. Styles use `light-dark()`
 colors to follow the user's system preference automatically, without a toggle or JavaScript.
 
-The RSS feed at `/rss.xml` is generated from the blog collection at build time, including full
-rendered posts in RSS 2.0 format. The previous `/atom.xml` URL is no longer served.
-
-The sitemap is a static file in `public/sitemap.xml`; keep it synchronized when adding or updating
-pages. Static assets, manifest, resume, and custom domain file are also served from `public/`.
+Static assets, manifest, resume, and custom domain file are served from `public/`.
 
 ### Netlify
 
