@@ -34,8 +34,7 @@ The shared layout declares `color-scheme: light dark` through a meta tag. Styles
 colors to follow the user's system preference automatically, without a toggle or JavaScript.
 
 The RSS feed at `/rss.xml` is generated from the blog collection at build time, including full
-rendered posts. The previous `/atom.xml` URL serves the same RSS feed for existing subscribers;
-entry identifiers are preserved, but the feed format is now RSS 2.0 rather than Atom.
+rendered posts in RSS 2.0 format. The previous `/atom.xml` URL is no longer served.
 
 The sitemap is a static file in `public/sitemap.xml`; keep it synchronized when adding or updating
 pages. Static assets, manifest, resume, and custom domain file are also served from `public/`.
