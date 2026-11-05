@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: HiroAgustin/astro-buffer
-          ref: 006f1929472d11e444f9d9888aac937b5d545e61
+          ref: afed29a5eebf3ccd500e0cd87ff233f36081787f
           path: .buffer-integration
           ssh-key: ${{ secrets.ASTRO_BUFFER_DEPLOY_KEY }}
           persist-credentials: false
