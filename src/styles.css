@@ -380,12 +380,12 @@ main {
   border-color: light-dark(#181717, #eeeeee);
 }
 
-.SocialNav__Link--Twitter:hover, .SocialNav__Link--Twitter:focus {
-  color: #1DA1F2;
+.SocialNav__Link--Bluesky:hover, .SocialNav__Link--Bluesky:focus {
+  color: #1185FE;
 }
 
-.SocialNav__Link--Twitter::after {
-  border-color: #1DA1F2;
+.SocialNav__Link--Bluesky::after {
+  border-color: #1185FE;
 }
 
 .SocialNav__Link--LinkedIn:hover, .SocialNav__Link--LinkedIn:focus {
