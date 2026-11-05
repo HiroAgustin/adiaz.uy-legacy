@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import { formatDate } from "../lib/posts";
 import { siteMetadata } from "../lib/site";
+import styles from "./BlogPost.module.css";
 
 interface Props {
   post: CollectionEntry<"blog">;
@@ -20,12 +21,16 @@ const avatar = new URL(siteMetadata.avatar.path, Astro.site);
 const image = new URL(siteMetadata.logo.path, Astro.site);
 ---
 
-<article class="Post" itemscope itemtype="https://schema.org/BlogPosting">
+<article class={styles.Post} itemscope itemtype="https://schema.org/BlogPosting">
   <header>
-    <h1 class="Post__Title" itemprop="headline">
+    <h1 class={styles.Post__Title} itemprop="headline">
       {linkedTitle ? <a href={href}>{post.data.title}</a> : post.data.title}
     </h1>
-    <time class="Post__Date" itemprop="datePublished" datetime={post.data.pubDate.toISOString()}>
+    <time
+      class={styles.Post__Date}
+      itemprop="datePublished"
+      datetime={post.data.pubDate.toISOString()}
+    >
       {formatDate(post.data.pubDate)}
     </time>
     <meta itemprop="dateModified" content={post.data.pubDate.toISOString()} />

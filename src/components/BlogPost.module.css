@@ -1,0 +1,19 @@
+.Post {
+  margin-bottom: 4em;
+}
+
+.Post li + li {
+  margin-top: 0.25rem;
+}
+
+.Post__Title {
+  color: var(--heading);
+  margin-top: 0;
+}
+
+.Post__Date {
+  display: block;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}

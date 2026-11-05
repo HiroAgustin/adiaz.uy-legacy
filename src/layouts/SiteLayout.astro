@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { siteMetadata } from "../lib/site";
 import "../styles.css";
+import styles from "./SiteLayout.module.css";
 
 interface Props {
   title?: string;
@@ -98,7 +99,7 @@ const structuredData = {
   </head>
   <body>
     <Header />
-    <main>
+    <main class={styles.main}>
       <div class="Container">
         <slot />
       </div>

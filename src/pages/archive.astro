@@ -1,6 +1,7 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 import { formatDate, getPosts } from "../lib/posts";
+import styles from "./Archive.module.css";
 
 const posts = await getPosts();
 ---
@@ -8,7 +9,7 @@ const posts = await getPosts();
 <SiteLayout title="Archive">
   <article class="Page">
     <h1 class="Page__Title">Archive</h1>
-    <ul class="Archive" itemscope itemtype="https://schema.org/ItemList">
+    <ul class={styles.Archive} itemscope itemtype="https://schema.org/ItemList">
       {posts.map((post, index) => (
         <li
           class="Archive__Item"
@@ -19,7 +20,7 @@ const posts = await getPosts();
           <a class="lead Archive__Item__Link" href={`/${post.id}/`} itemprop="url">
             <span itemprop="name">{post.data.title}</span>
           </a>{" "}
-          <time class="Archive__Item__Date" datetime={post.data.pubDate.toISOString()}>
+          <time class={styles.Archive__Item__Date} datetime={post.data.pubDate.toISOString()}>
             {formatDate(post.data.pubDate)}
           </time>
           <meta itemprop="position" content={String(index + 1)} />

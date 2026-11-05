@@ -1,0 +1,81 @@
+.Footer__Content {
+  align-items: center;
+  border-top: var(--border) 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.SocialNav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.SocialNav__Link {
+  align-items: center;
+  color: var(--subtle);
+  display: flex;
+  height: 100%;
+  padding: 0.75rem;
+  transition:
+    color 0.15s ease-out,
+    border-color 0.15s ease-out;
+}
+
+.SocialNav__Link::after {
+  border-color: darkorange;
+  bottom: auto;
+  top: -1px;
+}
+
+.SocialNav__Link:hover,
+.SocialNav__Link:focus {
+  color: darkorange;
+}
+
+.SocialNav__Link--GitHub:hover,
+.SocialNav__Link--GitHub:focus {
+  color: light-dark(#181717, #eeeeee);
+}
+
+.SocialNav__Link--GitHub::after {
+  border-color: light-dark(#181717, #eeeeee);
+}
+
+.SocialNav__Link--Bluesky:hover,
+.SocialNav__Link--Bluesky:focus {
+  color: #1185fe;
+}
+
+.SocialNav__Link--Bluesky::after {
+  border-color: #1185fe;
+}
+
+.SocialNav__Link--LinkedIn:hover,
+.SocialNav__Link--LinkedIn:focus {
+  color: light-dark(#0077b5, #70b5f9);
+}
+
+.SocialNav__Link--LinkedIn::after {
+  border-color: light-dark(#0077b5, #70b5f9);
+}
+
+.SocialNav__Link--CodePen:hover,
+.SocialNav__Link--CodePen:focus {
+  color: light-dark(#000000, #ffffff);
+}
+
+.SocialNav__Link--CodePen::after {
+  border-color: light-dark(#000000, #ffffff);
+}
+
+.SocialNav__Link--RSS:hover,
+.SocialNav__Link--RSS:focus {
+  color: #ffa500;
+}
+
+.SocialNav__Link--RSS::after {
+  border-color: #ffa500;
+}

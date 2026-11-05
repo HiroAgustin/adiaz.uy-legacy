@@ -1,0 +1,76 @@
+.Header {
+  border-bottom: var(--border) 1px solid;
+  margin-bottom: 2rem;
+}
+
+.Header__Content {
+  align-items: stretch;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Header__Title {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--text);
+}
+
+.Header__Title a {
+  color: inherit;
+  height: 100%;
+  padding: 0.5rem 0;
+}
+
+.Header__Title a::after {
+  border-color: var(--text);
+  bottom: -1px;
+}
+
+.Header__Title small {
+  display: none;
+  font-size: 75%;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+@media (min-width: 25em) {
+  .Header__Title small {
+    display: inline;
+  }
+}
+
+.Header__Nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Header__Nav__Link {
+  align-items: center;
+  color: var(--subtle);
+  display: flex;
+  height: 100%;
+  padding: 0.5rem;
+  transition:
+    color 0.15s ease-out,
+    border-color 0.15s ease-out;
+}
+
+.Header__Nav__Link::after {
+  border-color: darkorange;
+  bottom: -1px;
+}
+
+.Header__Nav__Link:hover,
+.Header__Nav__Link:focus {
+  color: darkorange;
+}
+
+.Header__Nav__Link--active {
+  color: darkorange;
+}
+
+.Header__Nav__Link--active::after {
+  transform: scaleX(1);
+}

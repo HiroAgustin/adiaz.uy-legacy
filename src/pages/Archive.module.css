@@ -1,0 +1,8 @@
+.Archive {
+  list-style: none;
+  padding: 0;
+}
+
+.Archive__Item__Date {
+  opacity: 0.5;
+}

@@ -1,4 +1,6 @@
 ---
+import styles from "./Footer.module.css";
+
 const links = [
   {
     name: "Bluesky",
@@ -19,12 +21,12 @@ const links = [
 ---
 
 <footer class="Footer">
-  <div class="Container Footer__Content">
-    <ul class="SocialNav">
+  <div class:list={["Container", styles.Footer__Content]}>
+    <ul class={styles.SocialNav}>
       {links.map(({ name, href, path }) => (
         <li class="SocialNav__Item">
           <a
-            class:list={["SocialNav__Link", `SocialNav__Link--${name}`]}
+            class:list={[styles.SocialNav__Link, styles[`SocialNav__Link--${name}`]]}
             href={href}
             rel="noopener noreferrer"
             target="_blank"

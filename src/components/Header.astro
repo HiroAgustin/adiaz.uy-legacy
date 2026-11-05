@@ -1,5 +1,6 @@
 ---
 import { siteMetadata } from "../lib/site";
+import styles from "./Header.module.css";
 
 const links = [
   { href: "/about/", title: "About" },
@@ -7,21 +8,21 @@ const links = [
 ];
 ---
 
-<header class="Header">
-  <div class="Container Header__Content">
-    <h3 class="Header__Title">
+<header class={styles.Header}>
+  <div class:list={["Container", styles.Header__Content]}>
+    <h3 class={styles.Header__Title}>
       <a href="/" title="Home">
         {siteMetadata.title}
       </a>
       <small>({siteMetadata.author.handle})</small>
     </h3>
-    <ul class="Header__Nav">
+    <ul class={styles.Header__Nav}>
       {links.map(({ href, title }) => (
         <li class="Header__Nav__Item">
           <a
             class:list={[
-              "Header__Nav__Link",
-              { "Header__Nav__Link--active": Astro.url.pathname === href },
+              styles.Header__Nav__Link,
+              { [styles["Header__Nav__Link--active"]]: Astro.url.pathname === href },
             ]}
             href={href}
             title={title}

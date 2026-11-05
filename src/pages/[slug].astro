@@ -4,6 +4,7 @@ import { render } from "astro:content";
 import BlogPost from "../components/BlogPost.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
 import { getPosts } from "../lib/posts";
+import styles from "./Pagination.module.css";
 
 export async function getStaticPaths() {
   const posts = await getPosts();
@@ -32,23 +33,34 @@ const { Content } = await render(post);
   <BlogPost post={post}>
     <Content />
   </BlogPost>
-  <nav class="Pagination" aria-label="Post navigation">
+  <nav class={styles.Pagination} aria-label="Post navigation">
     {previousHref ? (
       <a
-        class="Pagination__Item Pagination__Item--Link Pagination__Item--Previous"
+        class:list={[
+          styles.Pagination__Item,
+          styles["Pagination__Item--Link"],
+          "Pagination__Item--Previous",
+        ]}
         href={previousHref}
       >
         Previous
       </a>
     ) : (
-      <span class="Pagination__Item Pagination__Item--Previous">Previous</span>
+      <span class:list={[styles.Pagination__Item, "Pagination__Item--Previous"]}>Previous</span>
     )}
     {nextHref ? (
-      <a class="Pagination__Item Pagination__Item--Link Pagination__Item--Next" href={nextHref}>
+      <a
+        class:list={[
+          styles.Pagination__Item,
+          styles["Pagination__Item--Link"],
+          "Pagination__Item--Next",
+        ]}
+        href={nextHref}
+      >
         Next
       </a>
     ) : (
-      <span class="Pagination__Item Pagination__Item--Next">Next</span>
+      <span class:list={[styles.Pagination__Item, "Pagination__Item--Next"]}>Next</span>
     )}
   </nav>
 </SiteLayout>
