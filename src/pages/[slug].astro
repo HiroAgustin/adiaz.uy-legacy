@@ -27,6 +27,8 @@ const { Content } = await render(post);
   description={post.data.description}
   type="BlogPosting"
   publishedAt={post.data.pubDate}
+  modifiedAt={post.data.updatedDate}
+  image={post.data.image}
   previous={previousHref}
   next={nextHref}
 >

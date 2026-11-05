@@ -6,7 +6,10 @@ import styles from "./Archive.module.css";
 const posts = await getPosts();
 ---
 
-<SiteLayout title="Archive">
+<SiteLayout
+  title="Archive"
+  description="Browse all articles by Agustín Díaz on web development, frontend engineering, CSS, JavaScript, and design."
+>
   <article class="Page">
     <h1 class="Page__Title">Archive</h1>
     <ul class={styles.Archive} itemscope itemtype="https://schema.org/ItemList">
