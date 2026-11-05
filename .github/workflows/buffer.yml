@@ -1,0 +1,51 @@
+name: Share new blog posts
+
+on:
+  push:
+    branches: [main]
+    paths: ["src/content/blog/**"]
+  workflow_dispatch:
+    inputs:
+      base_ref:
+        description: Full commit SHA before the new posts (use the same SHA when retrying)
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: buffer-publishing
+  queue: max
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "26"
+          cache: npm
+      - run: npm ci
+      - name: Check out private integration
+        uses: actions/checkout@v4
+        with:
+          repository: HiroAgustin/astro-buffer
+          ref: 006f1929472d11e444f9d9888aac937b5d545e61
+          path: .buffer-integration
+          ssh-key: ${{ secrets.ASTRO_BUFFER_DEPLOY_KEY }}
+          persist-credentials: false
+      - name: Build integration
+        working-directory: .buffer-integration
+        run: npm ci && npm test && npm run build
+      - name: Install integration for this run
+        run: npm install --no-save --package-lock=false ./.buffer-integration
+      - run: npm run social:publish
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_ORGANIZATION_ID: ${{ vars.BUFFER_ORGANIZATION_ID }}
+          BUFFER_BASE_REF: ${{ github.event.before || inputs.base_ref }}
