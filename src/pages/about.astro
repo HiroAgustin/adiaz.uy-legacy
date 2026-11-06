@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import avatar from "../assets/avatar.jpg";
 import SiteLayout from "../layouts/SiteLayout.astro";
+import styles from "./About.module.css";
 
 const today = new Date();
 const yearsOfExperience = today.getFullYear() - 2009 - (today.getMonth() < 6 ? 1 : 0);
@@ -14,7 +15,7 @@ const yearsOfExperience = today.getFullYear() - 2009 - (today.getMonth() < 6 ? 1
 >
   <article class="Page">
     <Image
-      class="d-block m-auto round"
+      class:list={["d-block m-auto round", styles.Avatar]}
       src={avatar}
       alt="Agustín"
       width={160}
