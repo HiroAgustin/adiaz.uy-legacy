@@ -7,7 +7,7 @@ name: Deploy Astro site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -65,6 +65,12 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Check formatting
+        run: ${{ steps.detect-package-manager.outputs.manager }} run format:check
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Check types
+        run: ${{ steps.detect-package-manager.outputs.manager }} run check
         working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
         run: |
