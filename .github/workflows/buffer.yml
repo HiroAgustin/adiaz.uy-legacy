@@ -31,13 +31,12 @@ jobs:
           node-version: "26"
           cache: npm
       - run: npm ci
-      - name: Check out private integration
+      - name: Check out integration
         uses: actions/checkout@v4
         with:
           repository: HiroAgustin/astro-buffer
-          ref: afed29a5eebf3ccd500e0cd87ff233f36081787f
+          ref: ab4c240328f0bee7f81c9d1030d764566d322c13
           path: .buffer-integration
-          ssh-key: ${{ secrets.ASTRO_BUFFER_DEPLOY_KEY }}
           persist-credentials: false
       - name: Build integration
         working-directory: .buffer-integration
