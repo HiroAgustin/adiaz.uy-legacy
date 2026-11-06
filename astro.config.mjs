@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [
     ...(process.env.BUFFER_PUBLISH === "true"
       ? [
-          (await import("astro-buffer")).default({
+          (await import("astro-buffalo")).default({
             posts: new URL("./src/buffer-posts.ts", import.meta.url),
             contentDirectory: "src/content/blog",
           }),
