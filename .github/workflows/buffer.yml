@@ -31,18 +31,6 @@ jobs:
           node-version: "26"
           cache: npm
       - run: npm ci
-      - name: Check out integration
-        uses: actions/checkout@v4
-        with:
-          repository: HiroAgustin/astro-buffer
-          ref: ab4c240328f0bee7f81c9d1030d764566d322c13
-          path: .buffer-integration
-          persist-credentials: false
-      - name: Build integration
-        working-directory: .buffer-integration
-        run: npm ci && npm test && npm run build
-      - name: Install integration for this run
-        run: npm install --no-save --package-lock=false ./.buffer-integration
       - run: npm run social:publish
         env:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
