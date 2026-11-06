@@ -10,12 +10,12 @@ const links = [
 
 <header class={styles.Header}>
   <div class:list={["Container", styles.Header__Content]}>
-    <h3 class={styles.Header__Title}>
+    <div class={styles.Header__Title}>
       <a href="/" title="Home">
         {siteMetadata.title}
-      </a>
+      </a>{" "}
       <small>({siteMetadata.author.handle})</small>
-    </h3>
+    </div>
     <nav class={styles.Header__Navigation} aria-label="Main">
       <ul class={styles.Header__Nav}>
         {links.map(({ href, title }) => (
