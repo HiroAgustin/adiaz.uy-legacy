@@ -25,6 +25,7 @@ const content = `---
 title: ${JSON.stringify(title)}
 description: ""
 pubDate: "${pubDate}"
+draft: true
 ---
 
 `;
