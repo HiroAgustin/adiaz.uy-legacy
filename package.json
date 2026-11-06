@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
+    "blog": "node scripts/new-post.js",
     "check": "astro check",
     "format": "prettier --write src astro.config.mjs",
     "format:check": "prettier --check src astro.config.mjs",
