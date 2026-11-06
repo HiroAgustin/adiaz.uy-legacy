@@ -16,22 +16,24 @@ const links = [
       </a>
       <small>({siteMetadata.author.handle})</small>
     </h3>
-    <ul class={styles.Header__Nav}>
-      {links.map(({ href, title }) => (
-        <li class="Header__Nav__Item">
-          <a
-            class:list={[
-              styles.Header__Nav__Link,
-              { [styles["Header__Nav__Link--active"]]: Astro.url.pathname === href },
-            ]}
-            href={href}
-            title={title}
-            aria-current={Astro.url.pathname === href ? "page" : undefined}
-          >
-            {title}
-          </a>
-        </li>
-      ))}
-    </ul>
+    <nav class={styles.Header__Navigation} aria-label="Main">
+      <ul class={styles.Header__Nav}>
+        {links.map(({ href, title }) => (
+          <li class="Header__Nav__Item">
+            <a
+              class:list={[
+                styles.Header__Nav__Link,
+                { [styles["Header__Nav__Link--active"]]: Astro.url.pathname === href },
+              ]}
+              href={href}
+              title={title}
+              aria-current={Astro.url.pathname === href ? "page" : undefined}
+            >
+              {title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   </div>
 </header>
