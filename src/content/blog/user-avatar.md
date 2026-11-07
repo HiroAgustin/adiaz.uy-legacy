@@ -8,7 +8,7 @@ If your app has users, I bet they have avatars. Rounded avatars are pretty much 
 UI, so you might be inclined to code something like this:
 
 <p class="flex">
-  <img src="https://picsum.photos/seed/avatar/200/200" alt="User avatar placeholder" class="round m-auto" style="height: 100px; width: 100px;" />
+  <img src="https://picsum.photos/seed/avatar/200/200" alt="User avatar placeholder" style="border-radius: 50%; height: 100px; margin: auto; width: 100px;" />
 </p>
 
 ```html
@@ -35,8 +35,8 @@ chocolate chip cookie.
 Fuck.
 
 <p class="flex">
-  <img src="https://picsum.photos/seed/avatar/150/200?grayscale" alt="User avatar placeholder" class="round m-0" style="height: 100px; width: 100px;" />
-  <img src="https://picsum.photos/seed/avatar/300/200" alt="User avatar placeholder" class="round m-0" style="height: 100px; width: 100px;" />
+  <img src="https://picsum.photos/seed/avatar/150/200?grayscale" alt="User avatar placeholder" style="border-radius: 50%; height: 100px; margin: 0; width: 100px;" />
+  <img src="https://picsum.photos/seed/avatar/300/200" alt="User avatar placeholder" style="border-radius: 50%; height: 100px; margin: 0; width: 100px;" />
 </p>
 
 You could add one of those modals where the user edits their own avatar and store a cropped version
@@ -67,14 +67,14 @@ of the image; I much rather use some CSS magic:
 ```
 
 <p class="flex">
-  <picture class="round" style="height: 100px; overflow: hidden; width: 100px;">
-    <img src="https://picsum.photos/seed/avatar/200/200" alt="User avatar placeholder" class="m-0" style="height: 100%; object-fit: cover; width: 100%;" />
+  <picture style="border-radius: 50%; height: 100px; overflow: hidden; width: 100px;">
+    <img src="https://picsum.photos/seed/avatar/200/200" alt="User avatar placeholder" style="height: 100%; margin: 0; object-fit: cover; width: 100%;" />
   </picture>
-  <picture class="round" style="height: 100px; overflow: hidden; width: 100px;">
-    <img src="https://picsum.photos/seed/avatar/150/200?grayscale" alt="User avatar placeholder" class="m-0" style="height: 100%; object-fit: cover; width: 100%;" />
+  <picture style="border-radius: 50%; height: 100px; overflow: hidden; width: 100px;">
+    <img src="https://picsum.photos/seed/avatar/150/200?grayscale" alt="User avatar placeholder" style="height: 100%; margin: 0; object-fit: cover; width: 100%;" />
   </picture>
-  <picture class="round" style="height: 100px; overflow: hidden; width: 100px;">
-    <img src="https://picsum.photos/seed/avatar/300/200" alt="User avatar placeholder" class="m-0" style="height: 100%; object-fit: cover; width: 100%;" />
+  <picture style="border-radius: 50%; height: 100px; overflow: hidden; width: 100px;">
+    <img src="https://picsum.photos/seed/avatar/300/200" alt="User avatar placeholder" style="height: 100%; margin: 0; object-fit: cover; width: 100%;" />
   </picture>
 </p>
 
@@ -103,12 +103,12 @@ you’ll need:
 
 <p class="flex">
   <picture style="border-radius: 8px; height: 100px; overflow: hidden; width: 100px;">
-    <img src="https://picsum.photos/seed/avatar/200/200" alt="User avatar placeholder" class="m-0" style="height: 100%; object-fit: cover; width: 100%;" />
+    <img src="https://picsum.photos/seed/avatar/200/200" alt="User avatar placeholder" style="height: 100%; margin: 0; object-fit: cover; width: 100%;" />
   </picture>
-  <picture class="round" style="height: 50px; overflow: hidden; width: 50px;">
-    <img src="https://picsum.photos/seed/avatar/150/200?grayscale" alt="User avatar placeholder" class="m-0" style="height: 100%; object-fit: cover; width: 100%;" />
+  <picture style="border-radius: 50%; height: 50px; overflow: hidden; width: 50px;">
+    <img src="https://picsum.photos/seed/avatar/150/200?grayscale" alt="User avatar placeholder" style="height: 100%; margin: 0; object-fit: cover; width: 100%;" />
   </picture>
-  <picture class="round" style="height: 150px; overflow: hidden; width: 150px;">
-    <img src="https://picsum.photos/seed/avatar/300/200" alt="User avatar placeholder" class="m-0" style="height: 100%; object-fit: cover; width: 100%;" />
+  <picture style="border-radius: 50%; height: 150px; overflow: hidden; width: 150px;">
+    <img src="https://picsum.photos/seed/avatar/300/200" alt="User avatar placeholder" style="height: 100%; margin: 0; object-fit: cover; width: 100%;" />
   </picture>
 </p>
