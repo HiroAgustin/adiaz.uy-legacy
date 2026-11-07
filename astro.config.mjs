@@ -1,10 +1,13 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
+import tailwindcss from "@tailwindcss/vite";
+
 const site = "https://adiaz.uy";
 
 export default defineConfig({
   site,
+
   integrations: [
     ...(process.env.BUFFER_PUBLISH === "true"
       ? [
@@ -18,13 +21,20 @@ export default defineConfig({
       customPages: [new URL("/Resume.pdf", site).href],
     }),
   ],
+
   trailingSlash: "always",
+
   build: {
     format: "directory",
   },
+
   markdown: {
     shikiConfig: {
       theme: "dark-plus",
     },
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 });
