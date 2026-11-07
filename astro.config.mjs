@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
 import tailwindcss from "@tailwindcss/vite";
@@ -7,6 +7,25 @@ const site = "https://adiaz.uy";
 
 export default defineConfig({
   site,
+
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Atkinson Hyperlegible",
+      cssVariable: "--font-body",
+      weights: [400, 700],
+      styles: ["normal", "italic"],
+      subsets: ["latin"],
+    },
+    {
+      provider: fontProviders.google(),
+      name: "Merienda",
+      cssVariable: "--font-heading",
+      weights: [400, 500, 600],
+      styles: ["normal"],
+      subsets: ["latin"],
+    },
+  ],
 
   integrations: [
     ...(process.env.BUFFER_PUBLISH === "true"

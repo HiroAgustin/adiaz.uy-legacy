@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Font } from "astro:assets";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { siteMetadata } from "../lib/site";
@@ -71,6 +72,8 @@ const structuredData = {
     <meta name="color-scheme" content="light dark" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <Font cssVariable="--font-body" />
+    <Font cssVariable="--font-heading" />
     <meta name="google-site-verification" content="H3h1-fkuHBo-jtqa_TZWrWFlc8DFdeTWSw1bqyYFFUs" />
     <title>{title === siteMetadata.title ? title : `${title} · ${siteMetadata.title}`}</title>
     <meta name="author" content={siteMetadata.author.name} />
