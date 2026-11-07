@@ -72,8 +72,8 @@ const structuredData = {
     <meta name="color-scheme" content="light dark" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <Font cssVariable="--font-body" />
-    <Font cssVariable="--font-heading" />
+    <Font cssVariable="--font-body" preload={[{ weight: 400, style: "normal" }]} />
+    <Font cssVariable="--font-heading" preload />
     <meta name="google-site-verification" content="H3h1-fkuHBo-jtqa_TZWrWFlc8DFdeTWSw1bqyYFFUs" />
     <title>{title === siteMetadata.title ? title : `${title} · ${siteMetadata.title}`}</title>
     <meta name="author" content={siteMetadata.author.name} />
