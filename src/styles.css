@@ -96,11 +96,13 @@ a strong {
   color: inherit;
 }
 
-img {
-  border-radius: 5px;
-  display: block;
-  margin: 0 0 1rem;
-  max-width: 100%;
+@layer base {
+  img {
+    border-radius: 5px;
+    display: block;
+    margin: 0 0 1rem;
+    max-width: 100%;
+  }
 }
 
 table {
