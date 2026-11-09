@@ -1,9 +1,14 @@
 import { writeFile } from "node:fs/promises";
 
-const title = process.argv.slice(2).join(" ").trim();
+const args = process.argv.slice(2);
+const draft = args.includes("--draft");
+const title = args
+  .filter((arg) => arg !== "--draft")
+  .join(" ")
+  .trim();
 
 if (!title) {
-  console.error('Usage: npm run blog -- "Post title"');
+  console.error('Usage: npm run blog -- [--draft] "Post title"');
   process.exit(1);
 }
 
@@ -25,7 +30,7 @@ const content = `---
 title: ${JSON.stringify(title)}
 description: ""
 pubDate: "${pubDate}"
-draft: true
+draft: ${draft}
 ---
 
 `;

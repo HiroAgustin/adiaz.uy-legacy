@@ -18,7 +18,8 @@ diagnostics, and `npm run format` to format the source files.
 ## Editing and publishing
 
 Blog posts live in `src/content/blog/` as Markdown files with validated `title`, `description`, and
-`pubDate` frontmatter. Use Markdown for prose, links, headings, lists, and fenced code blocks. Astro
+`pubDate` frontmatter. Create a post with `npm run blog -- "Post title"`; add `--draft` to create it
+as a draft instead. Use Markdown for prose, links, headings, lists, and fenced code blocks. Astro
 highlights code at build time; raw HTML is reserved for live SVG/CSS examples and warning callouts.
 
 The RSS feed at `/rss.xml` is generated from the blog collection at build time, including full
@@ -29,9 +30,9 @@ newest first. The homepage shows only the latest post; the archive lists all pos
 native `.astro` files in `src/pages/`. Shared layout and post markup live in `src/layouts/` and
 `src/components/`.
 
-Site-wide navigation uses the browser's default CSS-only cross-document view transitions in supported
-browsers, with no targeted elements. Animations respect reduced-motion preferences and require no
-JavaScript.
+Site-wide navigation uses the browser's default CSS-only cross-document view transitions in
+supported browsers, with no targeted elements. Animations respect reduced-motion preferences and
+require no JavaScript.
 
 The shared layout declares `color-scheme: light dark` through a meta tag. Styles use `light-dark()`
 colors to follow the user's system preference automatically, without a toggle or JavaScript.
@@ -40,18 +41,18 @@ Static assets, manifest, resume, and custom domain file are served from `public/
 
 ### Netlify
 
-The site is hosted on Netlify at `adiaz.uy`. Netlify builds the Astro site with `npm run build`
-and publishes the generated `dist/` directory.
+The site is hosted on Netlify at `adiaz.uy`. Netlify builds the Astro site with `npm run build` and
+publishes the generated `dist/` directory.
 
-Keep GitHub Pages disabled in **Settings > Pages > Build and deployment > Source > Deploy from
-a branch > Branch > None**. GitHub Pages' legacy Jekyll builder cannot build the Astro source
-files and can send failure notifications even when the Netlify deployment succeeds.
+Keep GitHub Pages disabled in **Settings > Pages > Build and deployment > Source > Deploy from a
+branch > Branch > None**. GitHub Pages' legacy Jekyll builder cannot build the Astro source files
+and can send failure notifications even when the Netlify deployment succeeds.
 
 ### Sitemap
 
 The sitemap at `/sitemap-index.xml` is generated from Astro's routes at build time and includes
-`/Resume.pdf` as a custom entry. It is advertised in `robots.txt` and the shared layout.
-The previous `/sitemap.xml` URL is no longer served.
+`/Resume.pdf` as a custom entry. It is advertised in `robots.txt` and the shared layout. The
+previous `/sitemap.xml` URL is no longer served.
 
 ## Resources
 
@@ -64,6 +65,6 @@ Some resources used by the site:
 
 ## Licensing
 
-No project-wide reuse license is granted for the site's original code or content.
-Third-party material retains its applicable license; the Poole notice is preserved in
+No project-wide reuse license is granted for the site's original code or content. Third-party
+material retains its applicable license; the Poole notice is preserved in
 `public/third-party-notices.txt` and published at `/third-party-notices.txt`.
