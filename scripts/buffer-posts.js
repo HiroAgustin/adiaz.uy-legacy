@@ -1,5 +1,6 @@
 import { execFileSync } from "node:child_process";
 import { parse } from "yaml";
+import { readFileSync } from "node:fs";
 
 const bufferModes = ["shareNow", "addToQueue"];
 
@@ -58,7 +59,31 @@ export function getNewPosts({ base } = {}) {
     if (data.bufferMode !== undefined && !bufferModes.includes(data.bufferMode)) {
       throw new Error(`Invalid bufferMode in ${path}: use shareNow or addToQueue.`);
     }
+    if (
+      data.bufferChannels !== undefined &&
+      (!Array.isArray(data.bufferChannels) ||
+        !data.bufferChannels.length ||
+        data.bufferChannels.some(
+          (id) => typeof id !== "string" || !id.trim() || id !== id.trim(),
+        ) ||
+        new Set(data.bufferChannels).size !== data.bufferChannels.length)
+    ) {
+      throw new Error(`Invalid bufferChannels in ${path}: use a non-empty list of channel IDs.`);
+    }
     posts.push({ path, source, ...metadata });
+  }
+  return posts;
+}
+
+export function getPublishingPosts() {
+  const posts = getNewPosts({ base: process.env.BUFFER_BASE_REF ?? "" });
+  for (const { path, source, data } of posts) {
+    if (readFileSync(path, "utf8") !== source) {
+      throw new Error(`${path} has uncommitted changes. Publish from the committed version.`);
+    }
+    if (!data.bufferMode || !data.bufferChannels) {
+      throw new Error(`Choose a bufferMode and bufferChannels for ${path} before publishing.`);
+    }
   }
   return posts;
 }
