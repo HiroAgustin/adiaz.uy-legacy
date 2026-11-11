@@ -1,4 +1,4 @@
-import { execFileSync, spawnSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import { parse } from "yaml";
 
 const bufferModes = ["shareNow", "addToQueue"];
@@ -23,15 +23,7 @@ function frontmatter(source, path) {
 
 export function getNewPosts({ base } = {}) {
   const staged = base === undefined;
-  if (staged) {
-    const head = spawnSync("git", ["rev-parse", "--verify", "--quiet", "HEAD"], {
-      encoding: "utf8",
-    });
-    if (head.error) throw head.error;
-    if (head.status === 0) base = head.stdout.trim();
-    else if (head.status === 1) base = git("hash-object", "-t", "tree", "--stdin").trim();
-    else throw new Error(`Cannot resolve HEAD: ${head.stderr.trim()}`);
-  } else if (!/^[a-f0-9]{40}$/i.test(base) || /^0+$/.test(base)) {
+  if (!staged && (!/^[a-f0-9]{40}$/i.test(base) || /^0+$/.test(base))) {
     throw new Error("Set BUFFER_BASE_REF to the full commit SHA before the new posts.");
   }
 
@@ -42,8 +34,7 @@ export function getNewPosts({ base } = {}) {
     "-z",
     "--diff-filter=AMR",
     "--find-renames",
-    base,
-    ...(staged ? [] : ["HEAD"]),
+    ...(staged ? [] : [base, "HEAD"]),
     "--",
     "src/content/blog",
   )
@@ -61,7 +52,7 @@ export function getNewPosts({ base } = {}) {
     const { data } = metadata;
     if (data.draft === true) continue;
     if (status !== "A") {
-      const previous = git("show", `${base}:${previousPath}`);
+      const previous = git("show", `${staged ? "HEAD" : base}:${previousPath}`);
       if (frontmatter(previous, previousPath).data.draft !== true) continue;
     }
     if (data.bufferMode !== undefined && !bufferModes.includes(data.bufferMode)) {
