@@ -1,2 +1,2 @@
-node scripts/choose-buffer-mode.js || exit 1
-npx --no-install lint-staged
+npx --no-install lint-staged || exit 1
+node scripts/choose-buffer-mode.js
