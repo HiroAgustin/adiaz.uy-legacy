@@ -4,6 +4,14 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 const site = "https://adiaz.uy";
+const bufferMode = process.env.BUFFER_MODE;
+if (
+  process.env.BUFFER_PUBLISH === "true" &&
+  bufferMode !== "shareNow" &&
+  bufferMode !== "addToQueue"
+) {
+  throw new Error("Use npm run social:publish to publish posts with their chosen Buffer modes.");
+}
 
 export default defineConfig({
   site,
@@ -35,6 +43,7 @@ export default defineConfig({
           (await import("astro-buffalo")).default({
             posts: new URL("./src/buffer-posts.ts", import.meta.url),
             contentDirectory: "src/content/blog",
+            mode: bufferMode,
           }),
         ]
       : []),
