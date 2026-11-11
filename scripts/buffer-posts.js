@@ -1,13 +1,13 @@
 import { execFileSync, spawnSync } from "node:child_process";
 import { parse } from "yaml";
 
-export const bufferModes = ["shareNow", "addToQueue"];
+const bufferModes = ["shareNow", "addToQueue"];
 
-export function git(cwd, ...args) {
-  return execFileSync("git", args, { cwd, encoding: "utf8" });
+export function git(...args) {
+  return execFileSync("git", args, { encoding: "utf8" });
 }
 
-export function frontmatter(source, path) {
+function frontmatter(source, path) {
   const lines = source.split("\n");
   if (lines[0].replace(/^\uFEFF/, "").trimEnd() !== "---") {
     throw new Error(`Missing YAML frontmatter in ${path}.`);
@@ -21,23 +21,21 @@ export function frontmatter(source, path) {
   return { data, lines, end };
 }
 
-export function getNewPosts({ cwd = process.cwd(), staged = false, baseRef } = {}) {
-  let base = baseRef;
+export function getNewPosts({ staged = false } = {}) {
+  let base = process.env.BUFFER_BASE_REF;
   if (staged) {
     const head = spawnSync("git", ["rev-parse", "--verify", "--quiet", "HEAD"], {
-      cwd,
       encoding: "utf8",
     });
     if (head.error) throw head.error;
     if (head.status === 0) base = head.stdout.trim();
-    else if (head.status === 1) base = git(cwd, "hash-object", "-t", "tree", "--stdin").trim();
+    else if (head.status === 1) base = git("hash-object", "-t", "tree", "--stdin").trim();
     else throw new Error(`Cannot resolve HEAD: ${head.stderr.trim()}`);
   } else if (!base || !/^[a-f0-9]{40}$/i.test(base) || /^0+$/.test(base)) {
     throw new Error("Set BUFFER_BASE_REF to the full commit SHA before the new posts.");
   }
 
   const changes = git(
-    cwd,
     "diff",
     ...(staged ? ["--cached"] : []),
     "--name-status",
@@ -58,17 +56,18 @@ export function getNewPosts({ cwd = process.cwd(), staged = false, baseRef } = {
     const previousPath = changes[index++];
     const path = status.startsWith("R") ? changes[index++] : previousPath;
     if (!path.endsWith(".md")) continue;
-    const source = git(cwd, "show", `${staged ? "" : "HEAD"}:${path}`);
-    const { data } = frontmatter(source, path);
+    const source = git("show", `${staged ? "" : "HEAD"}:${path}`);
+    const metadata = frontmatter(source, path);
+    const { data } = metadata;
     if (data.draft === true) continue;
     if (status !== "A") {
-      const previous = git(cwd, "show", `${base}:${previousPath}`);
+      const previous = git("show", `${base}:${previousPath}`);
       if (frontmatter(previous, previousPath).data.draft !== true) continue;
     }
     if (data.bufferMode !== undefined && !bufferModes.includes(data.bufferMode)) {
       throw new Error(`Invalid bufferMode in ${path}: use shareNow or addToQueue.`);
     }
-    posts.push({ path, source, data });
+    posts.push({ path, source, ...metadata });
   }
   return posts;
 }

@@ -1,9 +1,6 @@
-import { closeSync, openSync, readSync, writeSync } from "node:fs";
-import { readFile, writeFile } from "node:fs/promises";
-import { resolve } from "node:path";
-import { pathToFileURL } from "node:url";
+import { closeSync, openSync, readFileSync, readSync, writeFileSync, writeSync } from "node:fs";
 import { styleText } from "node:util";
-import { bufferModes, frontmatter, getNewPosts, git } from "./buffer-posts.js";
+import { getNewPosts, git } from "./buffer-posts.js";
 
 function promptForMode({ path, data }) {
   let terminal;
@@ -44,45 +41,31 @@ function promptForMode({ path, data }) {
   }
 }
 
-export async function chooseBufferModes({ cwd = process.cwd(), choose = promptForMode } = {}) {
-  const posts = getNewPosts({ cwd, staged: true }).filter(
-    ({ data }) => data.bufferMode === undefined,
-  );
-  for (const post of posts) {
-    if ((await readFile(resolve(cwd, post.path), "utf8")) !== post.source) {
+function ensureUnchanged(posts) {
+  for (const { path, source } of posts) {
+    if (readFileSync(path, "utf8") !== source) {
       throw new Error(
-        `Stage the complete publishing version of ${post.path} before choosing its Buffer mode; unstaged changes were left untouched.`,
+        `${path} has unstaged changes. Stage the complete post and retry; no publishing choices were saved.`,
       );
     }
   }
-  const updates = [];
-  for (const post of posts) {
-    const mode = choose(post);
-    if (!bufferModes.includes(mode)) {
-      throw new Error(`Invalid Buffer choice for ${post.path}.`);
-    }
-    const { lines, end } = frontmatter(post.source, post.path);
-    lines.splice(end, 0, `bufferMode: ${mode}${lines[0].endsWith("\r") ? "\r" : ""}`);
-    updates.push({ ...post, updated: lines.join("\n") });
-  }
-  for (const post of updates) {
-    if ((await readFile(resolve(cwd, post.path), "utf8")) !== post.source) {
-      throw new Error(
-        `${post.path} changed during the prompt; commit aborted without saving choices.`,
-      );
-    }
-  }
-  for (const post of updates) {
-    await writeFile(resolve(cwd, post.path), post.updated);
-  }
-  if (updates.length) git(cwd, "add", "--", ...updates.map(({ path }) => path));
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  try {
-    await chooseBufferModes();
-  } catch (error) {
-    console.error(error.message);
-    process.exitCode = 1;
+try {
+  const posts = getNewPosts({ staged: true }).filter(({ data }) => data.bufferMode === undefined);
+  ensureUnchanged(posts);
+  const updates = posts.map((post) => {
+    const mode = promptForMode(post);
+    const { lines, end } = post;
+    lines.splice(end, 0, `bufferMode: ${mode}${lines[0].endsWith("\r") ? "\r" : ""}`);
+    return { ...post, updated: lines.join("\n") };
+  });
+  ensureUnchanged(posts);
+  for (const post of updates) {
+    writeFileSync(post.path, post.updated);
   }
+  if (updates.length) git("add", "--", ...updates.map(({ path }) => path));
+} catch (error) {
+  console.error(error.message);
+  process.exitCode = 1;
 }
