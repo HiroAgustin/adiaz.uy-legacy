@@ -52,7 +52,7 @@ function ensureUnchanged(posts) {
 }
 
 try {
-  const posts = getNewPosts({ staged: true }).filter(({ data }) => data.bufferMode === undefined);
+  const posts = getNewPosts().filter(({ data }) => data.bufferMode === undefined);
   ensureUnchanged(posts);
   const updates = posts.map((post) => {
     const mode = promptForMode(post);

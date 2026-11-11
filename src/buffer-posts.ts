@@ -8,17 +8,16 @@ export const GET: APIRoute = async ({ site }) => {
 
   const posts = await getPosts();
   return Response.json(
-    posts
-      .filter((post) => (post.data.bufferMode ?? "shareNow") === process.env.BUFFER_MODE)
-      .map((post) => {
-        if (!post.filePath) {
-          throw new Error(`Missing source file path for blog post "${post.id}".`);
-        }
-        return {
-          filePath: post.filePath,
-          title: post.data.title,
-          url: new URL(`/${post.id}/`, site).href,
-        };
-      }),
+    posts.map((post) => {
+      if (!post.filePath) {
+        throw new Error(`Missing source file path for blog post "${post.id}".`);
+      }
+      return {
+        filePath: post.filePath,
+        title: post.data.title,
+        url: new URL(`/${post.id}/`, site).href,
+        mode: post.data.bufferMode,
+      };
+    }),
   );
 };
