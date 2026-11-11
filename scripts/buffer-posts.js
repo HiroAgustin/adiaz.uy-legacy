@@ -21,24 +21,29 @@ function frontmatter(source, path) {
   return { data, lines, end };
 }
 
-export function getNewPosts() {
-  const head = spawnSync("git", ["rev-parse", "--verify", "--quiet", "HEAD"], {
-    encoding: "utf8",
-  });
-  if (head.error) throw head.error;
-  let base;
-  if (head.status === 0) base = head.stdout.trim();
-  else if (head.status === 1) base = git("hash-object", "-t", "tree", "--stdin").trim();
-  else throw new Error(`Cannot resolve HEAD: ${head.stderr.trim()}`);
+export function getNewPosts({ base } = {}) {
+  const staged = base === undefined;
+  if (staged) {
+    const head = spawnSync("git", ["rev-parse", "--verify", "--quiet", "HEAD"], {
+      encoding: "utf8",
+    });
+    if (head.error) throw head.error;
+    if (head.status === 0) base = head.stdout.trim();
+    else if (head.status === 1) base = git("hash-object", "-t", "tree", "--stdin").trim();
+    else throw new Error(`Cannot resolve HEAD: ${head.stderr.trim()}`);
+  } else if (!/^[a-f0-9]{40}$/i.test(base) || /^0+$/.test(base)) {
+    throw new Error("Set BUFFER_BASE_REF to the full commit SHA before the new posts.");
+  }
 
   const changes = git(
     "diff",
-    "--cached",
+    ...(staged ? ["--cached"] : []),
     "--name-status",
     "-z",
     "--diff-filter=AMR",
     "--find-renames",
     base,
+    ...(staged ? [] : ["HEAD"]),
     "--",
     "src/content/blog",
   )
@@ -51,7 +56,7 @@ export function getNewPosts() {
     const previousPath = changes[index++];
     const path = status.startsWith("R") ? changes[index++] : previousPath;
     if (!path.endsWith(".md")) continue;
-    const source = git("show", `:${path}`);
+    const source = git("show", `${staged ? "" : "HEAD"}:${path}`);
     const metadata = frontmatter(source, path);
     const { data } = metadata;
     if (data.draft === true) continue;
