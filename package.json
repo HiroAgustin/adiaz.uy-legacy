@@ -10,7 +10,7 @@
     "format": "prettier --write src astro.config.mjs",
     "format:check": "prettier --check src astro.config.mjs",
     "build": "astro build",
-    "social:publish": "BUFFER_PUBLISH=true node --env-file-if-exists=.env ./node_modules/astro/bin/astro.mjs build",
+    "social:publish": "node --env-file-if-exists=.env scripts/publish-buffer.js",
     "preview": "astro preview"
   },
   "dependencies": {

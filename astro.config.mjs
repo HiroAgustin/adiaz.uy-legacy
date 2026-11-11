@@ -1,22 +1,25 @@
 import { defineConfig, fontProviders } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import buffalo from "astro-buffalo";
-import { readFileSync } from "node:fs";
-import { getNewPosts } from "./scripts/buffer-posts.js";
+import { getPublishingPosts } from "./scripts/buffer-posts.js";
 
 import tailwindcss from "@tailwindcss/vite";
 
 const site = "https://adiaz.uy";
 
-function checkPublishingModes() {
-  const posts = getNewPosts({ base: process.env.BUFFER_BASE_REF ?? "" });
-  for (const { path, source, data } of posts) {
-    if (readFileSync(path, "utf8") !== source) {
-      throw new Error(`${path} has uncommitted changes. Publish from the committed version.`);
-    }
-    if (!data.bufferMode) {
-      throw new Error(`Choose a bufferMode for ${path} before publishing.`);
-    }
+let channelIds;
+if (process.env.BUFFER_PUBLISH === "true" && process.env.BUFFER_CHANNEL_IDS) {
+  try {
+    channelIds = JSON.parse(process.env.BUFFER_CHANNEL_IDS);
+  } catch {
+    throw new Error("Use npm run social:publish to publish to the selected channels.");
+  }
+  if (
+    !Array.isArray(channelIds) ||
+    !channelIds.length ||
+    channelIds.some((id) => typeof id !== "string" || !id.trim())
+  ) {
+    throw new Error("Use npm run social:publish to publish to the selected channels.");
   }
 }
 
@@ -46,16 +49,22 @@ export default defineConfig({
 
   integrations: [
     {
-      name: "check-publishing-modes",
+      name: "check-publishing-choices",
       hooks: {
         "astro:config:setup": ({ command }) => {
-          if (command === "build" && process.env.BUFFER_PUBLISH === "true") checkPublishingModes();
+          if (command === "build" && process.env.BUFFER_PUBLISH === "true") {
+            if (!channelIds) {
+              throw new Error("Use npm run social:publish to publish to the selected channels.");
+            }
+            getPublishingPosts();
+          }
         },
       },
     },
     buffalo({
       posts: new URL("./src/buffer-posts.ts", import.meta.url),
       contentDirectory: "src/content/blog",
+      channelIds,
     }),
     sitemap({
       customPages: [new URL("/Resume.pdf", site).href],

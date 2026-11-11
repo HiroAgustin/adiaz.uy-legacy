@@ -10,6 +10,7 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     draft: z.boolean().default(false),
     bufferMode: z.enum(["shareNow", "addToQueue"]).optional(),
+    bufferChannels: z.array(z.string().min(1)).min(1).optional(),
     updatedDate: z.coerce.date().optional(),
     image: z
       .object({
