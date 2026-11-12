@@ -10,7 +10,7 @@
     "format": "prettier --write src astro.config.mjs",
     "format:check": "prettier --check src astro.config.mjs",
     "build": "astro build",
-    "social:publish": "node --env-file-if-exists=.env scripts/publish-buffer.js",
+    "social:publish": "BUFFER_PUBLISH=true node --env-file-if-exists=.env ./node_modules/astro/bin/astro.mjs build",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -18,7 +18,7 @@
     "@astrojs/sitemap": "^3.7.4",
     "@tailwindcss/vite": "^4.3.5",
     "astro": "^7.4.5",
-    "astro-buffalo": "^0.2.0",
+    "astro-buffalo": "^0.3.0",
     "tailwindcss": "^4.3.5",
     "yaml": "^2.9.1"
   },
