@@ -17,7 +17,7 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "@tailwindcss/vite": "^4.3.5",
-    "astro": "^7.4.5",
+    "astro": "^7.4.12",
     "astro-buffalo": "^0.3.0",
     "tailwindcss": "^4.3.5",
     "yaml": "^2.9.1"
